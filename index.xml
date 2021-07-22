@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yuanyi 的博客</title>
-    <link>http://yuanyi-au.github.io/</link>
+    <link>/</link>
     <description>yuanyi 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="http://yuanyi-au.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>利用 Hugo 搭建网站</title>
-        <link>http://yuanyi-au.github.io/notes/hugo-website.html</link>
+        <link>/notes/hugo-website/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/notes/hugo-website.html</guid>
+        <guid>/notes/hugo-website/</guid>
         <description>快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
 建议安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
 注意：要把 hugo 的路径添加到环境变量 Path 中！
@@ -29,48 +29,48 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
     
       <item>
         <title>开源入门</title>
-        <link>http://yuanyi-au.github.io/posts/opensource-starter.html</link>
+        <link>/posts/opensource-starter/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/opensource-starter.html</guid>
+        <guid>/posts/opensource-starter/</guid>
         <description>接触不久后的感想</description>
       </item>
     
       <item>
         <title>《 JS 高级程序设计》笔记</title>
-        <link>http://yuanyi-au.github.io/notes/pro-js-fdw-readingnotes.html</link>
+        <link>/notes/pro-js-fdw-readingnotes/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/notes/pro-js-fdw-readingnotes.html</guid>
+        <guid>/notes/pro-js-fdw-readingnotes/</guid>
         <description>待搬&amp;hellip;</description>
       </item>
     
       <item>
         <title>学习历程</title>
-        <link>http://yuanyi-au.github.io/posts/learning-process.html</link>
+        <link>/posts/learning-process/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/learning-process.html</guid>
+        <guid>/posts/learning-process/</guid>
         <description>转码的整个时间线 &amp;amp; 踩过的所有坑，个人体验仅供参考：
  第一阶段（2020.11初~2020.12末）  第二阶段（2021.1中~2021.4中）  第三阶段（2021.4末~2021.5初）  第四阶段（2021.5初~2021.6末）  第五阶段（2021.7初~2021.8中） </description>
       </item>
     
       <item>
         <title>面试准备</title>
-        <link>http://yuanyi-au.github.io/posts/interviews.html</link>
+        <link>/posts/interviews/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/interviews.html</guid>
+        <guid>/posts/interviews/</guid>
         <description>面试相关的非技术性经验，会不断补充
 面试相关的技术问题总结会放在 Github 上</description>
       </item>
     
       <item>
         <title>关于我</title>
-        <link>http://yuanyi-au.github.io/about.html</link>
+        <link>/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/about.html</guid>
+        <guid>/about/</guid>
         <description> 个人介绍 大家好，我是四川大学化学系2022届在读本科生，从2020年11月开始零基础转码，一路上遇到了无数问题与困难，同样也得到了无数帮助与鼓励，真的非常感激曾经遇到的每一位朋友。所以也想在这里记录一些自己的经验，希望能够或多或少帮助到其他人。祝愿大家都能探索出自己的路！
 要特别感谢豆瓣的 Women In Tech 小组，当我在计算机的道路上艰难摸索时，这个小组给予了我最大的帮助与支持，在这里收获了很多姐妹给予的力量。希望科技行业能有越来越多有力量的女性，也希望我的这些经验分享能为此目标增添一份绵薄之力。
  有任何问题可以与我联系： 名字邮箱主题打个招呼!有个问题?内容</description>
