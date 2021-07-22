@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yuanyi 的博客</title>
+    <link>http://yuanyi-au.github.io/notes/</link>
+    <description>yuanyi 的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="http://yuanyi-au.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>利用 Hugo 搭建网站</title>
+        <link>http://yuanyi-au.github.io/notes/hugo-website/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://yuanyi-au.github.io/notes/hugo-website/</guid>
+        <description>快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
+建议安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装，也很方便大家可以试试
+ MacOS： brew install hugo
+ 新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：
+---title: &amp;quot;Helloworld&amp;quot;date: {{ .</description>
+      </item>
+    
+      <item>
+        <title>《 JS 高级程序设计》笔记</title>
+        <link>http://yuanyi-au.github.io/notes/pro-js-fdw-readingnotes/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://yuanyi-au.github.io/notes/pro-js-fdw-readingnotes/</guid>
+        <description>待搬&amp;hellip;</description>
+      </item>
+    
+  </channel>
+</rss>
