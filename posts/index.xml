@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yuanyi 的博客</title>
-    <link>http://yuanyi-au.github.io/posts/</link>
+    <link>http://yuanyi-au.github.io/posts.html</link>
     <description>yuanyi 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="http://yuanyi-au.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>开源入门</title>
-        <link>http://yuanyi-au.github.io/posts/opensource-starter/</link>
+        <link>http://yuanyi-au.github.io/posts/opensource-starter.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/opensource-starter/</guid>
+        <guid>http://yuanyi-au.github.io/posts/opensource-starter.html</guid>
         <description>接触不久后的感想</description>
       </item>
     
       <item>
         <title>学习历程</title>
-        <link>http://yuanyi-au.github.io/posts/learning-process/</link>
+        <link>http://yuanyi-au.github.io/posts/learning-process.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/learning-process/</guid>
+        <guid>http://yuanyi-au.github.io/posts/learning-process.html</guid>
         <description>转码的整个时间线 &amp;amp; 踩过的所有坑，个人体验仅供参考：
  第一阶段（2020.11初~2020.12末）  第二阶段（2021.1中~2021.4中）  第三阶段（2021.4末~2021.5初）  第四阶段（2021.5初~2021.6末）  第五阶段（2021.7初~2021.8中） </description>
       </item>
     
       <item>
         <title>面试准备</title>
-        <link>http://yuanyi-au.github.io/posts/interviews/</link>
+        <link>http://yuanyi-au.github.io/posts/interviews.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://yuanyi-au.github.io/posts/interviews/</guid>
+        <guid>http://yuanyi-au.github.io/posts/interviews.html</guid>
         <description>面试相关的非技术性经验，会不断补充
 面试相关的技术问题总结会放在 Github 上</description>
       </item>
