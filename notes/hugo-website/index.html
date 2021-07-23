@@ -398,6 +398,37 @@ title = &quot;Blog&quot;
 
 
 
+
+
+  <h2 id="把网站部署到-github-上"><a class="anchor" href="#把网站部署到-github-上" title='Anchor for: 把网站部署到 GitHub 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 GitHub 上</h2> 
+
+
+
+
+
+
+  <h2 id="public-文件夹渲染问题"><a class="anchor" href="#public-文件夹渲染问题" title='Anchor for: Public 文件夹渲染问题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Public 文件夹渲染问题</h2> 
+
+<p>问题描述：<code>hugo server</code> 在本地运行时没有任何问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件</p>
+<p>搜索到别人提的 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a>，问题出在 Hugo 本身处理 URL 的方式上。</p>
+<p>解决方法：</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>baseURL = &quot;//example.org&quot;
+relativeURLs = true
+uglyURLs = true
+</code></pre><p>我尝试了没有用，最后直接把 <code>baseURL</code> 注释掉，再运行就没问题了</p>
+
+
+
+
+
+  <h1 id="参考链接">参考链接</h1> 
+
+<p>Hugo 官网上的视频教程，比较详细 <a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3"> YouTube Playlist </a></p>
+<p>如何创建自己的 Hugo 主题 <a href="https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;list=LLm-KB0VAVChbSZPeDA_WqSg">Creating your own Hugo Theme!</a></p>
+<p>如何把个人博客部署到 GitHub 上 <a href="https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=247s">Creating a Blog with Hugo and Github in 10 minutes</a></p>
+
+
+
     </article>
   </main>
 
