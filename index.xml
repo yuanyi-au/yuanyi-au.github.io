@@ -13,18 +13,16 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>/notes/hugo-website/</guid>
-        <description>快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
-建议安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+        <description>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的一些问题
+快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
+直接安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
 注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装，也很方便大家可以试试
- MacOS： brew install hugo
+我在下载安装扩展版本的时候有点问题，最后重新用 [Chocolatey](https://gohugo.io/getting-started/installing/#chocolatey-windows) 安装成功  MacOS： brew install hugo
  新建网站 hugo version 检查安装是否成功
 hugo new site [sitename] 创建一个新的网站
 hugo server 开启 Hugo 服务器，可以在本地预览调试网站
 结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
-在该文件夹下的文件结构目录直接对应网站结构
-通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：
----title: &amp;quot;Helloworld&amp;quot;date: {{ .</description>
+在该文件夹下的文件结构目录直接对应网站结构</description>
       </item>
     
       <item>
@@ -34,15 +32,6 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
         
         <guid>/posts/opensource-starter/</guid>
         <description>接触不久后的感想</description>
-      </item>
-    
-      <item>
-        <title>《 JS 高级程序设计》笔记</title>
-        <link>/notes/pro-js-fdw-readingnotes/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/pro-js-fdw-readingnotes/</guid>
-        <description>待搬&amp;hellip;</description>
       </item>
     
       <item>
@@ -63,6 +52,111 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
         <guid>/posts/interviews/</guid>
         <description>面试相关的非技术性经验，会不断补充
 面试相关的技术问题总结会放在 Github 上</description>
+      </item>
+    
+      <item>
+        <title>git 笔记(1) 基础入门</title>
+        <link>/notes/git-1/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/notes/git-1/</guid>
+        <description>本篇笔记的内容包括常用命令以及 commit message 规范
+常用命令  名词 workplace 工作区
+stage 暂存区
+repository 本地仓库
+remote 远程仓库
+ 新建仓库 git init 在当前目录新建一个本地仓库
+git clone 将一个远程仓库的内容下载到本地
+ 文件的增加、删除、提交 git add [filename] 将文件从工作区添加到暂存区
+git rm [filename] 删除工作区文件
+git rm --cached [filename] 停止追踪指定文件，但该文件会保留在工作区
+git mv [originalname] [newname] 文件重命名，并将该文件放入暂存区
+git commit - &amp;quot;message&amp;quot; 将暂存区文件提交到本地仓库
+git commit -amend -m &amp;quot;message&amp;quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
+ 分支管理 git branch 查看所有本地分支
+git branch -a 查看所有本地分支与远程分支
+git branch [branch] 新建一个分支，但依然停留在当前分支</description>
+      </item>
+    
+      <item>
+        <title>git 笔记(2) 进阶学习</title>
+        <link>/notes/git-2/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/notes/git-2/</guid>
+        <description>你真的懂git rebase吗？
+详解git pull和git fetch的区别：</description>
+      </item>
+    
+      <item>
+        <title>package.json 与 package-lock.json</title>
+        <link>/notes/package.json-package-lock.json/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/notes/package.json-package-lock.json/</guid>
+        <description>package.json 描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 npm init 自动生成
+{&amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,&amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,&amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,&amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,&amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;},&amp;quot;repository&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,&amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;},&amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&amp;quot;bugs&amp;quot;: {&amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;},&amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,&amp;quot;dependencies&amp;quot;: {},&amp;quot;devDependencies&amp;quot;: {&amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,&amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;}}package.json 文件要求必须包括name 和 version 属性
+ author：作者，是在 npmjs.org 网站上的有效账户名 main：指定加载入口，默认值时模块根目录下的 index.js script：指定命令行缩写所要执行的命令，默认是一个空的 test 脚本 repository：代码库地址，会直接在组件库的 npm 首页生效 bugs：开发者联系方式，一般是代码库的 issues 地址 dependencies：指定项目运行所需要的模块 devDependencies：指定项目开发所需要的模块 bin：指定各个内部命令对应的可执行文件的位置 license：开源协议，可看Choose an open source license config：用于添加命令行的环境变量  package-lock.</description>
+      </item>
+    
+      <item>
+        <title> LeetCode 刷题经验</title>
+        <link>/posts/leetcode/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/leetcode/</guid>
+        <description>准备 刷题顺序 只刷easy，数据结构每个专题10道，算法每个专题5道，一共80道，每天10道，8天刷完
+ 数据结构  数组 合并两个有序数组
+删除有序数组中的重复项
+只出现一次的数字
+二分查找
+移除元素
+两个数组的交集
+转置矩阵
+ 链表 反转链表
+合并两个有序链表
+环形链表
+删除排序链表中的重复元素
+相交链表
+ 哈希表 两数之和
+罗马数字转整数
+ 字符串 字符串相加
+最长公共前缀
+ 栈与队列 有效的括号
+删除字符串中的所有相邻重复项
+最小栈
+ 树 二叉树的最大深度
+翻转二叉树
+对称二叉树
+二叉树的直径
+ 算法  排序  贪心  动态规划 爬楼梯
+最大子序和
+杨辉三角
+ 回溯 暂时未归类：整数反转 回文数</description>
+      </item>
+    
+      <item>
+        <title>使用 netlify 预览 GitHub 上的 PR</title>
+        <link>/notes/netlify/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/notes/netlify/</guid>
+        <description>netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
+本篇笔记介绍了如何在 GitHub 上添加 netlify 以便预览提交的 pull request 效果
+安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
+New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
+ 基本设置 常见框架对应的 Build command 和 Publish directory
+ 为 PR 生成预览 进入 Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Deploy notifications
+选择 ”Add notification“ ，在下拉菜单中选择 “GitHub Pull Request Comment” ，然后选择 “Deploy Preview succeeded” ，保存</description>
+      </item>
+    
+      <item>
+        <title>在 GitHub 上参与项目时的合作交流礼节</title>
+        <link>/notes/git-teamwork/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/notes/git-teamwork/</guid>
+        <description>缩写  WIP：Work in progress, do not merge yet // 开发中 LGTM：Looks good to me // PR 经过 review 没有问题 PTAL：Please take a look. //请别人 review 自己的 PR CC：Carbon copy // 抄送某人 RFC：request for comments. // 我们来讨论下这个问题 IIRC：if I recall correctly ACK：acknowledgement NACK/NAK：negative acknowledgement TBR: To Be Reviewed //提示维护者进行 review TL, DR: Too Long; Didn&amp;rsquo;t Read TBD: To Be Done(or Defined/Discussed/Decided/Determined) PRD : Product Requirement Document //产品需求文档  </description>
       </item>
     
       <item>
