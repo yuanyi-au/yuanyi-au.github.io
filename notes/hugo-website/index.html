@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "281",
+      "wordCount" : "301",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -289,9 +289,8 @@
 
 <p>最简单的方法是直接下载 <a href="https://github.com/gohugoio/hugo/releases">最新版本的 hugo</a> 安装</p>
 <p>直接安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题</p>
-<p>注意：要把 hugo 的路径添加到环境变量 Path 中！</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>我在下载安装扩展版本的时候有点问题，最后重新用 [Chocolatey](https://gohugo.io/getting-started/installing/#chocolatey-windows) 安装成功
-</code></pre>
+<p><strong>注意：要把 hugo 的路径添加到环境变量 Path 中！</strong></p>
+<p>我在下载安装扩展版本的时候有点问题，最后重新用 <a href="https://gohugo.io/getting-started/installing/#chocolatey-windows">Chocolatey</a> 安装成功</p>
 
 
 
@@ -462,12 +461,21 @@ title = &quot;Blog&quot;
 <ol start="5">
 <li>在第二个仓库的设置中可以找到 GitHub Pages，可以看到网站地址，也就是 <code>github_id.github.io</code>，就可以进行访问了</li>
 </ol>
+<p><strong>注意：<code>public</code> 文件夹的内容需要每次在项目根目录执行 <code>hugo</code> 命令后才会更新</strong></p>
 
 
 
 
 
-  <h1 id="过程中遇到的问题">过程中遇到的问题</h1> 
+  <h2 id="把网站部署到-netlify-上"><a class="anchor" href="#把网站部署到-netlify-上" title='Anchor for: 把网站部署到 Netlify 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 Netlify 上</h2> 
+
+<p>可以参考这篇笔记 <a href="">使用 netlify 预览 GitHub 上的 PR</a> ，不做最后一步就行啦</p>
+
+
+
+
+
+  <h1 id="搭建过程中遇到的问题">搭建过程中遇到的问题</h1> 
 
 
 
@@ -476,19 +484,22 @@ title = &quot;Blog&quot;
 
   <h2 id="public-文件夹渲染出错"><a class="anchor" href="#public-文件夹渲染出错" title='Anchor for: Public 文件夹渲染出错.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Public 文件夹渲染出错</h2> 
 
-<p>问题描述：<code>hugo server</code> 在本地运行时没有任何问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件</p>
-<p>搜索到别人提的 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a> ,问题出在 Hugo 本身处理 URL 的方式上。</p>
-<p>解决方法：</p>
+<p>问题描述：</p>
+<p><code>hugo server</code> 在本地运行时没有任何问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件</p>
+<p>问题解决：</p>
+<p>问题出在 Hugo 本身处理 URL 的方式上，可以参见 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a></p>
 <pre aria-label="Box containing code sample." tabindex=0><code>baseURL = &quot;//example.org&quot;
 relativeURLs = true
 uglyURLs = true
-</code></pre><p>我尝试了没有用，简书上有人说可以直接把 <code>baseURL</code> 注释掉，我试了确实可行</p>
+</code></pre><p>上面的方法没有解决我的问题，后来试了两种方法可行：</p>
+<p><code># baseURL = &quot;example.org&quot;</code></p>
+<p><code>baseURL = &quot;\&quot;</code></p>
 
 
 
 
 
-  <h1 id="参考链接">参考链接</h1> 
+  <h1 id="参考资料">参考资料</h1> 
 
 <p>Hugo 官网上的视频教程，比较详细 <a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3"> YouTube Playlist </a></p>
 <p>如何创建自己的 Hugo 主题 <a href="https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;list=LLm-KB0VAVChbSZPeDA_WqSg">Creating your own Hugo Theme!</a></p>

@@ -8,15 +8,6 @@
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
-        <title>开源入门</title>
-        <link>/posts/opensource-starter/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/opensource-starter/</guid>
-        <description>接触不久后的感想</description>
-      </item>
-    
-      <item>
         <title>学习历程</title>
         <link>/posts/learning-process/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -37,39 +28,73 @@
       </item>
     
       <item>
-        <title> LeetCode 刷题经验</title>
+        <title> LeetCode 刷题记录</title>
         <link>/posts/leetcode/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>/posts/leetcode/</guid>
-        <description>准备 刷题顺序 只刷easy，数据结构每个专题10道，算法每个专题5道，一共80道，每天10道，8天刷完
- 数据结构  数组 合并两个有序数组
+        <description>数据结构  数组 合并两个有序数组
 删除有序数组中的重复项
 只出现一次的数字
 二分查找
 移除元素
 两个数组的交集
 转置矩阵
+搜索插入位置
+存在重复元素
+数组的度
+数组的相对排序
  链表 反转链表
 合并两个有序链表
 环形链表
 删除排序链表中的重复元素
 相交链表
+移除链表元素
+删除链表中的节点
  哈希表 两数之和
 罗马数字转整数
+多数元素
  字符串 字符串相加
 最长公共前缀
+验证回文串
+反转字符串
  栈与队列 有效的括号
 删除字符串中的所有相邻重复项
 最小栈
+用栈实现队列
+用队列实现栈
  树 二叉树的最大深度
 翻转二叉树
 对称二叉树
+合并二叉树
+平衡二叉树
 二叉树的直径
- 算法  排序  贪心  动态规划 爬楼梯
+二叉树的所有路径
+二叉树的前序遍历
+二叉树的中序遍历
+二叉树的后序遍历
+路径总和
+算法  排序  贪心  动态规划 爬楼梯
 最大子序和
 杨辉三角
- 回溯 暂时未归类：整数反转 回文数</description>
+ 回溯 </description>
+      </item>
+    
+      <item>
+        <title>在 GitHub 上参与项目应该知道的事</title>
+        <link>/posts/github-opensource-project/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/github-opensource-project/</guid>
+        <description>有些内容写得比较简略，因为网上随便一搜就有很多详细笔记
+慢慢丰富经验慢慢补充
+参与项目的基本流程  找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们，会是一个不错的开始。
+ 仔细阅读项目文档代码 很多开源项目都有 contributing guidelines 类似的文档，请一定要完整阅读它们，这是最基本的礼节。
+当然应该阅读源码，这也是最基本的礼节。至少阅读你感兴趣准备参与的部分。
+ 看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这是第一次参与的不错选择
+最开始参与项目的时候自己可能没有什么方向，可以从解决 Issues 里的问题开始下手
+ pull request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码
+ fork 你想要参与的项目，它就会出现在你的仓库列表里 将你自己仓库里的这个项目 git clone 到本地 在本地仓库 git remote add upstream 原仓库地址 ，与原仓库建立连接 创建一个新的分支，然后开始修改代码 把改好的代码推送到自己的远程仓库 在 GitHub 自己的仓库页面上就可以看到 New pull request 按钮   等待 review 结果 项目管理者会对你提交的代码 review 进行 review，如果没有问题就会将你的代码 merge 到项目源码里，一次 pull request 就这样完成啦</description>
       </item>
     
   </channel>

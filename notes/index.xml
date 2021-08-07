@@ -17,12 +17,14 @@
 快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
 直接安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
 注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 [Chocolatey](https://gohugo.io/getting-started/installing/#chocolatey-windows) 安装成功  MacOS： brew install hugo
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功
+ MacOS： brew install hugo
  新建网站 hugo version 检查安装是否成功
 hugo new site [sitename] 创建一个新的网站
 hugo server 开启 Hugo 服务器，可以在本地预览调试网站
 结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
-在该文件夹下的文件结构目录直接对应网站结构</description>
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</description>
       </item>
     
       <item>
@@ -81,17 +83,10 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
 安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
 New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
  基本设置 常见框架对应的 Build command 和 Publish directory
- 为 PR 生成预览 进入 Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Deploy notifications
-选择 ”Add notification“ ，在下拉菜单中选择 “GitHub Pull Request Comment” ，然后选择 “Deploy Preview succeeded” ，保存</description>
-      </item>
-    
-      <item>
-        <title>在 GitHub 上参与项目时的合作交流礼节</title>
-        <link>/notes/git-teamwork/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/git-teamwork/</guid>
-        <description>缩写  WIP：Work in progress, do not merge yet // 开发中 LGTM：Looks good to me // PR 经过 review 没有问题 PTAL：Please take a look. //请别人 review 自己的 PR CC：Carbon copy // 抄送某人 RFC：request for comments. // 我们来讨论下这个问题 IIRC：if I recall correctly ACK：acknowledgement NACK/NAK：negative acknowledgement TBR: To Be Reviewed //提示维护者进行 review TL, DR: Too Long; Didn&amp;rsquo;t Read TBD: To Be Done(or Defined/Discussed/Decided/Determined) PRD : Product Requirement Document //产品需求文档  </description>
+ 环境变量 如果第一次 deploy 失败，首先查看版本是否正确
+Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables
+ 修改域名 netlify 会自动以你的 site name 生成一个域名：[name-of-your-site].netlify.app
+进入 Domain Setting &amp;gt; Domain management &amp;gt; Custom domains，可以通过修改 site name 修改域名</description>
       </item>
     
   </channel>

@@ -17,21 +17,14 @@
 快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
 直接安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
 注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 [Chocolatey](https://gohugo.io/getting-started/installing/#chocolatey-windows) 安装成功  MacOS： brew install hugo
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功
+ MacOS： brew install hugo
  新建网站 hugo version 检查安装是否成功
 hugo new site [sitename] 创建一个新的网站
 hugo server 开启 Hugo 服务器，可以在本地预览调试网站
 结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
-在该文件夹下的文件结构目录直接对应网站结构</description>
-      </item>
-    
-      <item>
-        <title>开源入门</title>
-        <link>/posts/opensource-starter/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/opensource-starter/</guid>
-        <description>接触不久后的感想</description>
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</description>
       </item>
     
       <item>
@@ -100,39 +93,56 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
       </item>
     
       <item>
-        <title> LeetCode 刷题经验</title>
+        <title> LeetCode 刷题记录</title>
         <link>/posts/leetcode/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>/posts/leetcode/</guid>
-        <description>准备 刷题顺序 只刷easy，数据结构每个专题10道，算法每个专题5道，一共80道，每天10道，8天刷完
- 数据结构  数组 合并两个有序数组
+        <description>数据结构  数组 合并两个有序数组
 删除有序数组中的重复项
 只出现一次的数字
 二分查找
 移除元素
 两个数组的交集
 转置矩阵
+搜索插入位置
+存在重复元素
+数组的度
+数组的相对排序
  链表 反转链表
 合并两个有序链表
 环形链表
 删除排序链表中的重复元素
 相交链表
+移除链表元素
+删除链表中的节点
  哈希表 两数之和
 罗马数字转整数
+多数元素
  字符串 字符串相加
 最长公共前缀
+验证回文串
+反转字符串
  栈与队列 有效的括号
 删除字符串中的所有相邻重复项
 最小栈
+用栈实现队列
+用队列实现栈
  树 二叉树的最大深度
 翻转二叉树
 对称二叉树
+合并二叉树
+平衡二叉树
 二叉树的直径
- 算法  排序  贪心  动态规划 爬楼梯
+二叉树的所有路径
+二叉树的前序遍历
+二叉树的中序遍历
+二叉树的后序遍历
+路径总和
+算法  排序  贪心  动态规划 爬楼梯
 最大子序和
 杨辉三角
- 回溯 暂时未归类：整数反转 回文数</description>
+ 回溯 </description>
       </item>
     
       <item>
@@ -146,17 +156,27 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
 安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
 New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
  基本设置 常见框架对应的 Build command 和 Publish directory
- 为 PR 生成预览 进入 Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Deploy notifications
-选择 ”Add notification“ ，在下拉菜单中选择 “GitHub Pull Request Comment” ，然后选择 “Deploy Preview succeeded” ，保存</description>
+ 环境变量 如果第一次 deploy 失败，首先查看版本是否正确
+Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables
+ 修改域名 netlify 会自动以你的 site name 生成一个域名：[name-of-your-site].netlify.app
+进入 Domain Setting &amp;gt; Domain management &amp;gt; Custom domains，可以通过修改 site name 修改域名</description>
       </item>
     
       <item>
-        <title>在 GitHub 上参与项目时的合作交流礼节</title>
-        <link>/notes/git-teamwork/</link>
+        <title>在 GitHub 上参与项目应该知道的事</title>
+        <link>/posts/github-opensource-project/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/git-teamwork/</guid>
-        <description>缩写  WIP：Work in progress, do not merge yet // 开发中 LGTM：Looks good to me // PR 经过 review 没有问题 PTAL：Please take a look. //请别人 review 自己的 PR CC：Carbon copy // 抄送某人 RFC：request for comments. // 我们来讨论下这个问题 IIRC：if I recall correctly ACK：acknowledgement NACK/NAK：negative acknowledgement TBR: To Be Reviewed //提示维护者进行 review TL, DR: Too Long; Didn&amp;rsquo;t Read TBD: To Be Done(or Defined/Discussed/Decided/Determined) PRD : Product Requirement Document //产品需求文档  </description>
+        <guid>/posts/github-opensource-project/</guid>
+        <description>有些内容写得比较简略，因为网上随便一搜就有很多详细笔记
+慢慢丰富经验慢慢补充
+参与项目的基本流程  找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们，会是一个不错的开始。
+ 仔细阅读项目文档代码 很多开源项目都有 contributing guidelines 类似的文档，请一定要完整阅读它们，这是最基本的礼节。
+当然应该阅读源码，这也是最基本的礼节。至少阅读你感兴趣准备参与的部分。
+ 看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这是第一次参与的不错选择
+最开始参与项目的时候自己可能没有什么方向，可以从解决 Issues 里的问题开始下手
+ pull request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码
+ fork 你想要参与的项目，它就会出现在你的仓库列表里 将你自己仓库里的这个项目 git clone 到本地 在本地仓库 git remote add upstream 原仓库地址 ，与原仓库建立连接 创建一个新的分支，然后开始修改代码 把改好的代码推送到自己的远程仓库 在 GitHub 自己的仓库页面上就可以看到 New pull request 按钮   等待 review 结果 项目管理者会对你提交的代码 review 进行 review，如果没有问题就会将你的代码 merge 到项目源码里，一次 pull request 就这样完成啦</description>
       </item>
     
       <item>
