@@ -8,27 +8,7 @@
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
       <item>
-        <title>利用 Hugo 搭建网站</title>
-        <link>/notes/hugo-website/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/hugo-website/</guid>
-        <description>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的一些问题
-快速开始  windows: 最简单的方法是直接下载 最新版本的 hugo 安装
-直接安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
-注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功
- MacOS： brew install hugo
- 新建网站 hugo version 检查安装是否成功
-hugo new site [sitename] 创建一个新的网站
-hugo server 开启 Hugo 服务器，可以在本地预览调试网站
-结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
-在该文件夹下的文件结构目录直接对应网站结构
-通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</description>
-      </item>
-    
-      <item>
-        <title>git 笔记(1) 基础入门</title>
+        <title>git 笔记 (1)</title>
         <link>/notes/git-1/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
@@ -52,13 +32,23 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
       </item>
     
       <item>
-        <title>git 笔记(2) 进阶学习</title>
-        <link>/notes/git-2/</link>
+        <title>利用 Hugo 搭建网站</title>
+        <link>/notes/hugo-website/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/git-2/</guid>
-        <description>你真的懂git rebase吗？
-详解git pull和git fetch的区别：</description>
+        <guid>/notes/hugo-website/</guid>
+        <description>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
+快速开始  Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
+请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便
+ MacOS： 其它系统的安装过程可以看官网文档
+ 新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</description>
       </item>
     
       <item>
@@ -73,20 +63,21 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
       </item>
     
       <item>
-        <title>使用 netlify 预览 GitHub 上的 PR</title>
+        <title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
         <link>/notes/netlify/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>/notes/netlify/</guid>
-        <description>netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
-本篇笔记介绍了如何在 GitHub 上添加 netlify 以便预览提交的 pull request 效果
+        <description>Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
+本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果
+也可以参考此笔记将自己的网站部署在 Netlify 上
 安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
+或者你也可以选择在 Netlify 官网 上进行注册授权
 New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
- 基本设置 常见框架对应的 Build command 和 Publish directory
- 环境变量 如果第一次 deploy 失败，首先查看版本是否正确
+ 基本设置 常见框架对应的 Build command 和 Publish directory 可以看 官网文档
+ 环境变量 如果第一次 deploy 失败，请查看环境设置，检查版本是否正确
 Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables
- 修改域名 netlify 会自动以你的 site name 生成一个域名：[name-of-your-site].netlify.app
-进入 Domain Setting &amp;gt; Domain management &amp;gt; Custom domains，可以通过修改 site name 修改域名</description>
+ 修改域名 Netlify 会自动以你的 site name 生成一个域名：[name-of-your-site].</description>
       </item>
     
   </channel>

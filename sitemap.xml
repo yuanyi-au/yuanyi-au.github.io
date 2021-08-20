@@ -4,36 +4,6 @@
   
   
     <url>
-      <loc>/notes/hugo-website/</loc>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </url>
-    
-  
-  
-    <url>
-      <loc>/posts/learning-process/</loc>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </url>
-    
-  
-  
-    <url>
       <loc>/posts/interviews/</loc>
       
       
@@ -64,7 +34,7 @@
   
   
     <url>
-      <loc>/notes/git-2/</loc>
+      <loc>/notes/hugo-website/</loc>
       
       
       
@@ -80,21 +50,6 @@
   
     <url>
       <loc>/notes/package.json-package-lock.json/</loc>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </url>
-    
-  
-  
-    <url>
-      <loc>/posts/leetcode/</loc>
       
       
       
@@ -125,6 +80,21 @@
   
     <url>
       <loc>/posts/github-opensource-project/</loc>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </url>
+    
+  
+  
+    <url>
+      <loc>/posts/leetcode/</loc>
       
       
       

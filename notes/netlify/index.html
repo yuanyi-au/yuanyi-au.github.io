@@ -29,7 +29,7 @@
 
 
 
-<title>使用 netlify 预览 GitHub 上的 PR</title>
+<title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
 
 
 <meta name="author" content="yuanyi">
@@ -53,7 +53,7 @@
 
 
 <meta property="og:site_name" content="yuanyi 的博客">
-<meta property="og:title" content="使用 netlify 预览 GitHub 上的 PR">
+<meta property="og:title" content="使用 Netlify 部署个人网站以及预览 GitHub 上的 PR">
 
   <meta property="og:url" content="/notes/netlify/">
 
@@ -111,14 +111,14 @@
         "@type": "WebSite",
         "@id": ""
       },
-      "headline": "使用 netlify 预览 GitHub 上的 PR",
+      "headline": "使用 Netlify 部署个人网站以及预览 GitHub 上的 PR",
       "description": "",
       
       "url": "\/notes\/netlify\/",
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "119",
+      "wordCount" : "137",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -137,7 +137,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.6aaf319c5d7a6664bf28d0c59001e337054bc67daa42432ac97ad8f619e6e6a9.css" integrity="sha256-aq8xnF16ZmS/KNDFkAHjNwVLxn2qQkMqyXrY9hnm5qk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/main.min.ffa3f48697eecbbe774455b02926461447f821242012064b51265de2e00528f9.css" integrity="sha256-/6P0hpfuy753RFWwKSZGFEf4ISQgEgZLUSZd4uAFKPk=" crossorigin="anonymous">
 
 
 
@@ -272,8 +272,36 @@
 
 
 
-<p>netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台</p>
-<p>本篇笔记介绍了如何在 GitHub 上添加 netlify 以便预览提交的 pull request 效果</p>
+<p>Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台</p>
+<p>本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="images/netlify-bot.png"
+      
+    />
+
+  
+
+</p>
+<p>也可以参考此笔记将自己的网站部署在 Netlify 上</p>
 
 
 
@@ -282,6 +310,7 @@
   <h1 id="安装准备">安装准备</h1> 
 
 <p>在 GitHub 上安装 <a href="https://github.com/apps/netlify"> Netlify </a>，授权 GitHub 账号</p>
+<p>或者你也可以选择在 <a href="https://www.netlify.com/">Netlify 官网</a> 上进行注册授权</p>
 
 
 
@@ -297,7 +326,7 @@
 
   <h2 id="基本设置"><a class="anchor" href="#基本设置" title='Anchor for: 基本设置.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 基本设置</h2> 
 
-<p><a href="https://docs.netlify.com/configure-builds/common-configurations/">常见框架对应的 Build command 和 Publish directory</a></p>
+<p>常见框架对应的 Build command 和 Publish directory 可以看 <a href="https://docs.netlify.com/configure-builds/common-configurations/">官网文档</a></p>
 
 
 
@@ -305,7 +334,7 @@
 
   <h2 id="环境变量"><a class="anchor" href="#环境变量" title='Anchor for: 环境变量.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 环境变量</h2> 
 
-<p>如果第一次 deploy 失败，首先查看版本是否正确</p>
+<p>如果第一次 deploy 失败，请查看环境设置，检查版本是否正确</p>
 <p><code>Site settings &gt; Build &amp; deploy &gt; Environment &gt; Environment variables</code></p>
 <p>
 
@@ -327,7 +356,7 @@
     <img
       
       loading="lazy"
-      src="netlify-4.png"
+      src="netlify-environment.png"
       
     />
 
@@ -341,14 +370,41 @@
 
   <h2 id="修改域名"><a class="anchor" href="#修改域名" title='Anchor for: 修改域名.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 修改域名</h2> 
 
-<p>netlify 会自动以你的 site name 生成一个域名：<code>[name-of-your-site].netlify.app</code></p>
+<p>Netlify 会自动以你的 site name 生成一个域名：<code>[name-of-your-site].netlify.app</code></p>
 <p>进入 <code>Domain Setting &gt; Domain management &gt; Custom domains</code>，可以通过修改 site name 修改域名</p>
+<p>
 
 
 
 
 
-  <h2 id="为-pr-生成预览"><a class="anchor" href="#为-pr-生成预览" title='Anchor for: 为 PR 生成预览.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 为 PR 生成预览</h2> 
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="netlify-domain.png"
+      
+    />
+
+  
+
+</p>
+
+
+
+
+
+  <h1 id="为-pr-生成预览">为 PR 生成预览</h1> 
 
 <p>进入 <code>Site settings &gt; Build &amp; deploy &gt; Deploy notifications</code></p>
 <p>
@@ -371,7 +427,7 @@
     <img
       
       loading="lazy"
-      src="netlify-1.png"
+      src="netlify-notification.png"
       
     />
 
@@ -399,7 +455,7 @@
     <img
       
       loading="lazy"
-      src="netlify-2.png"
+      src="netlify-prcomment.png"
       
     />
 
@@ -407,33 +463,14 @@
 
 </p>
 <p>现在每个新出现的 PR 都会自动生成一个评论，包含预览链接 <code>deploy-preview-4--yoursitename.netlify.app</code></p>
-<p>
 
 
 
 
 
+  <h1 id="对开源项目的支持">对开源项目的支持</h1> 
 
-
-
-
-
-
-
-
-  
-  
-
-    <img
-      
-      loading="lazy"
-      src="netlify-3"
-      
-    />
-
-  
-
-</p>
+<p>如果是开源项目，可以阅读 <a href="https://www.netlify.com/legal/open-source-policy">Open Source Plan Policy</a> 相关内容，提交申请表单，就能免费享有 Pro 的功能，团队成员数量无限制</p>
 
 
 
@@ -441,7 +478,7 @@
 
   <h1 id="参考资料">参考资料</h1> 
 
-<p><a href="https://docs.netlify.com/site-deploys/deploy-previews/"> netlify 官网文档</a></p>
+<p><a href="https://docs.netlify.com/site-deploys/deploy-previews/"> Netlify 官网文档</a></p>
 <p><a href="https://levelup.gitconnected.com/how-to-setup-previews-for-prs-on-your-github-repo-using-netlify-105c80574875"> How to Setup Previews For PRs on Your GitHub Repo Using Netlify </a></p>
 
 

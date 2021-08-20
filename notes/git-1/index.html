@@ -29,7 +29,7 @@
 
 
 
-<title>git 笔记(1) 基础入门</title>
+<title>git 笔记 (1)</title>
 
 
 <meta name="author" content="yuanyi">
@@ -53,7 +53,7 @@
 
 
 <meta property="og:site_name" content="yuanyi 的博客">
-<meta property="og:title" content="git 笔记(1) 基础入门">
+<meta property="og:title" content="git 笔记 (1)">
 
   <meta property="og:url" content="/notes/git-1/">
 
@@ -111,14 +111,14 @@
         "@type": "WebSite",
         "@id": ""
       },
-      "headline": "git 笔记(1) 基础入门",
+      "headline": "git 笔记 (1)",
       "description": "",
       
       "url": "\/notes\/git-1\/",
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "161",
+      "wordCount" : "314",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -137,7 +137,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.6aaf319c5d7a6664bf28d0c59001e337054bc67daa42432ac97ad8f619e6e6a9.css" integrity="sha256-aq8xnF16ZmS/KNDFkAHjNwVLxn2qQkMqyXrY9hnm5qk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/main.min.ffa3f48697eecbbe774455b02926461447f821242012064b51265de2e00528f9.css" integrity="sha256-/6P0hpfuy753RFWwKSZGFEf4ISQgEgZLUSZd4uAFKPk=" crossorigin="anonymous">
 
 
 
@@ -389,14 +389,146 @@
 
   <h1 id="commit-message-规范"><code>commit message</code> 规范</h1> 
 
+<p>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://d33wubrfki0l68.cloudfront.net/eb16595d0c6862c0c013a36c339317a4d82bdce7/9195b/images/posts/2019-11-01-understanding-semantic-commit-messages-using-git-and-angular/conventions-diagram.png"
+      alt="不同的 commit message 规范"
+    />
+
+  
+
+</p>
+<p>通常我们都用 Angular 的规范，具体可以参见 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></p>
+
+
+
+
+
+  <h2 id="组成"><a class="anchor" href="#组成" title='Anchor for: 组成.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 组成</h2> 
+
+<p>commit message 包括三部分：header，body 和 footer</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>&lt;type&gt;[optional scope]: &lt;description&gt;
+
+[optional body]
+
+[optional footer(s)]
+</code></pre>
+
+
+
+
+  <h3 id="header"><a class="anchor" href="#header" title='Anchor for: Header.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Header</h3> 
+
+<ul>
+<li>type：用于说明 commit 的类别
+<ul>
+<li>feat：增加新功能</li>
+<li>fix：修 bug</li>
+<li>docs：文档变动</li>
+<li>style：格式变动，不改变代码逻辑</li>
+<li>refactor：重构（既非feat又非fix的影响代码运行的改动）</li>
+<li>test：增加测试</li>
+<li>chore(or build)：构建过程或辅助工具变动</li>
+<li>ci：与持续集成相关的变动</li>
+<li>perf：改善性能</li>
+</ul>
+</li>
+<li>scope：用于说明 commit 影响的范围，例如数据层、控制层、视图层等</li>
+<li>subject：用于描述 commit 目的</li>
+</ul>
+
+
+
+
+
+  <h3 id="body"><a class="anchor" href="#body" title='Anchor for: Body.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Body</h3> 
+
+<p>对 commit 的详细描述，可以分成多行</p>
+
+
+
+
+
+  <h3 id="footer"><a class="anchor" href="#footer" title='Anchor for: Footer.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Footer</h3> 
+
+<p>只用于两种情况：</p>
+<ul>
+<li>当前代码与上一版本代码不兼容，则 footer 以 BREAKING CHANGE 开头，接着描述变动的内容、理由及迁移方法</li>
+<li>针对某个 Issue，可以在 footer 部分关闭这个 Issue <code>Close #65 #77</code></li>
+</ul>
+
+
+
+
+
+  <h3 id="revert"><a class="anchor" href="#revert" title='Anchor for: Revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Revert</h3> 
+
+<p>如果当前 commit 是用来撤销之前的 commit，则必须以 <code>revert:</code> 开头，后面跟着被撤销的 commit 的 header</p>
+<p>body 部分则必须写成 <code>This  reverts commit 667ecc1654a317a13331b17617d973392f415f02.</code></p>
+
+
+
+
+
+  <h2 id="规则"><a class="anchor" href="#规则" title='Anchor for: 规则.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 规则</h2> 
+
+<p>优秀的 commit massage 应该遵循以下七条规则：</p>
+<ol>
+<li>subject 和 body 之间空一行</li>
+<li>subject字数限制在50字符以内</li>
+<li>行首字母大写</li>
+<li>subject 不要以句号结尾</li>
+<li>subject 使用祈使句</li>
+<li>body 不超过72个字符</li>
+<li>用 body 部分解释此次 commit 的改动及其原因</li>
+</ol>
+
+
+
+
+
+  <h2 id="示例"><a class="anchor" href="#示例" title='Anchor for: 示例.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 示例</h2> 
+
+<p><code>feat(lang): add polish language</code></p>
+<p><code>refactor!: drop support for Node 6 //使用感叹号代表 breaking change</code></p>
+<pre aria-label="Box containing code sample." tabindex=0><code>fix: correct minor typos in code
+
+see the issue for details
+
+on typos fixed.
+
+Reviewed-by: Z
+Refs #133
+</code></pre>
 
 
 
 
   <h1 id="参考资料">参考资料</h1> 
 
+<p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a></p>
+<p><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></p>
+<p><a href="https://nitayneeman.com/posts/understanding-semantic-commit-messages-using-git-and-angular/">Understanding Semantic Commit Messages Using Git and Angular</a></p>
 <p><a href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html">常用 Git 命令清单</a></p>
+<p><a href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">Commit message 和 Change log 编写指南</a></p>
 
 
 
