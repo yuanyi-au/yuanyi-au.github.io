@@ -52,7 +52,7 @@
 
 
 
-<meta property="og:site_name" content="yuanyi 的博客">
+<meta property="og:site_name" content="yuanyi&#39;s blog">
 <meta property="og:title" content="利用 Hugo 搭建网站">
 
   <meta property="og:url" content="/notes/hugo-website/">
@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "328",
+      "wordCount" : "331",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -137,7 +137,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.ffa3f48697eecbbe774455b02926461447f821242012064b51265de2e00528f9.css" integrity="sha256-/6P0hpfuy753RFWwKSZGFEf4ISQgEgZLUSZd4uAFKPk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/main.min.d2eeb03d1457d7c91ab996eacadb0722d8d22c3701aa78f666900daabef2591f.css" integrity="sha256-0u6wPRRX18kauZbqytsHItjSLDcBqnj2ZpANqr7yWR8=" crossorigin="anonymous">
 
 
 
@@ -185,7 +185,7 @@
     <header>
       
 
-  <a href="/">yuanyi 的博客</a>
+  <a href="/">yuanyi&#39;s blog</a>
 
 
 
@@ -329,23 +329,23 @@
 
 
 
-  <h2 id="content-文件夹"><a class="anchor" href="#content-文件夹" title='Anchor for: content 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> <code>content</code> 文件夹</h2> 
+  <h2 id="content-文件夹"><a class="anchor" href="#content-文件夹" title='Anchor for: content 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> content 文件夹</h2> 
 
 <p>存放网站的主要内容 md 文件</p>
 <p>在该文件夹下的文件结构目录直接对应网站结构</p>
-<p>通常md文件开头如下（一般可以在 <code>archetypes</code> 文件夹中找到）：</p>
+<p>通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>---
 title: &quot;Helloworld&quot;
 date: {{ .Date }}
 draft: true
 ---
-</code></pre><p>除了 <code>title</code> 必需，其他可以省略</p>
+</code></pre><p>除了 title 必需，其他可以省略</p>
 
 
 
 
 
-  <h2 id="layouts-文件夹"><a class="anchor" href="#layouts-文件夹" title='Anchor for: layouts 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> <code>layouts</code> 文件夹</h2> 
+  <h2 id="layouts-文件夹"><a class="anchor" href="#layouts-文件夹" title='Anchor for: layouts 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> layouts 文件夹</h2> 
 
 <p>存放网站 HTML 模板，包括 index、particials、single page、list pages 等</p>
 
@@ -353,7 +353,7 @@ draft: true
 
 
 
-  <h2 id="themes文件夹"><a class="anchor" href="#themes文件夹" title='Anchor for: themes文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> <code>themes</code>文件夹</h2> 
+  <h2 id="themes文件夹"><a class="anchor" href="#themes文件夹" title='Anchor for: themes文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> themes文件夹</h2> 
 
 <p>存放现有的 Hugo 主题模板</p>
 
@@ -361,7 +361,7 @@ draft: true
 
 
 
-  <h2 id="configtoml-文件"><a class="anchor" href="#configtoml-文件" title='Anchor for: config.toml 文件.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> <code>config.toml</code> 文件</h2> 
+  <h2 id="configtoml-文件"><a class="anchor" href="#configtoml-文件" title='Anchor for: config.toml 文件.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> config.toml 文件</h2> 
 
 <p>配置文件，最基础的设置如下：</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>baseURL = &quot;http://example.org/&quot;
@@ -408,8 +408,8 @@ title = &quot;Blog&quot;
 
   <h3 id="现有主题模板的个性化"><a class="anchor" href="#现有主题模板的个性化" title='Anchor for: 现有主题模板的个性化.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 现有主题模板的个性化</h3> 
 
-<p><code>themes</code>文件夹里主要看 <code>assets</code> 和 <code>layouts</code> 两个文件夹，前者主要存放 css 和 js 文件，后者主要存放 html 文件</p>
-<p><code>layouts</code> 文件夹里主要看 <code>partials</code> 和 <code>shortcodes</code> 两个文件夹</p>
+<p><code>themes</code> 文件夹里主要修改 <code>assets</code> 和 <code>layouts</code> 两个文件夹，前者存放 css 和 js 文件，后者存放 html 文件</p>
+<p><code>layouts</code> 文件夹里主要修改 <code>partials</code> 和 <code>shortcodes</code> 两个文件夹里的 html 文件</p>
 
 
 
@@ -470,7 +470,7 @@ title = &quot;Blog&quot;
 
   <h2 id="把网站部署到-netlify-上"><a class="anchor" href="#把网站部署到-netlify-上" title='Anchor for: 把网站部署到 Netlify 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 Netlify 上</h2> 
 
-<p>可以参考这篇笔记 <a href="">使用 netlify 预览 GitHub 上的 PR</a> ，不做最后一步就行啦</p>
+<p>可以参考这篇笔记 <a href="https://yuanyi-au.github.io/notes/netlify/">使用 netlify 预览 GitHub 上的 PR</a> ，不做最后一步就行啦</p>
 
 
 

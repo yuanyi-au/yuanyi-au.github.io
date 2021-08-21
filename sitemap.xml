@@ -4,7 +4,7 @@
   
   
     <url>
-      <loc>/posts/interviews/</loc>
+      <loc>/posts/interviews.html</loc>
       
       
       
@@ -19,7 +19,7 @@
   
   
     <url>
-      <loc>/notes/git-1/</loc>
+      <loc>/notes/git-1.html</loc>
       
       
       
@@ -34,7 +34,7 @@
   
   
     <url>
-      <loc>/notes/hugo-website/</loc>
+      <loc>/notes/git-2.html</loc>
       
       
       
@@ -49,7 +49,7 @@
   
   
     <url>
-      <loc>/notes/package.json-package-lock.json/</loc>
+      <loc>/notes/hugo-website.html</loc>
       
       
       
@@ -64,7 +64,7 @@
   
   
     <url>
-      <loc>/notes/netlify/</loc>
+      <loc>/notes/package.json-package-lock.json.html</loc>
       
       
       
@@ -79,7 +79,7 @@
   
   
     <url>
-      <loc>/posts/github-opensource-project/</loc>
+      <loc>/notes/netlify.html</loc>
       
       
       
@@ -94,7 +94,7 @@
   
   
     <url>
-      <loc>/posts/leetcode/</loc>
+      <loc>/posts/github-opensource-project.html</loc>
       
       
       
@@ -109,7 +109,22 @@
   
   
     <url>
-      <loc>/about/</loc>
+      <loc>/posts/leetcode.html</loc>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </url>
+    
+  
+  
+    <url>
+      <loc>/about.html</loc>
       
       
       
