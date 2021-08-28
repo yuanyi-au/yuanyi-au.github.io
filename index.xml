@@ -8,14 +8,24 @@
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
       <item>
-        <title>面试准备</title>
-        <link>/posts/interviews.html</link>
+        <title>开源入门之路</title>
+        <link>/posts/opensource.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/interviews.html</guid>
-        <description>面试相关的非技术性经验，找到工作就来写
-知识总结
-面经总结</description>
+        <guid>/posts/opensource.html</guid>
+        <description>今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
+前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
+参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
+如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。
+在这篇文章里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。
+最后一点，保持礼貌！
+参与项目的基本流程  找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 Explore 板块，或者 Open Source Friday 之类的网站来寻找项目。
+请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。
+较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。
+ 看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。
+如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。
+创建 Issue 要注意的问题：
+ 提供具体的环境配置、操作步骤以及问题的详细情况 用文字描述，方便其他人检索 做好标签分类   Pull Request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码</description>
       </item>
     
       <item>
@@ -87,7 +97,7 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
         <guid>/notes/package.json-package-lock.json.html</guid>
         <description>package.json 描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 npm init 自动生成
 {&amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,&amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,&amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,&amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,&amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;},&amp;quot;repository&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,&amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;},&amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&amp;quot;bugs&amp;quot;: {&amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;},&amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,&amp;quot;dependencies&amp;quot;: {},&amp;quot;devDependencies&amp;quot;: {&amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,&amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;}}package.json 文件要求必须包括name 和 version 属性
- author：作者，是在 npmjs.org 网站上的有效账户名 main：指定加载入口，默认值时模块根目录下的 index.js script：指定命令行缩写所要执行的命令，默认是一个空的 test 脚本 repository：代码库地址，会直接在组件库的 npm 首页生效 bugs：开发者联系方式，一般是代码库的 issues 地址 dependencies：指定项目运行所需要的模块 devDependencies：指定项目开发所需要的模块 bin：指定各个内部命令对应的可执行文件的位置 license：开源协议，可看Choose an open source license config：用于添加命令行的环境变量  package-lock.</description>
+ author：作者，是在 npmjs.org 网站上的有效账户名 main：指定加载入口，默认值时模块根目录下的 index.js script：指定命令行缩写所要执行的命令，默认是一个空的 test 脚本 repository：代码库地址，会直接在组件库的 npm 首页生效 bugs：开发者联系方式，一般是代码库的 issues 地址 dependencies：指定项目运行所需要的模块 devDependencies：指定项目开发所需要的模块 bin：指定各个内部命令对应的可执行文件的位置 license：开源协议，可看Choose an open source license config：用于添加命令行的环境变量   依赖模块的版本  指定版本 16.</description>
       </item>
     
       <item>
@@ -109,34 +119,13 @@ Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Envi
       </item>
     
       <item>
-        <title>开源入门之路</title>
-        <link>/posts/github-opensource-project.html</link>
+        <title>学习历程</title>
+        <link>/posts/learning-process.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/github-opensource-project.html</guid>
-        <description>今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
-前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
-参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
-如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。
-在这篇文章里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。
-最后一点，保持礼貌！
-参与项目的基本流程  找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 Explore 板块，或者 Open Source Friday 之类的网站来寻找项目。
-请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。
-较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。
- 看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。
-如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。
-创建 Issue 要注意的问题：
- 提供具体的环境配置、操作步骤以及问题的详细情况 用文字描述，方便其他人检索 做好标签分类   Pull Request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码</description>
-      </item>
-    
-      <item>
-        <title> LeetCode 题库</title>
-        <link>/posts/leetcode.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/leetcode.html</guid>
-        <description>题目是我在 LeetCode 算法题库里按照出现频率排序，综合其他因素选出来的，放个链接方便自己刷，每个阶段刷完就会再更新
-数据结构  数组    - 简单 -     移除元素 合并两个有序数组 数组的度   二分查找 搜索插入位置 只出现一次的数字   两个数组的交集 删除有序数组中的重复项 存在重复元素     链表    - 简单 -     反转链表 相交链表 环形链表   合并两个有序链表 删除排序链表中的重复元素 删除链表中的节点   移除链表元素       哈希表    - 简单 -     两数之和 罗马数字转整数 多数元素     字符串    - 简单 -     字符串相加 最长公共前缀 验证回文串   反转字符串       栈与队列    - 简单 -     有效的括号 删除字符串中的所有相邻重复项 最小栈   用栈实现队列 - 用队列实现栈     树    - 简单 -     二叉树的前序遍历 二叉树的中序遍历 二叉树的后序遍历   二叉树的直径 二叉树的最大深度 二叉树的所有路径   路径总和 翻转二叉树 对称二叉树   合并二叉树 平衡二叉树     算法  排序    - 简单 -     贪心    - 简单 -     动态规划    - 简单 -     爬楼梯 最大子序和 杨辉三角     回溯    - 简单 -    </description>
+        <guid>/posts/learning-process.html</guid>
+        <description>转码的整个时间线 &amp;amp; 踩过的所有坑，个人体验仅供参考：
+ 第一阶段（2020.11初~2020.12末）  第二阶段（2021.1中~2021.4中）  第三阶段（2021.4末~2021.5初）  第四阶段（2021.5初~2021.6末）  第五阶段（2021.7初~2021.8中） </description>
       </item>
     
       <item>
@@ -146,8 +135,7 @@ Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Envi
         
         <guid>/about.html</guid>
         <description> 个人介绍 大家好，我是四川大学化学系2022届本科生，从2020年11月开始零基础转码，一路上遇到了无数问题与困难，同样也得到了无数帮助与鼓励，真的非常感激曾经遇到的每一位朋友。所以也想在这里记录一些自己的经验，希望能够或多或少帮助到其他人。
-忽然做出人生大拐弯的决定，走上计算机这条路，曾经被很多不了解我的人质疑过。计算机，同书籍和电影一样，现在都成为了我的一部分。能发现自己对计算机的热爱是我最近几年遇到的最幸运的事情之一。我也非常幸运地拥有真正理解我的朋友和父母，真的很感谢他们的信任与陪伴。
-要特别感谢豆瓣的 Women In Tech 小组，感谢组里各位姐妹的帮助、鼓励与支持。希望科技行业能有越来越多有力量的女性，也希望我的这些经验分享能为此目标增添一份绵薄之力。
+能发现自己对计算机的热爱是我最近几年遇到的最幸运的事情之一。我也非常幸运地拥有真正理解我的朋友和父母，感谢他们的信任与陪伴。也要特别感谢豆瓣的 Women In Tech 小组，感谢组里各位姐妹的帮助、鼓励与支持。希望科技行业能有越来越多有力量的女性，也希望我的这些经验分享能为此目标增添一份绵薄之力。
 祝愿大家都能探索出自己的路！
  有任何问题可以与我联系： 名字邮箱主题打个招呼!有个问题?内容</description>
       </item>

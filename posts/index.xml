@@ -8,22 +8,11 @@
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
-        <title>面试准备</title>
-        <link>/posts/interviews.html</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/interviews.html</guid>
-        <description>面试相关的非技术性经验，找到工作就来写
-知识总结
-面经总结</description>
-      </item>
-    
-      <item>
         <title>开源入门之路</title>
-        <link>/posts/github-opensource-project.html</link>
+        <link>/posts/opensource.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/github-opensource-project.html</guid>
+        <guid>/posts/opensource.html</guid>
         <description>今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
 前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
 参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
@@ -40,13 +29,13 @@
       </item>
     
       <item>
-        <title> LeetCode 题库</title>
-        <link>/posts/leetcode.html</link>
+        <title>学习历程</title>
+        <link>/posts/learning-process.html</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/leetcode.html</guid>
-        <description>题目是我在 LeetCode 算法题库里按照出现频率排序，综合其他因素选出来的，放个链接方便自己刷，每个阶段刷完就会再更新
-数据结构  数组    - 简单 -     移除元素 合并两个有序数组 数组的度   二分查找 搜索插入位置 只出现一次的数字   两个数组的交集 删除有序数组中的重复项 存在重复元素     链表    - 简单 -     反转链表 相交链表 环形链表   合并两个有序链表 删除排序链表中的重复元素 删除链表中的节点   移除链表元素       哈希表    - 简单 -     两数之和 罗马数字转整数 多数元素     字符串    - 简单 -     字符串相加 最长公共前缀 验证回文串   反转字符串       栈与队列    - 简单 -     有效的括号 删除字符串中的所有相邻重复项 最小栈   用栈实现队列 - 用队列实现栈     树    - 简单 -     二叉树的前序遍历 二叉树的中序遍历 二叉树的后序遍历   二叉树的直径 二叉树的最大深度 二叉树的所有路径   路径总和 翻转二叉树 对称二叉树   合并二叉树 平衡二叉树     算法  排序    - 简单 -     贪心    - 简单 -     动态规划    - 简单 -     爬楼梯 最大子序和 杨辉三角     回溯    - 简单 -    </description>
+        <guid>/posts/learning-process.html</guid>
+        <description>转码的整个时间线 &amp;amp; 踩过的所有坑，个人体验仅供参考：
+ 第一阶段（2020.11初~2020.12末）  第二阶段（2021.1中~2021.4中）  第三阶段（2021.4末~2021.5初）  第四阶段（2021.5初~2021.6末）  第五阶段（2021.7初~2021.8中） </description>
       </item>
     
   </channel>
