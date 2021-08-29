@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yuanyi&#39;s blog</title>
-    <link>/posts.html</link>
+    <link>/posts/</link>
     <description>yuanyi 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>开源入门之路</title>
-        <link>/posts/opensource.html</link>
+        <link>/posts/opensource/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/opensource.html</guid>
+        <guid>/posts/opensource/</guid>
         <description>今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
 前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
 参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
@@ -30,10 +30,10 @@
     
       <item>
         <title>学习历程</title>
-        <link>/posts/learning-process.html</link>
+        <link>/posts/learning-process/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/posts/learning-process.html</guid>
+        <guid>/posts/learning-process/</guid>
         <description>转码的整个时间线 &amp;amp; 踩过的所有坑，个人体验仅供参考：
  第一阶段（2020.11初~2020.12末）  第二阶段（2021.1中~2021.4中）  第三阶段（2021.4末~2021.5初）  第四阶段（2021.5初~2021.6末）  第五阶段（2021.7初~2021.8中） </description>
       </item>

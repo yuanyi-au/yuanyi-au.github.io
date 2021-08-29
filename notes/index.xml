@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yuanyi&#39;s blog</title>
-    <link>/notes.html</link>
+    <link>/notes/</link>
     <description>yuanyi 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>git 笔记 (1)</title>
-        <link>/notes/git-1.html</link>
+        <link>/notes/git-1/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/git-1.html</guid>
+        <guid>/notes/git-1/</guid>
         <description>本篇笔记的内容包括常用命令以及 commit message 规范
 常用命令  名词 workplace 工作区
 stage 暂存区
@@ -33,10 +33,10 @@ git branch [branch] 新建一个分支，但依然停留在当前分支</descrip
     
       <item>
         <title>git 笔记 (2)</title>
-        <link>/notes/git-2.html</link>
+        <link>/notes/git-2/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/git-2.html</guid>
+        <guid>/notes/git-2/</guid>
         <description>git rebase  合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
 git checkout bgit rebase a 与 merge 的区别 ***永远不要在公共项目里使用 rebase ***
 merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
@@ -50,10 +50,10 @@ git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在�
     
       <item>
         <title>利用 Hugo 搭建网站</title>
-        <link>/notes/hugo-website.html</link>
+        <link>/notes/hugo-website/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/hugo-website.html</guid>
+        <guid>/notes/hugo-website/</guid>
         <description>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
 快速开始  Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
 请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
@@ -70,10 +70,10 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
     
       <item>
         <title>package.json 与 package-lock.json</title>
-        <link>/notes/package.json-package-lock.json.html</link>
+        <link>/notes/package.json-package-lock.json/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/package.json-package-lock.json.html</guid>
+        <guid>/notes/package.json-package-lock.json/</guid>
         <description>package.json 描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 npm init 自动生成
 {&amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,&amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,&amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,&amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,&amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;},&amp;quot;repository&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,&amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;},&amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&amp;quot;bugs&amp;quot;: {&amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;},&amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,&amp;quot;dependencies&amp;quot;: {},&amp;quot;devDependencies&amp;quot;: {&amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,&amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;}}package.json 文件要求必须包括name 和 version 属性
  author：作者，是在 npmjs.org 网站上的有效账户名 main：指定加载入口，默认值时模块根目录下的 index.js script：指定命令行缩写所要执行的命令，默认是一个空的 test 脚本 repository：代码库地址，会直接在组件库的 npm 首页生效 bugs：开发者联系方式，一般是代码库的 issues 地址 dependencies：指定项目运行所需要的模块 devDependencies：指定项目开发所需要的模块 bin：指定各个内部命令对应的可执行文件的位置 license：开源协议，可看Choose an open source license config：用于添加命令行的环境变量   依赖模块的版本  指定版本 16.</description>
@@ -81,10 +81,10 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
     
       <item>
         <title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
-        <link>/notes/netlify.html</link>
+        <link>/notes/netlify/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/notes/netlify.html</guid>
+        <guid>/notes/netlify/</guid>
         <description>Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
 本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果
 也可以参考此笔记将自己的网站部署在 Netlify 上
