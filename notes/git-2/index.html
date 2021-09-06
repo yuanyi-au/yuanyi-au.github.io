@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "171",
+      "wordCount" : "175",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -277,14 +277,21 @@
 
 
 
-  <h1 id="git-rebase">git rebase</h1> 
+  <h1 id="git-笔记-2">git 笔记 (2)</h1> 
 
 
 
 
 
 
-  <h2 id="合并不同分支的提交"><a class="anchor" href="#合并不同分支的提交" title='Anchor for: 合并不同分支的提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 合并不同分支的提交</h2> 
+  <h2 id="git-rebase"><a class="anchor" href="#git-rebase" title='Anchor for: git rebase.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git rebase</h2> 
+
+
+
+
+
+
+  <h3 id="合并不同分支的提交"><a class="anchor" href="#合并不同分支的提交" title='Anchor for: 合并不同分支的提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 合并不同分支的提交</h3> 
 
 <p>将 b 分支上的提交合并到 a 分支上成为一条直线</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>git checkout b
@@ -294,7 +301,7 @@ git rebase a
 
 
 
-  <h2 id="与-merge-的区别"><a class="anchor" href="#与-merge-的区别" title='Anchor for: 与 merge 的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 与 merge 的区别</h2> 
+  <h3 id="与-merge-的区别"><a class="anchor" href="#与-merge-的区别" title='Anchor for: 与 merge 的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 与 merge 的区别</h3> 
 
 <p><em>永远不要在公共项目里使用 rebase</em></p>
 <p>merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并</p>
@@ -364,7 +371,7 @@ git rebase --continue
 
 
 
-  <h2 id="合并本地的多次提交"><a class="anchor" href="#合并本地的多次提交" title='Anchor for: 合并本地的多次提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 合并本地的多次提交</h2> 
+  <h3 id="合并本地的多次提交"><a class="anchor" href="#合并本地的多次提交" title='Anchor for: 合并本地的多次提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 合并本地的多次提交</h3> 
 
 <p>合并最新的三次提交</p>
 <p><code>git rebase -i HEAD~3</code></p>
@@ -374,9 +381,10 @@ git rebase --continue
 
 
 
-  <h1 id="cherry-pick">cherry-pick</h1> 
+  <h2 id="cherry-pick"><a class="anchor" href="#cherry-pick" title='Anchor for: cherry-pick.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> cherry-pick</h2> 
 
 <p>将其他分支上的提交应用于 a 分支</p>
+<p>在开源项目里很有用</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>git checkout a
 git cherry-pick &lt;CommitID&gt;
 </code></pre>
@@ -384,7 +392,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h2 id="与-rebase-的区别"><a class="anchor" href="#与-rebase-的区别" title='Anchor for: 与 rebase 的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 与 rebase 的区别</h2> 
+  <h3 id="与-rebase-的区别"><a class="anchor" href="#与-rebase-的区别" title='Anchor for: 与 rebase 的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 与 rebase 的区别</h3> 
 
 <p>rebase 相当于剪切粘贴， cherry-pick 相当于复制粘贴</p>
 
@@ -392,14 +400,14 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h1 id="git-reset-与-git-revert">git reset 与 git revert</h1> 
+  <h2 id="git-reset-与-git-revert"><a class="anchor" href="#git-reset-与-git-revert" title='Anchor for: git reset 与 git revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git reset 与 git revert</h2> 
 
 
 
 
 
 
-  <h2 id="git-reset"><a class="anchor" href="#git-reset" title='Anchor for: git reset.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git reset</h2> 
+  <h3 id="git-reset"><a class="anchor" href="#git-reset" title='Anchor for: git reset.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git reset</h3> 
 
 <p>回退到指定的提交版本</p>
 
@@ -407,7 +415,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h2 id="git-revert"><a class="anchor" href="#git-revert" title='Anchor for: git revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git revert</h2> 
+  <h3 id="git-revert"><a class="anchor" href="#git-revert" title='Anchor for: git revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git revert</h3> 
 
 <p>用一个新的提交来消除之前的提交，原来的 commit 内容依旧会保存在提交历史中</p>
 
@@ -415,7 +423,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h2 id="两者的区别"><a class="anchor" href="#两者的区别" title='Anchor for: 两者的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 两者的区别</h2> 
+  <h3 id="两者的区别"><a class="anchor" href="#两者的区别" title='Anchor for: 两者的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 两者的区别</h3> 
 
 <p>reset 是在正常的提交历史中,删除了指定的 commit ，HEAD 向后移动，而 revert 是在正常的提交历史中再 commit 一次，只不过是反向提交可以抵消之前的提交，它的HEAD 是一直向前的</p>
 
@@ -423,7 +431,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h1 id="git-pull-和-git-fetch-的区别">git pull 和 git fetch 的区别</h1> 
+  <h2 id="git-pull-和-git-fetch-的区别"><a class="anchor" href="#git-pull-和-git-fetch-的区别" title='Anchor for: git pull 和 git fetch 的区别.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git pull 和 git fetch 的区别</h2> 
 
 <p>打开本地 <code>.git/refs</code> 文件夹我们可以看到代表本地分支的 <code>head</code> 文件夹和代表正在跟踪的远程分支的 <code>remotes</code> 文件夹</p>
 <p>使用 git pull 会将两个文件夹里的 commit ID 都更新至远程库的最新 commit ID</p>
@@ -433,7 +441,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h1 id="git-blame">git blame</h1> 
+  <h2 id="git-blame"><a class="anchor" href="#git-blame" title='Anchor for: git blame.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> git blame</h2> 
 
 <p>可以查看某个文件里每一行代码的最后修改提交记录</p>
 <p><code>git blame &lt;filename&gt;</code></p>
@@ -442,7 +450,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h1 id="sign-off">sign-off</h1> 
+  <h2 id="sign-off"><a class="anchor" href="#sign-off" title='Anchor for: sign-off.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> sign-off</h2> 
 
 <p>在做开源项目时遇到要求 sign-off，用于证明提交作者</p>
 <p><code>git commit -s -m &quot;&quot;</code></p>
@@ -451,7 +459,7 @@ git cherry-pick &lt;CommitID&gt;
 
 
 
-  <h1 id="参考资料">参考资料</h1> 
+  <h2 id="参考资料"><a class="anchor" href="#参考资料" title='Anchor for: 参考资料.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 参考资料</h2> 
 
 <p><a href="https://blog.csdn.net/hudashi/article/details/7664631?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.control&amp;spm=1001.2101.3001.4242">git rebase简介(基本篇)</a></p>
 <p><a href="https://www.jianshu.com/p/6960811ac89c">你真的懂git rebase吗？</a></p>

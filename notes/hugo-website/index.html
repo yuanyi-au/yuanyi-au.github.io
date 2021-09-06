@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "331",
+      "wordCount" : "372",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -272,20 +272,27 @@
 
 
 
+
+
+
+
+
+  <h1 id="利用-hugo-搭建网站">利用 Hugo 搭建网站</h1> 
+
 <p>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法</p>
 
 
 
 
 
-  <h1 id="快速开始">快速开始</h1> 
+  <h2 id="快速开始"><a class="anchor" href="#快速开始" title='Anchor for: 快速开始.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 快速开始</h2> 
 
 
 
 
 
 
-  <h2 id="windows"><a class="anchor" href="#windows" title='Anchor for: Windows:.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Windows:</h2> 
+  <h3 id="windows"><a class="anchor" href="#windows" title='Anchor for: Windows:.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Windows:</h3> 
 
 <p>最简单的方法是直接下载 <a href="https://github.com/gohugoio/hugo/releases">最新版本的 hugo</a> 安装</p>
 <p>请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题</p>
@@ -296,7 +303,7 @@
 
 
 
-  <h2 id="macos"><a class="anchor" href="#macos" title='Anchor for: MacOS：.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> MacOS：</h2> 
+  <h3 id="macos"><a class="anchor" href="#macos" title='Anchor for: MacOS：.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> MacOS：</h3> 
 
 <p><a href="https://gohugo.io/getting-started/installing/">其它系统的安装过程可以看官网文档</a></p>
 
@@ -304,7 +311,7 @@
 
 
 
-  <h2 id="新建网站"><a class="anchor" href="#新建网站" title='Anchor for: 新建网站.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 新建网站</h2> 
+  <h3 id="新建网站"><a class="anchor" href="#新建网站" title='Anchor for: 新建网站.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 新建网站</h3> 
 
 <p><code>hugo version</code> 检查安装是否成功</p>
 <p><code>hugo new site [sitename]</code> 创建一个新的网站</p>
@@ -314,7 +321,7 @@
 
 
 
-  <h1 id="结构目录">结构目录</h1> 
+  <h2 id="结构目录"><a class="anchor" href="#结构目录" title='Anchor for: 结构目录.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 结构目录</h2> 
 
 <pre aria-label="Box containing code sample." tabindex=0><code>.
 ├── archetypes 
@@ -329,7 +336,7 @@
 
 
 
-  <h2 id="content-文件夹"><a class="anchor" href="#content-文件夹" title='Anchor for: content 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> content 文件夹</h2> 
+  <h3 id="content-文件夹"><a class="anchor" href="#content-文件夹" title='Anchor for: content 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> content 文件夹</h3> 
 
 <p>存放网站的主要内容 md 文件</p>
 <p>在该文件夹下的文件结构目录直接对应网站结构</p>
@@ -345,7 +352,7 @@ draft: true
 
 
 
-  <h2 id="layouts-文件夹"><a class="anchor" href="#layouts-文件夹" title='Anchor for: layouts 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> layouts 文件夹</h2> 
+  <h3 id="layouts-文件夹"><a class="anchor" href="#layouts-文件夹" title='Anchor for: layouts 文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> layouts 文件夹</h3> 
 
 <p>存放网站 HTML 模板，包括 index、particials、single page、list pages 等</p>
 
@@ -353,7 +360,7 @@ draft: true
 
 
 
-  <h2 id="themes文件夹"><a class="anchor" href="#themes文件夹" title='Anchor for: themes文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> themes文件夹</h2> 
+  <h3 id="themes文件夹"><a class="anchor" href="#themes文件夹" title='Anchor for: themes文件夹.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> themes文件夹</h3> 
 
 <p>存放现有的 Hugo 主题模板</p>
 
@@ -361,7 +368,7 @@ draft: true
 
 
 
-  <h2 id="configtoml-文件"><a class="anchor" href="#configtoml-文件" title='Anchor for: config.toml 文件.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> config.toml 文件</h2> 
+  <h3 id="configtoml-文件"><a class="anchor" href="#configtoml-文件" title='Anchor for: config.toml 文件.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> config.toml 文件</h3> 
 
 <p>配置文件，最基础的设置如下：</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>baseURL = &quot;http://example.org/&quot;
@@ -380,7 +387,7 @@ title = &quot;Blog&quot;
 
 
 
-  <h1 id="主题外观">主题外观</h1> 
+  <h2 id="主题外观"><a class="anchor" href="#主题外观" title='Anchor for: 主题外观.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 主题外观</h2> 
 
 <p>可以直接使用 Hugo 现有的主题模板，也可以自己编写主题模板</p>
 
@@ -388,7 +395,7 @@ title = &quot;Blog&quot;
 
 
 
-  <h2 id="使用现有主题"><a class="anchor" href="#使用现有主题" title='Anchor for: 使用现有主题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 使用现有主题</h2> 
+  <h3 id="使用现有主题"><a class="anchor" href="#使用现有主题" title='Anchor for: 使用现有主题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 使用现有主题</h3> 
 
 <ol>
 <li>
@@ -406,7 +413,7 @@ title = &quot;Blog&quot;
 
 
 
-  <h3 id="现有主题模板的个性化"><a class="anchor" href="#现有主题模板的个性化" title='Anchor for: 现有主题模板的个性化.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 现有主题模板的个性化</h3> 
+  <h4 id="现有主题模板的个性化"><a class="anchor" href="#现有主题模板的个性化" title='Anchor for: 现有主题模板的个性化.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 现有主题模板的个性化</h4> 
 
 <p><code>themes</code> 文件夹里主要修改 <code>assets</code> 和 <code>layouts</code> 两个文件夹，前者存放 css 和 js 文件，后者存放 html 文件</p>
 <p><code>layouts</code> 文件夹里主要修改 <code>partials</code> 和 <code>shortcodes</code> 两个文件夹里的 html 文件</p>
@@ -415,7 +422,7 @@ title = &quot;Blog&quot;
 
 
 
-  <h2 id="自己创建主题"><a class="anchor" href="#自己创建主题" title='Anchor for: 自己创建主题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 自己创建主题</h2> 
+  <h3 id="自己创建主题"><a class="anchor" href="#自己创建主题" title='Anchor for: 自己创建主题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 自己创建主题</h3> 
 
 <ol>
 <li>
@@ -434,14 +441,14 @@ title = &quot;Blog&quot;
 
 
 
-  <h1 id="站点部署">站点部署</h1> 
+  <h2 id="站点部署"><a class="anchor" href="#站点部署" title='Anchor for: 站点部署.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 站点部署</h2> 
 
 
 
 
 
 
-  <h2 id="把网站部署到-github-上"><a class="anchor" href="#把网站部署到-github-上" title='Anchor for: 把网站部署到 GitHub 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 GitHub 上</h2> 
+  <h3 id="把网站部署到-github-上"><a class="anchor" href="#把网站部署到-github-上" title='Anchor for: 把网站部署到 GitHub 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 GitHub 上</h3> 
 
 <ol>
 <li>
@@ -468,7 +475,7 @@ title = &quot;Blog&quot;
 
 
 
-  <h2 id="把网站部署到-netlify-上"><a class="anchor" href="#把网站部署到-netlify-上" title='Anchor for: 把网站部署到 Netlify 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 Netlify 上</h2> 
+  <h3 id="把网站部署到-netlify-上"><a class="anchor" href="#把网站部署到-netlify-上" title='Anchor for: 把网站部署到 Netlify 上.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 把网站部署到 Netlify 上</h3> 
 
 <p>可以参考这篇笔记 <a href="https://yuanyi-au.github.io/notes/netlify/">使用 netlify 预览 GitHub 上的 PR</a> ，不做最后一步就行啦</p>
 
@@ -476,14 +483,14 @@ title = &quot;Blog&quot;
 
 
 
-  <h1 id="搭建过程中遇到的问题">搭建过程中遇到的问题</h1> 
+  <h2 id="其他问题"><a class="anchor" href="#其他问题" title='Anchor for: 其他问题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 其他问题</h2> 
 
 
 
 
 
 
-  <h2 id="public-文件夹渲染出错"><a class="anchor" href="#public-文件夹渲染出错" title='Anchor for: Public 文件夹渲染出错.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Public 文件夹渲染出错</h2> 
+  <h3 id="public-文件夹渲染出错"><a class="anchor" href="#public-文件夹渲染出错" title='Anchor for: Public 文件夹渲染出错.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Public 文件夹渲染出错</h3> 
 
 <p>问题描述：</p>
 <p><code>hugo server</code> 在本地运行时没有问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件</p>
@@ -491,7 +498,6 @@ title = &quot;Blog&quot;
 <p>问题出在 Hugo 本身处理 URL 的方式上，可以参见 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a></p>
 <pre aria-label="Box containing code sample." tabindex=0><code>baseURL = &quot;//example.org&quot;
 relativeURLs = true
-uglyURLs = true
 </code></pre><p>上面的方法没有解决我的问题，后来试了两种方法可行：</p>
 <p><code># baseURL = &quot;example.org&quot;</code></p>
 <p><code>baseURL = &quot;\&quot;</code></p>
@@ -500,7 +506,7 @@ uglyURLs = true
 
 
 
-  <h2 id="找不到新增的页面"><a class="anchor" href="#找不到新增的页面" title='Anchor for: 找不到新增的页面.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 找不到新增的页面</h2> 
+  <h3 id="找不到新增的页面"><a class="anchor" href="#找不到新增的页面" title='Anchor for: 找不到新增的页面.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 找不到新增的页面</h3> 
 
 <p>问题描述：</p>
 <p>增加的内容在 index 页面有链接，但点开却找不到页面</p>
@@ -511,7 +517,46 @@ uglyURLs = true
 
 
 
-  <h1 id="参考资料">参考资料</h1> 
+  <h3 id="图片加载问题"><a class="anchor" href="#图片加载问题" title='Anchor for: 图片加载问题.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 图片加载问题</h3> 
+
+<p>问题描述：</p>
+<p>Markdown 文档里的本地图片无法显示</p>
+<p>解决方法：</p>
+<p>我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以</p>
+<p>目录结构：</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>
+├── content
+	└── posts 
+		├── cat.md
+		├── dog.md
+		└── images
+			├── cat.png
+			└── dog.png
+</code></pre><p>在图片链接：
+<code>![dog](../images/dog.png)</code></p>
+
+
+
+
+
+  <h3 id="最后修改时间"><a class="anchor" href="#最后修改时间" title='Anchor for: 最后修改时间.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 最后修改时间</h3> 
+
+<p>可以通过两种方式记录 Last Modified 时间</p>
+<ol>
+<li>在文档开头加上时间</li>
+</ol>
+<pre aria-label="Box containing code sample." tabindex=0><code>date: 1990-01-01T00:00:00+00:00
+lastmod: 1995-04-04T00:00:00+00:00
+</code></pre><ol start="2">
+<li>在 config.toml 内设置使用 Git 记录</li>
+</ol>
+<p><code>enableGitInfo = true</code></p>
+
+
+
+
+
+  <h2 id="参考资料"><a class="anchor" href="#参考资料" title='Anchor for: 参考资料.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 参考资料</h2> 
 
 <p><a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3"> Hugo - Static Site Generator | Tutorial </a></p>
 <p><a href="https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=247s"> Creating a Blog with Hugo and Github in 10 minutes </a></p>

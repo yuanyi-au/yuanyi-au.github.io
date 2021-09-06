@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "314",
+      "wordCount" : "317",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -272,20 +272,27 @@
 
 
 
-<p>本篇笔记的内容包括常用命令以及 commit message 规范</p>
 
 
 
 
 
-  <h1 id="常用命令">常用命令</h1> 
+  <h1 id="git-笔记-1">git 笔记 (1)</h1> 
+
+<p>本篇笔记内容包括常用命令以及 commit message 规范</p>
+
+
+
+
+
+  <h2 id="常用命令"><a class="anchor" href="#常用命令" title='Anchor for: 常用命令.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 常用命令</h2> 
 
 
 
 
 
 
-  <h2 id="名词"><a class="anchor" href="#名词" title='Anchor for: 名词.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 名词</h2> 
+  <h3 id="名词"><a class="anchor" href="#名词" title='Anchor for: 名词.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 名词</h3> 
 
 <p>workplace 工作区</p>
 <p>stage 暂存区</p>
@@ -323,7 +330,7 @@
 
 
 
-  <h2 id="新建仓库"><a class="anchor" href="#新建仓库" title='Anchor for: 新建仓库.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 新建仓库</h2> 
+  <h3 id="新建仓库"><a class="anchor" href="#新建仓库" title='Anchor for: 新建仓库.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 新建仓库</h3> 
 
 <p><code>git init</code> 在当前目录新建一个本地仓库</p>
 <p><code>git clone</code> 将一个远程仓库的内容下载到本地</p>
@@ -332,7 +339,7 @@
 
 
 
-  <h2 id="文件的增加删除提交"><a class="anchor" href="#文件的增加删除提交" title='Anchor for: 文件的增加、删除、提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 文件的增加、删除、提交</h2> 
+  <h3 id="文件的增加删除提交"><a class="anchor" href="#文件的增加删除提交" title='Anchor for: 文件的增加、删除、提交.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 文件的增加、删除、提交</h3> 
 
 <p><code>git add [filename]</code> 将文件从工作区添加到暂存区</p>
 <p><code>git rm [filename]</code> 删除工作区文件</p>
@@ -345,7 +352,7 @@
 
 
 
-  <h2 id="分支管理"><a class="anchor" href="#分支管理" title='Anchor for: 分支管理.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 分支管理</h2> 
+  <h3 id="分支管理"><a class="anchor" href="#分支管理" title='Anchor for: 分支管理.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 分支管理</h3> 
 
 <p><code>git branch</code> 查看所有本地分支</p>
 <p><code>git branch -a</code> 查看所有本地分支与远程分支</p>
@@ -360,7 +367,7 @@
 
 
 
-  <h2 id="远程仓库"><a class="anchor" href="#远程仓库" title='Anchor for: 远程仓库.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 远程仓库</h2> 
+  <h3 id="远程仓库"><a class="anchor" href="#远程仓库" title='Anchor for: 远程仓库.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 远程仓库</h3> 
 
 <p><code>git remote -v</code> 查看所有远程仓库</p>
 <p><code>git remote add [name] [url]</code> 添加远程仓库</p>
@@ -373,7 +380,7 @@
 
 
 
-  <h2 id="其他"><a class="anchor" href="#其他" title='Anchor for: 其他.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 其他</h2> 
+  <h3 id="其他"><a class="anchor" href="#其他" title='Anchor for: 其他.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 其他</h3> 
 
 <p><code>git config --list</code> 显示当前配置</p>
 <p><code>git config -e</code> 编辑配置文件</p>
@@ -387,7 +394,7 @@
 
 
 
-  <h1 id="commit-message-规范">commit message 规范</h1> 
+  <h2 id="commit-message-规范"><a class="anchor" href="#commit-message-规范" title='Anchor for: commit message 规范.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> commit message 规范</h2> 
 
 <p>
 
@@ -422,7 +429,7 @@
 
 
 
-  <h2 id="组成"><a class="anchor" href="#组成" title='Anchor for: 组成.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 组成</h2> 
+  <h3 id="组成"><a class="anchor" href="#组成" title='Anchor for: 组成.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 组成</h3> 
 
 <p>commit message 包括三部分：header，body 和 footer</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>&lt;type&gt;[optional scope]: &lt;description&gt;
@@ -435,7 +442,7 @@
 
 
 
-  <h3 id="header"><a class="anchor" href="#header" title='Anchor for: Header.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Header</h3> 
+  <h4 id="header"><a class="anchor" href="#header" title='Anchor for: Header.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Header</h4> 
 
 <ul>
 <li>type：用于说明 commit 的类别
@@ -459,7 +466,7 @@
 
 
 
-  <h3 id="body"><a class="anchor" href="#body" title='Anchor for: Body.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Body</h3> 
+  <h4 id="body"><a class="anchor" href="#body" title='Anchor for: Body.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Body</h4> 
 
 <p>对 commit 的详细描述，可以分成多行</p>
 
@@ -467,7 +474,7 @@
 
 
 
-  <h3 id="footer"><a class="anchor" href="#footer" title='Anchor for: Footer.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Footer</h3> 
+  <h4 id="footer"><a class="anchor" href="#footer" title='Anchor for: Footer.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Footer</h4> 
 
 <p>只用于两种情况：</p>
 <ul>
@@ -479,7 +486,7 @@
 
 
 
-  <h3 id="revert"><a class="anchor" href="#revert" title='Anchor for: Revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Revert</h3> 
+  <h4 id="revert"><a class="anchor" href="#revert" title='Anchor for: Revert.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> Revert</h4> 
 
 <p>如果当前 commit 是用来撤销之前的 commit，则必须以 <code>revert:</code> 开头，后面跟着被撤销的 commit 的 header</p>
 <p>body 部分则必须写成 <code>This  reverts commit 667ecc1654a317a13331b17617d973392f415f02.</code></p>
@@ -488,7 +495,7 @@
 
 
 
-  <h2 id="规则"><a class="anchor" href="#规则" title='Anchor for: 规则.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 规则</h2> 
+  <h3 id="规则"><a class="anchor" href="#规则" title='Anchor for: 规则.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 规则</h3> 
 
 <p>优秀的 commit massage 应该遵循以下七条规则：</p>
 <ol>
@@ -505,7 +512,7 @@
 
 
 
-  <h2 id="示例"><a class="anchor" href="#示例" title='Anchor for: 示例.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 示例</h2> 
+  <h3 id="示例"><a class="anchor" href="#示例" title='Anchor for: 示例.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 示例</h3> 
 
 <p><code>feat(lang): add polish language</code></p>
 <p><code>refactor!: drop support for Node 6 //使用感叹号代表 breaking change</code></p>
@@ -522,7 +529,7 @@ Refs #133
 
 
 
-  <h1 id="参考资料">参考资料</h1> 
+  <h2 id="参考资料"><a class="anchor" href="#参考资料" title='Anchor for: 参考资料.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 参考资料</h2> 
 
 <p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a></p>
 <p><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></p>

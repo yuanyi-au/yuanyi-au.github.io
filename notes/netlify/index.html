@@ -118,7 +118,7 @@
       "inLanguage": "en",
       "datePublished": "0001-01-01",
       
-      "wordCount" : "137",
+      "wordCount" : "143",
       "publisher": {
         "@type": "Person",
         "name": "yuanyi"
@@ -272,6 +272,13 @@
 
 
 
+
+
+
+
+
+  <h1 id="使用-netlify-部署个人网站以及预览-github-上的-pr">使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</h1> 
+
 <p>Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台</p>
 <p>本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果</p>
 <p>
@@ -307,7 +314,7 @@
 
 
 
-  <h1 id="安装准备">安装准备</h1> 
+  <h2 id="安装准备"><a class="anchor" href="#安装准备" title='Anchor for: 安装准备.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 安装准备</h2> 
 
 <p>在 GitHub 上安装 <a href="https://github.com/apps/netlify"> Netlify </a>，授权 GitHub 账号</p>
 <p>或者你也可以选择在 <a href="https://www.netlify.com/">Netlify 官网</a> 上进行注册授权</p>
@@ -316,7 +323,7 @@
 
 
 
-  <h1 id="new-site-from-git">New site from Git</h1> 
+  <h2 id="new-site-from-git"><a class="anchor" href="#new-site-from-git" title='Anchor for: New site from Git.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> New site from Git</h2> 
 
 <p>选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site</p>
 
@@ -324,7 +331,7 @@
 
 
 
-  <h2 id="基本设置"><a class="anchor" href="#基本设置" title='Anchor for: 基本设置.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 基本设置</h2> 
+  <h3 id="基本设置"><a class="anchor" href="#基本设置" title='Anchor for: 基本设置.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 基本设置</h3> 
 
 <p>常见框架对应的 Build command 和 Publish directory 可以看 <a href="https://docs.netlify.com/configure-builds/common-configurations/">官网文档</a></p>
 
@@ -332,7 +339,7 @@
 
 
 
-  <h2 id="环境变量"><a class="anchor" href="#环境变量" title='Anchor for: 环境变量.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 环境变量</h2> 
+  <h3 id="环境变量"><a class="anchor" href="#环境变量" title='Anchor for: 环境变量.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 环境变量</h3> 
 
 <p>如果第一次 deploy 失败，请查看环境设置，检查版本是否正确</p>
 <p><code>Site settings &gt; Build &amp; deploy &gt; Environment &gt; Environment variables</code></p>
@@ -368,7 +375,7 @@
 
 
 
-  <h2 id="修改域名"><a class="anchor" href="#修改域名" title='Anchor for: 修改域名.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 修改域名</h2> 
+  <h3 id="修改域名"><a class="anchor" href="#修改域名" title='Anchor for: 修改域名.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 修改域名</h3> 
 
 <p>Netlify 会自动以你的 site name 生成一个域名：<code>[name-of-your-site].netlify.app</code></p>
 <p>进入 <code>Domain Setting &gt; Domain management &gt; Custom domains</code>，可以通过修改 site name 修改域名</p>
@@ -404,7 +411,7 @@
 
 
 
-  <h1 id="为-pr-生成预览">为 PR 生成预览</h1> 
+  <h2 id="为-pr-生成预览"><a class="anchor" href="#为-pr-生成预览" title='Anchor for: 为 PR 生成预览.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 为 PR 生成预览</h2> 
 
 <p>进入 <code>Site settings &gt; Build &amp; deploy &gt; Deploy notifications</code></p>
 <p>
@@ -468,7 +475,7 @@
 
 
 
-  <h1 id="对开源项目的支持">对开源项目的支持</h1> 
+  <h2 id="对开源项目的支持"><a class="anchor" href="#对开源项目的支持" title='Anchor for: 对开源项目的支持.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 对开源项目的支持</h2> 
 
 <p>如果是开源项目，可以阅读 <a href="https://www.netlify.com/legal/open-source-policy">Open Source Plan Policy</a> 相关内容，提交申请表单，就能免费享有 Pro 的功能，团队成员数量无限制</p>
 
@@ -476,7 +483,7 @@
 
 
 
-  <h1 id="参考资料">参考资料</h1> 
+  <h2 id="参考资料"><a class="anchor" href="#参考资料" title='Anchor for: 参考资料.'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a> 参考资料</h2> 
 
 <p><a href="https://docs.netlify.com/site-deploys/deploy-previews/"> Netlify 官网文档</a></p>
 <p><a href="https://levelup.gitconnected.com/how-to-setup-previews-for-prs-on-your-github-repo-using-netlify-105c80574875"> How to Setup Previews For PRs on Your GitHub Repo Using Netlify </a></p>
