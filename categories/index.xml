@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuanyi&#39;s blog</title>
-    <link>/categories/</link>
-    <description>yuanyi 的个人博客</description>
+    <title>分类 on 垃圾回收站</title>
+    <link>https://yuanyi-au.github.io/categories/</link>
+    <description>Recent content in 分类 on 垃圾回收站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>转码</title>
+      <link>https://yuanyi-au.github.io/categories/%E8%BD%AC%E7%A0%81/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/%E8%BD%AC%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开源</title>
+      <link>https://yuanyi-au.github.io/categories/%E5%BC%80%E6%BA%90/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/%E5%BC%80%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端工具</title>
+      <link>https://yuanyi-au.github.io/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://yuanyi-au.github.io/categories/hugo/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>其他</title>
+      <link>https://yuanyi-au.github.io/categories/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/%E5%85%B6%E4%BB%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://yuanyi-au.github.io/categories/git/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

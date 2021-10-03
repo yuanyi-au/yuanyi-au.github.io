@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html><head>
+<title>git 笔记 (2)</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="git 笔记 (2)" />
+<meta property="og:description" content="git 笔记 (2) git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
+git checkout bgit rebase a与 merge 的区别 永远不要在公共项目里使用 rebase
+merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
+git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
+git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
+git rebase --abort
+合并本地的多次提交 合并最新的三次提交
+git rebase -i HEAD~3
+git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuanyi-au.github.io/posts/git-2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-26T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git 笔记 (2)"/>
+<meta name="twitter:description" content="git 笔记 (2) git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
+git checkout bgit rebase a与 merge 的区别 永远不要在公共项目里使用 rebase
+merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
+git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
+git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
+git rebase --abort
+合并本地的多次提交 合并最新的三次提交
+git rebase -i HEAD~3
+git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/dark-mode.min.f7c2efa7183435a6bd1842f91c541481c7a5137b5991629a870f24e4a516ad4b.css" integrity="sha256-98Lvpxg0Naa9GEL5HFQUgcelE3tZkWKahw8k5KUWrUs=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'df402f42b44a5132782e',
+  clientSecret: '91abb6d2335e7f2ea53a51b42eda9f6b332f283c',
+  repo: 'gitalk-comments',
+  owner: 'yuanyi-au',
+  admin: ['yuanyi-au'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://yuanyi-au.github.io/">
+    
+        <div class="nav-title">
+            垃圾回收站
+        </div>
+        
+        <div class="nav-subtitle">
+            yuanyi&#39;s blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                文章
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-%e7%ac%94%e8%ae%b0-2" onclick="onNavClick(`#git-笔记-2-nav`)" id="git-笔记-2-nav">
+									git 笔记 (2)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#git-rebase" onclick="onNavClick(`#git-rebase-nav`)" id="git-rebase-nav">
+									git rebase
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e4%b8%8d%e5%90%8c%e5%88%86%e6%94%af%e7%9a%84%e6%8f%90%e4%ba%a4" onclick="onNavClick(`#合并不同分支的提交-nav`)" id="合并不同分支的提交-nav">
+									合并不同分支的提交
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8e-merge-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#与-merge-的区别-nav`)" id="与-merge-的区别-nav">
+									与 merge 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e6%9c%ac%e5%9c%b0%e7%9a%84%e5%a4%9a%e6%ac%a1%e6%8f%90%e4%ba%a4" onclick="onNavClick(`#合并本地的多次提交-nav`)" id="合并本地的多次提交-nav">
+									合并本地的多次提交
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#cherry-pick" onclick="onNavClick(`#cherry-pick-nav`)" id="cherry-pick-nav">
+									cherry-pick
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%8e-rebase-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#与-rebase-的区别-nav`)" id="与-rebase-的区别-nav">
+									与 rebase 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#git-reset-%e4%b8%8e-git-revert" onclick="onNavClick(`#git-reset-与-git-revert-nav`)" id="git-reset-与-git-revert-nav">
+									git reset 与 git revert
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#git-reset" onclick="onNavClick(`#git-reset-nav`)" id="git-reset-nav">
+									git reset
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-revert" onclick="onNavClick(`#git-revert-nav`)" id="git-revert-nav">
+									git revert
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%a4%e8%80%85%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#两者的区别-nav`)" id="两者的区别-nav">
+									两者的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#git-pull-%e5%92%8c-git-fetch-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#git-pull-和-git-fetch-的区别-nav`)" id="git-pull-和-git-fetch-的区别-nav">
+									git pull 和 git fetch 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-blame" onclick="onNavClick(`#git-blame-nav`)" id="git-blame-nav">
+									git blame
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sign-off" onclick="onNavClick(`#sign-off-nav`)" id="sign-off-nav">
+									sign-off
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    文章
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-%e7%ac%94%e8%ae%b0-2" onclick="onNavClick(`#git-笔记-2-nav`)" id="git-笔记-2-nav">
+									git 笔记 (2)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#git-rebase" onclick="onNavClick(`#git-rebase-nav`)" id="git-rebase-nav">
+									git rebase
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e4%b8%8d%e5%90%8c%e5%88%86%e6%94%af%e7%9a%84%e6%8f%90%e4%ba%a4" onclick="onNavClick(`#合并不同分支的提交-nav`)" id="合并不同分支的提交-nav">
+									合并不同分支的提交
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8e-merge-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#与-merge-的区别-nav`)" id="与-merge-的区别-nav">
+									与 merge 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e6%9c%ac%e5%9c%b0%e7%9a%84%e5%a4%9a%e6%ac%a1%e6%8f%90%e4%ba%a4" onclick="onNavClick(`#合并本地的多次提交-nav`)" id="合并本地的多次提交-nav">
+									合并本地的多次提交
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#cherry-pick" onclick="onNavClick(`#cherry-pick-nav`)" id="cherry-pick-nav">
+									cherry-pick
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%8e-rebase-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#与-rebase-的区别-nav`)" id="与-rebase-的区别-nav">
+									与 rebase 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#git-reset-%e4%b8%8e-git-revert" onclick="onNavClick(`#git-reset-与-git-revert-nav`)" id="git-reset-与-git-revert-nav">
+									git reset 与 git revert
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#git-reset" onclick="onNavClick(`#git-reset-nav`)" id="git-reset-nav">
+									git reset
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-revert" onclick="onNavClick(`#git-revert-nav`)" id="git-revert-nav">
+									git revert
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%a4%e8%80%85%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#两者的区别-nav`)" id="两者的区别-nav">
+									两者的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#git-pull-%e5%92%8c-git-fetch-%e7%9a%84%e5%8c%ba%e5%88%ab" onclick="onNavClick(`#git-pull-和-git-fetch-的区别-nav`)" id="git-pull-和-git-fetch-的区别-nav">
+									git pull 和 git fetch 的区别
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#git-blame" onclick="onNavClick(`#git-blame-nav`)" id="git-blame-nav">
+									git blame
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#sign-off" onclick="onNavClick(`#sign-off-nav`)" id="sign-off-nav">
+									sign-off
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://yuanyi-au.github.io/">
+            垃圾回收站
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://yuanyi-au.github.io/">
+        <div class="single-column-header-title">垃圾回收站</div>
+        
+        <div class="single-column-header-subtitle">yuanyi&#39;s blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    git 笔记 (2)
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-07-26 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/git">Git</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/git">git</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="git-笔记-2">git 笔记 (2)</h1>
+<h2 id="git-rebase">git rebase</h2>
+<h3 id="合并不同分支的提交">合并不同分支的提交</h3>
+<p>将 b 分支上的提交合并到 a 分支上成为一条直线</p>
+<pre><code>git checkout b
+git rebase a
+</code></pre><h3 id="与-merge-的区别">与 merge 的区别</h3>
+<p><em>永远不要在公共项目里使用 rebase</em></p>
+<p>merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并</p>
+<p>git rebase:
+<img src="../images/git-rebase.jpg" alt=""></p>
+<p>git merge:
+<img src="../images/git-merge.jpg" alt=""></p>
+<p>rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令</p>
+<pre><code>git add -u
+git rebase --continue
+</code></pre><p>继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase   前的代码则可以用命令</p>
+<p><code>git rebase --abort</code></p>
+<h3 id="合并本地的多次提交">合并本地的多次提交</h3>
+<p>合并最新的三次提交</p>
+<p><code>git rebase -i HEAD~3</code></p>
+<p>git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上</p>
+<h2 id="cherry-pick">cherry-pick</h2>
+<p>将其他分支上的提交应用于 a 分支</p>
+<p>在开源项目里很有用</p>
+<pre><code>git checkout a
+git cherry-pick &lt;CommitID&gt;
+</code></pre><h3 id="与-rebase-的区别">与 rebase 的区别</h3>
+<p>rebase 相当于剪切粘贴， cherry-pick 相当于复制粘贴</p>
+<h2 id="git-reset-与-git-revert">git reset 与 git revert</h2>
+<h3 id="git-reset">git reset</h3>
+<p>回退到指定的提交版本</p>
+<h3 id="git-revert">git revert</h3>
+<p>用一个新的提交来消除之前的提交，原来的 commit 内容依旧会保存在提交历史中</p>
+<h3 id="两者的区别">两者的区别</h3>
+<p>reset 是在正常的提交历史中,删除了指定的 commit ，HEAD 向后移动，而 revert 是在正常的提交历史中再 commit 一次，只不过是反向提交可以抵消之前的提交，它的HEAD 是一直向前的</p>
+<h2 id="git-pull-和-git-fetch-的区别">git pull 和 git fetch 的区别</h2>
+<p>打开本地 <code>.git/refs</code> 文件夹我们可以看到代表本地分支的 <code>head</code> 文件夹和代表正在跟踪的远程分支的 <code>remotes</code> 文件夹</p>
+<p>使用 git pull 会将两个文件夹里的 commit ID 都更新至远程库的最新 commit ID</p>
+<p>使用 git fetch 只会将 <code>remotes</code> 文件夹中的 commit ID 更新至远程库的最新 commit ID</p>
+<h2 id="git-blame">git blame</h2>
+<p>可以查看某个文件里每一行代码的最后修改提交记录</p>
+<p><code>git blame &lt;filename&gt;</code></p>
+<h2 id="sign-off">sign-off</h2>
+<p>在做开源项目时遇到要求 sign-off，用于证明提交作者</p>
+<p><code>git commit -s -m &quot;&quot;</code></p>
+<h2 id="参考资料">参考资料</h2>
+<p><a href="https://blog.csdn.net/hudashi/article/details/7664631?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.control&amp;spm=1001.2101.3001.4242">git rebase简介(基本篇)</a></p>
+<p><a href="https://www.jianshu.com/p/6960811ac89c">你真的懂git rebase吗？</a></p>
+<p><a href="https://blog.csdn.net/qq_43425487/article/details/105620270">Git应用详解第九讲：Git cherry-pick与Git rebase</a></p>
+<p><a href="https://blog.csdn.net/xybelieve1990/article/details/62885292?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control">Git版本恢复命令reset和revert</a></p>
+<p><a href="https://blog.csdn.net/weixin_41975655/article/details/82887273">详解git pull和git fetch的区别</a></p>
+<p><a href="https://blog.csdn.net/a19881029/article/details/42245955">git fetch和git pull之间的区别</a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-07-26</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://yuanyi-au.github.io/posts/package.json-package-lock.json/">
+			下篇<br>package.json 与 package-lock.json
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://yuanyi-au.github.io/posts/git-1/">
+			上篇<br>git 笔记 (1)
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

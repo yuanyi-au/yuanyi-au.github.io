@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuanyi&#39;s blog</title>
-    <link>/tags/</link>
-    <description>yuanyi 的个人博客</description>
+    <title>标签 on 垃圾回收站</title>
+    <link>https://yuanyi-au.github.io/tags/</link>
+    <description>Recent content in 标签 on 垃圾回收站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opensource</title>
+      <link>https://yuanyi-au.github.io/tags/opensource/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://yuanyi-au.github.io/tags/blog/</link>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deploy</title>
+      <link>https://yuanyi-au.github.io/tags/deploy/</link>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/tags/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://yuanyi-au.github.io/tags/hugo/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://yuanyi-au.github.io/tags/git/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

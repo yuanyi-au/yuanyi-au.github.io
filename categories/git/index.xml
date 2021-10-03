@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 垃圾回收站</title>
+    <link>https://yuanyi-au.github.io/categories/git/</link>
+    <description>Recent content in Git on 垃圾回收站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 26 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git 笔记 (2)</title>
+      <link>https://yuanyi-au.github.io/posts/git-2/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
+      <description>git 笔记 (2) git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
+git checkout bgit rebase a与 merge 的区别 永远不要在公共项目里使用 rebase
+merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
+git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
+git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
+git rebase --abort
+合并本地的多次提交 合并最新的三次提交
+git rebase -i HEAD~3
+git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上</description>
+    </item>
+    
+    <item>
+      <title>git 笔记 (1)</title>
+      <link>https://yuanyi-au.github.io/posts/git-1/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
+      <description>git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
+常用命令 名词 workplace 工作区
+stage 暂存区
+repository 本地仓库
+remote 远程仓库
+新建仓库 git init 在当前目录新建一个本地仓库
+git clone 将一个远程仓库的内容下载到本地
+文件的增加、删除、提交 git add [filename] 将文件从工作区添加到暂存区
+git rm [filename] 删除工作区文件
+git rm --cached [filename] 停止追踪指定文件，但该文件会保留在工作区
+git mv [originalname] [newname] 文件重命名，并将该文件放入暂存区
+git commit - &amp;quot;message&amp;quot; 将暂存区文件提交到本地仓库
+git commit -amend -m &amp;quot;message&amp;quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
+分支管理 git branch 查看所有本地分支
+git branch -a 查看所有本地分支与远程分支
+git branch [branch] 新建一个分支，但依然停留在当前分支</description>
+    </item>
+    
+  </channel>
+</rss>

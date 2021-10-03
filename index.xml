@@ -1,148 +1,563 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuanyi&#39;s blog</title>
-    <link>/</link>
-    <description>yuanyi 的个人博客</description>
+    <title>垃圾回收站</title>
+    <link>https://yuanyi-au.github.io/</link>
+    <description>Recent content on 垃圾回收站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>Copyright © 2021, yuanyi; All rights reserved.</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-      <item>
-        <title>开源入门之路</title>
-        <link>/posts/opensource/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/opensource/</guid>
-        <description>开源入门之路 今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
- 前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
-参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
-如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。
-在这篇文章里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。
-最后一点，保持礼貌！
- 参与项目的基本流程  找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 Explore 板块，或者 Open Source Friday 之类的网站来寻找项目。
-请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。
-较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。
- 看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。
-如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。
-创建 Issue 要注意的问题：
- 提供具体的环境配置、操作步骤以及问题的详细情况 用文字描述，方便其他人检索 做好标签分类   Pull Request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码</description>
-      </item>
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate>
     
-      <item>
-        <title>git 笔记 (1)</title>
-        <link>/notes/git-1/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/git-1/</guid>
-        <description>git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
- 常用命令  名词 workplace 工作区
-stage 暂存区
-repository 本地仓库
-remote 远程仓库
- 新建仓库 git init 在当前目录新建一个本地仓库
-git clone 将一个远程仓库的内容下载到本地
- 文件的增加、删除、提交 git add [filename] 将文件从工作区添加到暂存区
-git rm [filename] 删除工作区文件
-git rm --cached [filename] 停止追踪指定文件，但该文件会保留在工作区
-git mv [originalname] [newname] 文件重命名，并将该文件放入暂存区
-git commit - &amp;quot;message&amp;quot; 将暂存区文件提交到本地仓库
-git commit -amend -m &amp;quot;message&amp;quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
- 分支管理 git branch 查看所有本地分支</description>
-      </item>
+        <atom:link href="https://yuanyi-au.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-      <item>
-        <title>git 笔记 (2)</title>
-        <link>/notes/git-2/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/git-2/</guid>
-        <description>git 笔记 (2)  git rebase  合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
-git checkout bgit rebase a 与 merge 的区别 永远不要在公共项目里使用 rebase
-merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
-git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
-git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
-git rebase --abort
- 合并本地的多次提交 合并最新的三次提交
-git rebase -i HEAD~3
-git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上</description>
-      </item>
     
-      <item>
-        <title>利用 Hugo 搭建网站</title>
-        <link>/notes/hugo-website/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/hugo-website/</guid>
-        <description>利用 Hugo 搭建网站 本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
- 快速开始  Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
-请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
-注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便
- MacOS： 其它系统的安装过程可以看官网文档
- 新建网站 hugo version 检查安装是否成功
-hugo new site [sitename] 创建一个新的网站
-hugo server 开启 Hugo 服务器，可以在本地预览调试网站
- 结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themes content 文件夹 存放网站的主要内容 md 文件</description>
-      </item>
     
-      <item>
-        <title>package.json 与 package-lock.json</title>
-        <link>/notes/package.json-package-lock.json/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/package.json-package-lock.json/</guid>
-        <description>package.json 与 package-lock.json  package.json 描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 npm init 自动生成
-{&amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,&amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,&amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,&amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,&amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;},&amp;quot;repository&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,&amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;},&amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&amp;quot;bugs&amp;quot;: {&amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;},&amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,&amp;quot;dependencies&amp;quot;: {},&amp;quot;devDependencies&amp;quot;: {&amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,&amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;}}package.json 文件要求必须包括name 和 version 属性
- author：作者，是在 npmjs.</description>
-      </item>
-    
-      <item>
-        <title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
-        <link>/notes/netlify/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/notes/netlify/</guid>
-        <description>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
-本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果
-也可以参考此笔记将自己的网站部署在 Netlify 上
- 安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
-或者你也可以选择在 Netlify 官网 上进行注册授权
- New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
- 基本设置 常见框架对应的 Build command 和 Publish directory 可以看 官网文档
- 环境变量 如果第一次 deploy 失败，请查看环境设置，检查版本是否正确
-Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables</description>
-      </item>
-    
-      <item>
+        <item>
         <title>学习历程</title>
-        <link>/posts/learning-process/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <link>https://yuanyi-au.github.io/posts/learning-process/</link>
+        <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
         
-        <guid>/posts/learning-process/</guid>
-        <description>学习历程 慢慢反思总结写一下这段时间走过的路&amp;hellip;&amp;hellip;
- 第一阶段（2020.11初~2021.1中） 已经记不清当初开始学计算机的原因了，大概是闲着无聊吧&amp;hellip;&amp;hellip;学了 Python 之后发现自己还蛮有兴趣的，每天疯狂搜索各种东西，最后决定转码。因为这段时间也正好在大三上的后半学期，期末月还是挺忙的，学得比较水，现在 Python 已经基本忘光了。当时确定考完试就开始学前端。
-刚开始是跟着廖雪峰的网站学，半途开始看慕课上的 Python 入门课程（好像是北理的？反正很火的那个），我觉得如果是完全计算机零基础的话应该先看慕课，因为慕课会讲到一些计算机的基础概念。
- 第二阶段（2021.1中~2021.4中） 从寒假一开始就开始学 JavaScript/CSS/HTML，同时学了计算机网络、数据结构与算法，大概到三月份的时候开始学 React。整个假期每天在家几乎所有时间都在面对电脑，因为想在开学之后尽快找实习。
-前端部分是在 GitHub 上找了个教程，计网看了谢希仁的《计算机网络》（我居然坚持一字不漏地看完了哈哈，现在也忘光了），数据结构看了慕课上北大的 python 数据结构课程，还有《算法图解》《剑指offer》。
- 第三阶段（2021.4末~2021.5初） 开始疯狂实战做项目，跟着油管视频七天敲了八个小项目（我觉得这个方法超有用的，一周过去感觉自己人都不一样了哈哈，推荐大家！），然后开始自己模仿着写，做了个简单的 React 网站，学了点 React Native 做了个小项目（我现在想想很不理解自己为什么要在那个时候忽然岔去学 RN，可能当时真的好奇吧&amp;hellip;&amp;hellip;）
-然后，就开始投简历找实习&amp;hellip;&amp;hellip;（中间过程待补充）&amp;hellip;&amp;hellip;最后放弃了。
-说说我最后放弃找实习的原因吧。简历意外地被阿里捞了，因为他们效率很高所以其实这是我第一次面试。至今我仍然非常感谢这位面试官，当然他从很多方面来说都很好很厉害，给了我很多建议，但最重要的是，他让我想清楚了我真正想要的东西。这次面试完之后其他的面试邀请我都直接拒绝了，其实当时也知道自己到底是个什么水平，虽然海投海面肯定还是能找到实习，但我想自己还是更想花时间沉下心来学习。而且之后也因此有了时间参与开源，我还是觉得当时这个选择是适合我的。
- 第四阶段（2021.5初~2021.6末） 这段时间基本在忙期末和学校安排的实习，申请了开源之夏的项目，空闲时间继续学习，在看红宝书。
- 第五阶段（2021.7初~2021.8末） 这段时间可能是我收获最大的时期，第一次参与开源项目，和别人合作体验到了这行的氛围。转码大半年，终于到了面临秋招的时刻，我也忽然开始反思许多东西，思考自己对未来的真正期望（是很复杂很私人的问题，以后会写文章说说）。
- 第六阶段（2021.8末~unknow） 秋招开始，大概之后也没有什么好说的啦，找到工作后会总结秋招，希望这一天快点到来。</description>
-      </item>
+        <guid>https://yuanyi-au.github.io/posts/learning-process/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/learning-process/ -&lt;h1 id=&#34;学习历程&#34;&gt;学习历程&lt;/h1&gt;
+&lt;p&gt;慢慢反思总结写一下这段时间走过的路&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;第一阶段202011初20211中&#34;&gt;第一阶段（2020.11初~2021.1中）&lt;/h2&gt;
+&lt;p&gt;当初开始学计算机可能是想尝试一下其他道路，反正我也很喜欢接触新东西，更新自己感觉很快乐。学了 Python 之后发现自己还蛮有兴趣的，每天疯狂搜索各种东西，最后决定转码。因为这段时间也正好在大三上的后半学期，期末月还是挺忙的，学得比较水，现在 Python 已经基本忘光了。当时确定考完试就开始学前端。&lt;/p&gt;
+&lt;p&gt;刚开始是跟着廖雪峰的网站学，半途开始看慕课上的 Python 入门课程（好像是北理的？反正很火的那个），我觉得如果是完全计算机零基础的话应该先看慕课，因为慕课会讲到一些计算机的基础概念。&lt;/p&gt;
+&lt;h2 id=&#34;第二阶段20211中20214中&#34;&gt;第二阶段（2021.1中~2021.4中）&lt;/h2&gt;
+&lt;p&gt;从寒假一开始就开始学 JavaScript/CSS/HTML，同时学了计算机网络、数据结构与算法，大概到三月份的时候开始学 React。整个假期每天在家几乎所有时间都在面对电脑，因为想在开学之后尽快找实习。&lt;/p&gt;
+&lt;p&gt;前端部分是在 GitHub 上找了个教程，计网看了谢希仁的《计算机网络》（我居然坚持一字不漏地看完了哈哈，现在也忘光了），数据结构看了慕课上北大的 python 数据结构课程，还有《算法图解》《剑指offer》。&lt;/p&gt;
+&lt;h2 id=&#34;第三阶段20214末20215初&#34;&gt;第三阶段（2021.4末~2021.5初）&lt;/h2&gt;
+&lt;p&gt;开始疯狂实战做项目，跟着油管视频七天敲了八个小项目（油管项目超级多，从这里上手挺不错的），然后开始自己模仿着写，做了个简单的 React 网站，学了点 React Native 做了个小项目。&lt;/p&gt;
+&lt;p&gt;然后，就开始投简历找实习，但最后因为学校的原因，以及和几个面试官聊过之后感觉自己还是更想沉下心来继续学习，就放弃了找实习。&lt;/p&gt;
+&lt;h2 id=&#34;第四阶段20215初20216末&#34;&gt;第四阶段（2021.5初~2021.6末）&lt;/h2&gt;
+&lt;p&gt;这段时间基本在忙期末和学校安排的实习，申请了开源之夏的项目，空闲时间继续学习，在看红宝书。&lt;/p&gt;
+&lt;h2 id=&#34;第五阶段20217初20218末&#34;&gt;第五阶段（2021.7初~2021.8末）&lt;/h2&gt;
+&lt;p&gt;这段时间可能是我收获最大的时期，第一次参与开源项目，和别人合作体验到了这行的氛围。转码大半年，终于到了面临秋招的时刻，我也忽然开始反思许多东西，思考自己对未来的真正期望（是很复杂很私人的问题，以后会写文章说说）。&lt;/p&gt;
+&lt;h2 id=&#34;第六阶段20218末unknow&#34;&gt;第六阶段（2021.8末~unknow）&lt;/h2&gt;
+&lt;p&gt;秋招开始，大概之后也没有什么好说的啦，找到工作后会好好总结，希望这一天快点到来。&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/learning-process/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
     
-      <item>
-        <title>关于我</title>
-        <link>/about/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+    
+    
+        <item>
+        <title>开源入门之路</title>
+        <link>https://yuanyi-au.github.io/posts/opensource/</link>
+        <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
         
-        <guid>/about/</guid>
-        <description> 个人介绍 大家好，我是四川大学化学系2022届本科生，从2020年11月开始零基础转码，一路上遇到了无数问题与困难，同样也得到了无数帮助与鼓励，真的非常感激曾经遇到的每一位朋友。所以也想在这里记录一些自己的经验，希望能够或多或少帮助到其他人。
-能发现自己对计算机的热爱是我最近几年遇到的最幸运的事情之一。我也非常幸运地拥有真正理解我的朋友和父母，感谢他们的信任与陪伴。也要特别感谢豆瓣的 Women In Tech 小组，感谢组里各位姐妹的帮助、鼓励与支持。希望科技行业能有越来越多有力量的女性，也希望我的这些经验分享能为此目标增添一份绵薄之力。
-愿大家都能找到自己真正所爱，找到属于自己的路。
- 有任何问题可以与我联系： 名字邮箱主题打个招呼!有个问题?内容</description>
-      </item>
+        <guid>https://yuanyi-au.github.io/posts/opensource/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
+&lt;p&gt;今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。&lt;/p&gt;
+&lt;p&gt;参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。&lt;/p&gt;
+&lt;p&gt;如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&#34;https://www.igor.pro.br/publica/papers/saner2016.pdf&#34;&gt;这篇文章&lt;/a&gt;里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。&lt;/p&gt;
+&lt;p&gt;最后一点，保持礼貌！&lt;/p&gt;
+&lt;h2 id=&#34;参与项目的基本流程&#34;&gt;参与项目的基本流程&lt;/h2&gt;
+&lt;h3 id=&#34;找到你想要参与的项目&#34;&gt;找到你想要参与的项目&lt;/h3&gt;
+&lt;p&gt;如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 &lt;a href=&#34;https://github.com/explore/&#34;&gt;Explore&lt;/a&gt; 板块，或者 &lt;a href=&#34;https://opensourcefriday.com/&#34;&gt;Open Source Friday&lt;/a&gt; 之类的网站来寻找项目。&lt;/p&gt;
+&lt;p&gt;请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。&lt;/p&gt;
+&lt;p&gt;较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。&lt;/p&gt;
+&lt;h3 id=&#34;看看-issues-都有些什么&#34;&gt;看看 &lt;code&gt;Issues&lt;/code&gt; 都有些什么&lt;/h3&gt;
+&lt;p&gt;很多开源项目在 Issues 板块都会有 &lt;code&gt;good first issue&lt;/code&gt; ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。&lt;/p&gt;
+&lt;p&gt;如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。&lt;/p&gt;
+&lt;p&gt;创建 Issue 要注意的问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供具体的环境配置、操作步骤以及问题的详细情况&lt;/li&gt;
+&lt;li&gt;用文字描述，方便其他人检索&lt;/li&gt;
+&lt;li&gt;做好标签分类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pull-request-基本流程&#34;&gt;Pull Request 基本流程&lt;/h3&gt;
+&lt;p&gt;如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;fork&lt;/code&gt; 你想要参与的项目，它就会出现在你的仓库列表里&lt;/li&gt;
+&lt;li&gt;将你自己仓库里的这个项目 &lt;code&gt;git clone&lt;/code&gt; 到本地&lt;/li&gt;
+&lt;li&gt;在本地仓库 &lt;code&gt;git remote add upstream 原仓库地址&lt;/code&gt; ，与原仓库建立连接&lt;/li&gt;
+&lt;li&gt;创建一个新的分支，然后开始修改代码&lt;/li&gt;
+&lt;li&gt;把改好的代码推送到自己的远程仓库&lt;/li&gt;
+&lt;li&gt;在 GitHub 自己的仓库页面上就可以看到 &lt;code&gt;New pull request&lt;/code&gt; 按钮&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;等待-review-结果&#34;&gt;等待 review 结果&lt;/h3&gt;
+&lt;p&gt;项目维护者会对你提交的代码进行 review，如果你提交的代码存在问题，对方会做出说明，希望调整代码或者是代码不被接受的原因。如果没有问题，你的代码就将会被 merge 到项目源码里，一次贡献就这样完成了！&lt;/p&gt;
+&lt;p&gt;如果你的 PR 暂时没有得到回应，请耐心等待，如果时间超过一周，可以尝试 @ 相关负责人。&lt;/p&gt;
+&lt;h2 id=&#34;参与到开源社区中&#34;&gt;参与到开源社区中&lt;/h2&gt;
+&lt;p&gt;如果你对某个社区产生兴趣想要参与，在社区的官网或者 GitHub 上都能找到联系方式（比如 邮件列表、Slack、SIG 会议）。&lt;/p&gt;
+&lt;p&gt;SIG (Special Interest Group) ：很多社区会定期举办 SIG 会议，不要害怕参与进去。一般来说社区会维护每次 SIG 会议的会议文档以及会议录屏，也可以通过这些方式了解社区或者项目的动态。&lt;/p&gt;
+&lt;h2 id=&#34;github-上常见的交流缩写&#34;&gt;GitHub 上常见的交流缩写&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;WIP：Work in progress, do not merge yet.  // 开发中&lt;/li&gt;
+&lt;li&gt;LGTM：Looks good to me.  // PR 经过 review 没有问题&lt;/li&gt;
+&lt;li&gt;CC：Carbon copy.  // 抄送某人&lt;/li&gt;
+&lt;li&gt;RFC：request for comments.  // 我们来讨论下这个问题&lt;/li&gt;
+&lt;li&gt;ACK：acknowledgement.&lt;/li&gt;
+&lt;li&gt;NACK/NAK：negative acknowledgement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开源指南&#34;&gt;开源指南&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensource.guide/zh-hans/&#34;&gt;GitHub 开源软件指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/opensource-guide/&#34;&gt;Gitee 开源指北&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://surenpi.com/open-source-best-practice/&#34;&gt;开源最佳实践&lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/opensource/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
+        <link>https://yuanyi-au.github.io/posts/netlify/</link>
+        <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
+&lt;p&gt;Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台&lt;/p&gt;
+&lt;p&gt;本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/netlify-bot.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也可以参考此笔记将自己的网站部署在 Netlify 上&lt;/p&gt;
+&lt;h2 id=&#34;安装准备&#34;&gt;安装准备&lt;/h2&gt;
+&lt;p&gt;在 GitHub 上安装 &lt;a href=&#34;https://github.com/apps/netlify&#34;&gt; Netlify &lt;/a&gt;，授权 GitHub 账号&lt;/p&gt;
+&lt;p&gt;或者你也可以选择在 &lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify 官网&lt;/a&gt; 上进行注册授权&lt;/p&gt;
+&lt;h2 id=&#34;new-site-from-git&#34;&gt;New site from Git&lt;/h2&gt;
+&lt;p&gt;选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site&lt;/p&gt;
+&lt;h3 id=&#34;基本设置&#34;&gt;基本设置&lt;/h3&gt;
+&lt;p&gt;常见框架对应的 Build command 和 Publish directory 可以看 &lt;a href=&#34;https://docs.netlify.com/configure-builds/common-configurations/&#34;&gt;官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;环境变量&#34;&gt;环境变量&lt;/h3&gt;
+&lt;p&gt;如果第一次 deploy 失败，请查看环境设置，检查版本是否正确&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/netlify-environment.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改域名&#34;&gt;修改域名&lt;/h3&gt;
+&lt;p&gt;Netlify 会自动以你的 site name 生成一个域名：&lt;code&gt;[name-of-your-site].netlify.app&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;进入 &lt;code&gt;Domain Setting &amp;gt; Domain management &amp;gt; Custom domains&lt;/code&gt;，可以通过修改 site name 修改域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/netlify-domain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;为-pr-生成预览&#34;&gt;为 PR 生成预览&lt;/h2&gt;
+&lt;p&gt;进入 &lt;code&gt;Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Deploy notifications&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/netlify-notification.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 ”Add notification“ ，在下拉菜单中选择 “GitHub Pull Request Comment” ，然后选择 “Deploy Preview succeeded” ，保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/netlify-prcomment.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;现在每个新出现的 PR 都会自动生成一个评论，包含预览链接 &lt;code&gt;deploy-preview-4--yoursitename.netlify.app&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;对开源项目的支持&#34;&gt;对开源项目的支持&lt;/h2&gt;
+&lt;p&gt;如果是开源项目，可以阅读 &lt;a href=&#34;https://www.netlify.com/legal/open-source-policy&#34;&gt;Open Source Plan Policy&lt;/a&gt; 相关内容，提交申请表单，就能免费享有 Pro 的功能，团队成员数量无限制&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.netlify.com/site-deploys/deploy-previews/&#34;&gt; Netlify 官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://levelup.gitconnected.com/how-to-setup-previews-for-prs-on-your-github-repo-using-netlify-105c80574875&#34;&gt; How to Setup Previews For PRs on Your GitHub Repo Using Netlify &lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/netlify/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>利用 Hugo 搭建网站</title>
+        <link>https://yuanyi-au.github.io/posts/hugo-website/</link>
+        <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/hugo-website/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/hugo-website/ -&lt;h1 id=&#34;利用-hugo-搭建网站&#34;&gt;利用 Hugo 搭建网站&lt;/h1&gt;
+&lt;p&gt;本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法&lt;/p&gt;
+&lt;h2 id=&#34;快速开始&#34;&gt;快速开始&lt;/h2&gt;
+&lt;h3 id=&#34;windows&#34;&gt;Windows:&lt;/h3&gt;
+&lt;p&gt;最简单的方法是直接下载 &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;最新版本的 hugo&lt;/a&gt; 安装&lt;/p&gt;
+&lt;p&gt;请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：要把 hugo 的路径添加到环境变量 Path 中！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我在下载安装扩展版本的时候有点问题，最后重新用 &lt;a href=&#34;https://gohugo.io/getting-started/installing/#chocolatey-windows&#34;&gt;Chocolatey&lt;/a&gt; 安装成功，非常方便&lt;/p&gt;
+&lt;h3 id=&#34;macos&#34;&gt;MacOS：&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;其它系统的安装过程可以看官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新建网站&#34;&gt;新建网站&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;hugo version&lt;/code&gt; 检查安装是否成功&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo new site [sitename]&lt;/code&gt; 创建一个新的网站&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 开启 Hugo 服务器，可以在本地预览调试网站&lt;/p&gt;
+&lt;h2 id=&#34;结构目录&#34;&gt;结构目录&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;.
+├── archetypes 
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;content-文件夹&#34;&gt;content 文件夹&lt;/h3&gt;
+&lt;p&gt;存放网站的主要内容 md 文件&lt;/p&gt;
+&lt;p&gt;在该文件夹下的文件结构目录直接对应网站结构&lt;/p&gt;
+&lt;p&gt;通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;Helloworld&amp;quot;
+date: {{ .Date }}
+draft: true
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除了 title 必需，其他可以省略&lt;/p&gt;
+&lt;h3 id=&#34;layouts-文件夹&#34;&gt;layouts 文件夹&lt;/h3&gt;
+&lt;p&gt;存放网站 HTML 模板，包括 index、particials、single page、list pages 等&lt;/p&gt;
+&lt;h3 id=&#34;themes文件夹&#34;&gt;themes文件夹&lt;/h3&gt;
+&lt;p&gt;存放现有的 Hugo 主题模板&lt;/p&gt;
+&lt;h3 id=&#34;configtoml-文件&#34;&gt;config.toml 文件&lt;/h3&gt;
+&lt;p&gt;配置文件，最基础的设置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;http://example.org/&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;Blog&amp;quot;
+
+#导航栏菜单
+[menu]
+[[menu.main]]
+    identifier = &amp;quot;about&amp;quot;
+    name = &amp;quot;about&amp;quot;
+    url = &amp;quot;/about&amp;quot;
+    weight = 1  #weight数字越小排序越靠前
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;主题外观&#34;&gt;主题外观&lt;/h2&gt;
+&lt;p&gt;可以直接使用 Hugo 现有的主题模板，也可以自己编写主题模板&lt;/p&gt;
+&lt;h3 id=&#34;使用现有主题&#34;&gt;使用现有主题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;Hugo 官网&lt;/a&gt; 或者 GitHub 上寻找合适的 Hugo 主题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入 &lt;code&gt;themes&lt;/code&gt; 文件夹，&lt;code&gt;git clone&lt;/code&gt; 想要使用的主题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在配置文件中添加主题：&lt;code&gt;theme = &amp;quot;themename&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;现有主题模板的个性化&#34;&gt;现有主题模板的个性化&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;themes&lt;/code&gt; 文件夹里主要修改 &lt;code&gt;assets&lt;/code&gt; 和 &lt;code&gt;layouts&lt;/code&gt; 两个文件夹，前者存放 css 和 js 文件，后者存放 html 文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;layouts&lt;/code&gt; 文件夹里主要修改 &lt;code&gt;partials&lt;/code&gt; 和 &lt;code&gt;shortcodes&lt;/code&gt; 两个文件夹里的 html 文件&lt;/p&gt;
+&lt;h3 id=&#34;自己创建主题&#34;&gt;自己创建主题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;layout&lt;/code&gt; 中创建 &lt;code&gt;_default&lt;/code&gt; 文件夹、 &lt;code&gt;index.html&lt;/code&gt; 和 &lt;code&gt;404.html&lt;/code&gt; 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;_default&lt;/code&gt; 文件夹中创建 &lt;code&gt;single.html&lt;/code&gt; 和 &lt;code&gt;list.html&lt;/code&gt; 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;static&lt;/code&gt; 文件夹中创建 &lt;code&gt;css&lt;/code&gt; 文件定义样式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：在 &lt;code&gt;_index.md&lt;/code&gt; 中的内容永远都会依照 list 模板渲染，而非 single&lt;/p&gt;
+&lt;h2 id=&#34;站点部署&#34;&gt;站点部署&lt;/h2&gt;
+&lt;h3 id=&#34;把网站部署到-github-上&#34;&gt;把网站部署到 GitHub 上&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 GitHub 上创建一个新仓库 A ，名字随便起（例如 blog），该仓库用于存放完整的代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建另一个新仓库 B ，起名为 &lt;code&gt;github_id.github.io&lt;/code&gt; （例如 yuanyi-au.github.io ），该仓库用于网站部署&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将本地代码与 GitHub 上的仓库 A 关联&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入本地代码文件根目录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git submodule add -b main &amp;lt;仓库 B 地址&amp;gt; public&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;生成 &lt;code&gt;public&lt;/code&gt; 文件夹并将其关联到仓库 B 上，push 之后可以在 GitHub 仓库 B 的页面上看到 &lt;code&gt;public&lt;/code&gt; 文件夹的内容&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;在仓库 B 的设置中可以找到 GitHub Pages，可以看到网站地址 &lt;code&gt;github_id.github.io&lt;/code&gt;，就可以进行访问了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;code&gt;public&lt;/code&gt; 文件夹的内容需要每次在项目根目录执行 &lt;code&gt;hugo&lt;/code&gt; 命令后才会更新&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;把网站部署到-netlify-上&#34;&gt;把网站部署到 Netlify 上&lt;/h3&gt;
+&lt;p&gt;可以参考这篇笔记 &lt;a href=&#34;https://yuanyi-au.github.io/notes/netlify/&#34;&gt;使用 netlify 预览 GitHub 上的 PR&lt;/a&gt; ，不做最后一步就行啦&lt;/p&gt;
+&lt;h2 id=&#34;其他问题&#34;&gt;其他问题&lt;/h2&gt;
+&lt;h3 id=&#34;public-文件夹渲染出错&#34;&gt;Public 文件夹渲染出错&lt;/h3&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 在本地运行时没有问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件&lt;/p&gt;
+&lt;p&gt;问题解决：&lt;/p&gt;
+&lt;p&gt;问题出在 Hugo 本身处理 URL 的方式上，可以参见 &lt;a href=&#34;https://github.com/matcornic/hugo-theme-learn/issues/125&#34;&gt;issue&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;//example.org&amp;quot;
+relativeURLs = true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的方法没有解决我的问题，后来试了两种方法可行：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;# baseURL = &amp;quot;example.org&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;baseURL = &amp;quot;\&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;找不到新增的页面&#34;&gt;找不到新增的页面&lt;/h3&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;增加的内容在 index 页面有链接，但点开却找不到页面&lt;/p&gt;
+&lt;p&gt;问题解决：&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;hugo -t theme_name&lt;/code&gt; 代替 &lt;code&gt;hugo&lt;/code&gt; 命令进行编译&lt;/p&gt;
+&lt;h3 id=&#34;图片加载问题&#34;&gt;图片加载问题&lt;/h3&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;Markdown 文档里的本地图片无法显示&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以&lt;/p&gt;
+&lt;p&gt;目录结构：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+├── content
+	└── posts 
+		├── cat.md
+		├── dog.md
+		└── images
+			├── cat.png
+			└── dog.png
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在图片链接：
+&lt;code&gt;![dog](../images/dog.png)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;最后修改时间&#34;&gt;最后修改时间&lt;/h3&gt;
+&lt;p&gt;可以通过两种方式记录 Last Modified 时间&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在文档开头加上时间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;date: 1990-01-01T00:00:00+00:00
+lastmod: 1995-04-04T00:00:00+00:00
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;在 config.toml 内设置使用 Git 记录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;enableGitInfo = true&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&#34;&gt; Hugo - Static Site Generator | Tutorial &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=247s&#34;&gt; Creating a Blog with Hugo and Github in 10 minutes &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;amp;list=LLm-KB0VAVChbSZPeDA_WqSg&#34;&gt; Creating your own Hugo Theme! &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&#34;&gt; Creating a Hugo Theme From Scratch &lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/hugo-website/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>package.json 与 package-lock.json</title>
+        <link>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</link>
+        <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
+&lt;h2 id=&#34;packagejson&#34;&gt;package.json&lt;/h2&gt;
+&lt;p&gt;描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 &lt;code&gt;npm init&lt;/code&gt; 自动生成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,
+  &amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,
+  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;
+  },
+  &amp;quot;repository&amp;quot;: {
+    &amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,
+    &amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;
+  },
+  &amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,
+  &amp;quot;bugs&amp;quot;: {
+    &amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;
+  },
+  &amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,
+  &amp;quot;dependencies&amp;quot;: {},
+  &amp;quot;devDependencies&amp;quot;: {
+    &amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,
+    &amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt; 文件要求必须包括&lt;code&gt;name&lt;/code&gt; 和 &lt;code&gt;version&lt;/code&gt; 属性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;author&lt;/code&gt;：作者，是在 &lt;code&gt;npmjs.org&lt;/code&gt; 网站上的有效账户名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;main&lt;/code&gt;：指定加载入口，默认值时模块根目录下的 index.js&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;script&lt;/code&gt;：指定命令行缩写所要执行的命令，默认是一个空的 &lt;code&gt;test&lt;/code&gt; 脚本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;repository&lt;/code&gt;：代码库地址，会直接在组件库的 npm 首页生效&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bugs&lt;/code&gt;：开发者联系方式，一般是代码库的 issues 地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dependencies&lt;/code&gt;：指定项目运行所需要的模块&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;devDependencies&lt;/code&gt;：指定项目开发所需要的模块&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;：指定各个内部命令对应的可执行文件的位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;license&lt;/code&gt;：开源协议，可看&lt;a href=&#34;https://choosealicense.com/&#34;&gt;Choose an open source license&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config&lt;/code&gt;：用于添加命令行的环境变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;依赖模块的版本&#34;&gt;依赖模块的版本&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;指定版本 16.2.3&lt;/li&gt;
+&lt;li&gt;波浪号 ~16.2.3：安装 16.2.x 的最新版本&lt;/li&gt;
+&lt;li&gt;插入号 ^16.2.3：安装 16.x.x 的最新版本&lt;/li&gt;
+&lt;li&gt;latest：安装最新版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;package-lockjson&#34;&gt;package-lock.json&lt;/h2&gt;
+&lt;p&gt;描述 &lt;code&gt;node_modules&lt;/code&gt; 文件中所有模块的版本信息，模块来源及依赖的小版本信息，将整个依赖树锁死&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.npmjs.com/cli/v7/configuring-npm/package-json&#34;&gt;npm 官网 package.json 文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.npmjs.com/cli/v7/configuring-npm/package-lock-json&#34;&gt;npm 官网 package-lock.json 文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://javascript.ruanyifeng.com/nodejs/packagejson.html&#34;&gt;package.json文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/6844904006746112007&#34;&gt;package.json 详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/2e459040a29f&#34;&gt;package-lock.json&lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/package.json-package-lock.json/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>git 笔记 (2)</title>
+        <link>https://yuanyi-au.github.io/posts/git-2/</link>
+        <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
+&lt;h2 id=&#34;git-rebase&#34;&gt;git rebase&lt;/h2&gt;
+&lt;h3 id=&#34;合并不同分支的提交&#34;&gt;合并不同分支的提交&lt;/h3&gt;
+&lt;p&gt;将 b 分支上的提交合并到 a 分支上成为一条直线&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout b
+git rebase a
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;与-merge-的区别&#34;&gt;与 merge 的区别&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;永远不要在公共项目里使用 rebase&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并&lt;/p&gt;
+&lt;p&gt;git rebase:
+&lt;img src=&#34;../images/git-rebase.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;git merge:
+&lt;img src=&#34;../images/git-merge.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add -u
+git rebase --continue
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase   前的代码则可以用命令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git rebase --abort&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;合并本地的多次提交&#34;&gt;合并本地的多次提交&lt;/h3&gt;
+&lt;p&gt;合并最新的三次提交&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git rebase -i HEAD~3&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上&lt;/p&gt;
+&lt;h2 id=&#34;cherry-pick&#34;&gt;cherry-pick&lt;/h2&gt;
+&lt;p&gt;将其他分支上的提交应用于 a 分支&lt;/p&gt;
+&lt;p&gt;在开源项目里很有用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout a
+git cherry-pick &amp;lt;CommitID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;与-rebase-的区别&#34;&gt;与 rebase 的区别&lt;/h3&gt;
+&lt;p&gt;rebase 相当于剪切粘贴， cherry-pick 相当于复制粘贴&lt;/p&gt;
+&lt;h2 id=&#34;git-reset-与-git-revert&#34;&gt;git reset 与 git revert&lt;/h2&gt;
+&lt;h3 id=&#34;git-reset&#34;&gt;git reset&lt;/h3&gt;
+&lt;p&gt;回退到指定的提交版本&lt;/p&gt;
+&lt;h3 id=&#34;git-revert&#34;&gt;git revert&lt;/h3&gt;
+&lt;p&gt;用一个新的提交来消除之前的提交，原来的 commit 内容依旧会保存在提交历史中&lt;/p&gt;
+&lt;h3 id=&#34;两者的区别&#34;&gt;两者的区别&lt;/h3&gt;
+&lt;p&gt;reset 是在正常的提交历史中,删除了指定的 commit ，HEAD 向后移动，而 revert 是在正常的提交历史中再 commit 一次，只不过是反向提交可以抵消之前的提交，它的HEAD 是一直向前的&lt;/p&gt;
+&lt;h2 id=&#34;git-pull-和-git-fetch-的区别&#34;&gt;git pull 和 git fetch 的区别&lt;/h2&gt;
+&lt;p&gt;打开本地 &lt;code&gt;.git/refs&lt;/code&gt; 文件夹我们可以看到代表本地分支的 &lt;code&gt;head&lt;/code&gt; 文件夹和代表正在跟踪的远程分支的 &lt;code&gt;remotes&lt;/code&gt; 文件夹&lt;/p&gt;
+&lt;p&gt;使用 git pull 会将两个文件夹里的 commit ID 都更新至远程库的最新 commit ID&lt;/p&gt;
+&lt;p&gt;使用 git fetch 只会将 &lt;code&gt;remotes&lt;/code&gt; 文件夹中的 commit ID 更新至远程库的最新 commit ID&lt;/p&gt;
+&lt;h2 id=&#34;git-blame&#34;&gt;git blame&lt;/h2&gt;
+&lt;p&gt;可以查看某个文件里每一行代码的最后修改提交记录&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git blame &amp;lt;filename&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sign-off&#34;&gt;sign-off&lt;/h2&gt;
+&lt;p&gt;在做开源项目时遇到要求 sign-off，用于证明提交作者&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git commit -s -m &amp;quot;&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/hudashi/article/details/7664631?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.control&amp;amp;spm=1001.2101.3001.4242&#34;&gt;git rebase简介(基本篇)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/6960811ac89c&#34;&gt;你真的懂git rebase吗？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_43425487/article/details/105620270&#34;&gt;Git应用详解第九讲：Git cherry-pick与Git rebase&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/xybelieve1990/article/details/62885292?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&#34;&gt;Git版本恢复命令reset和revert&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_41975655/article/details/82887273&#34;&gt;详解git pull和git fetch的区别&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/a19881029/article/details/42245955&#34;&gt;git fetch和git pull之间的区别&lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/git-2/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>git 笔记 (1)</title>
+        <link>https://yuanyi-au.github.io/posts/git-1/</link>
+        <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
+        <description>垃圾回收站 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
+&lt;p&gt;本篇笔记内容包括常用命令以及 commit message 规范&lt;/p&gt;
+&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
+&lt;h3 id=&#34;名词&#34;&gt;名词&lt;/h3&gt;
+&lt;p&gt;workplace 工作区&lt;/p&gt;
+&lt;p&gt;stage 暂存区&lt;/p&gt;
+&lt;p&gt;repository 本地仓库&lt;/p&gt;
+&lt;p&gt;remote 远程仓库&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新建仓库&#34;&gt;新建仓库&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git init&lt;/code&gt; 在当前目录新建一个本地仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone&lt;/code&gt; 将一个远程仓库的内容下载到本地&lt;/p&gt;
+&lt;h3 id=&#34;文件的增加删除提交&#34;&gt;文件的增加、删除、提交&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git add [filename]&lt;/code&gt; 将文件从工作区添加到暂存区&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git rm [filename]&lt;/code&gt; 删除工作区文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git rm --cached [filename]&lt;/code&gt; 停止追踪指定文件，但该文件会保留在工作区&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git mv [originalname] [newname]&lt;/code&gt; 文件重命名，并将该文件放入暂存区&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git commit - &amp;quot;message&amp;quot;&lt;/code&gt; 将暂存区文件提交到本地仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git commit -amend -m &amp;quot;message&amp;quot;&lt;/code&gt; 用一次新的 commit 代替上次 commit，可以用来改写 commit message&lt;/p&gt;
+&lt;h3 id=&#34;分支管理&#34;&gt;分支管理&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt; 查看所有本地分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git branch -a&lt;/code&gt; 查看所有本地分支与远程分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git branch [branch]&lt;/code&gt; 新建一个分支，但依然停留在当前分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout -b [branch]&lt;/code&gt; 新建一个分支并切换到该分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout [branch]&lt;/code&gt; 切换到指定分支，并更新工作区&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git merge [branch]&lt;/code&gt; 将指定分支合并到当前分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git branch -d [branch]&lt;/code&gt; 删除本地分支&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push origin --delete [branch]&lt;/code&gt; 删除远程分支&lt;/p&gt;
+&lt;h3 id=&#34;远程仓库&#34;&gt;远程仓库&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git remote -v&lt;/code&gt; 查看所有远程仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote add [name] [url]&lt;/code&gt; 添加远程仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote remove [name]&lt;/code&gt; 删除远程仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git fetch [remote]&lt;/code&gt; 下载远程仓库的所有变动&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git pull [remote] [branch]&lt;/code&gt; 下载远程仓库的变动并与本地仓库合并&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push [remote] [branch]&lt;/code&gt; 将本地分支推送到远程分支&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git config --list&lt;/code&gt; 显示当前配置&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config -e&lt;/code&gt; 编辑配置文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 显示所有变更文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt; 显示当前分支的版本历史&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git reset --soft [commit_id]&lt;/code&gt; 回退到某一个 commit 版本，工作区和暂存区不变&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git reset --hard [commit_id]&lt;/code&gt; 回退到某一个 commit 版本，工作区和暂存区也随之更改&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff&lt;/code&gt; 显示暂存区与工作区的差异&lt;/p&gt;
+&lt;h2 id=&#34;commit-message-规范&#34;&gt;commit message 规范&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/eb16595d0c6862c0c013a36c339317a4d82bdce7/9195b/images/posts/2019-11-01-understanding-semantic-commit-messages-using-git-and-angular/conventions-diagram.png&#34; alt=&#34;不同的 commit message 规范&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通常我们都用 Angular 的规范，具体可以参见 &lt;a href=&#34;https://www.conventionalcommits.org/en/v1.0.0/&#34;&gt;Conventional Commits&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;组成&#34;&gt;组成&lt;/h3&gt;
+&lt;p&gt;commit message 包括三部分：header，body 和 footer&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;type&amp;gt;[optional scope]: &amp;lt;description&amp;gt;
+
+[optional body]
+
+[optional footer(s)]
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;header&#34;&gt;Header&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;type：用于说明 commit 的类别
+&lt;ul&gt;
+&lt;li&gt;feat：增加新功能&lt;/li&gt;
+&lt;li&gt;fix：修 bug&lt;/li&gt;
+&lt;li&gt;docs：文档变动&lt;/li&gt;
+&lt;li&gt;style：格式变动，不改变代码逻辑&lt;/li&gt;
+&lt;li&gt;refactor：重构（既非feat又非fix的影响代码运行的改动）&lt;/li&gt;
+&lt;li&gt;test：增加测试&lt;/li&gt;
+&lt;li&gt;chore(or build)：构建过程或辅助工具变动&lt;/li&gt;
+&lt;li&gt;ci：与持续集成相关的变动&lt;/li&gt;
+&lt;li&gt;perf：改善性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;scope：用于说明 commit 影响的范围，例如数据层、控制层、视图层等&lt;/li&gt;
+&lt;li&gt;subject：用于描述 commit 目的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;body&#34;&gt;Body&lt;/h4&gt;
+&lt;p&gt;对 commit 的详细描述，可以分成多行&lt;/p&gt;
+&lt;h4 id=&#34;footer&#34;&gt;Footer&lt;/h4&gt;
+&lt;p&gt;只用于两种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当前代码与上一版本代码不兼容，则 footer 以 BREAKING CHANGE 开头，接着描述变动的内容、理由及迁移方法&lt;/li&gt;
+&lt;li&gt;针对某个 Issue，可以在 footer 部分关闭这个 Issue &lt;code&gt;Close #65 #77&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;revert&#34;&gt;Revert&lt;/h4&gt;
+&lt;p&gt;如果当前 commit 是用来撤销之前的 commit，则必须以 &lt;code&gt;revert:&lt;/code&gt; 开头，后面跟着被撤销的 commit 的 header&lt;/p&gt;
+&lt;p&gt;body 部分则必须写成 &lt;code&gt;This  reverts commit 667ecc1654a317a13331b17617d973392f415f02.&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;规则&#34;&gt;规则&lt;/h3&gt;
+&lt;p&gt;优秀的 commit massage 应该遵循以下七条规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;subject 和 body 之间空一行&lt;/li&gt;
+&lt;li&gt;subject字数限制在50字符以内&lt;/li&gt;
+&lt;li&gt;行首字母大写&lt;/li&gt;
+&lt;li&gt;subject 不要以句号结尾&lt;/li&gt;
+&lt;li&gt;subject 使用祈使句&lt;/li&gt;
+&lt;li&gt;body 不超过72个字符&lt;/li&gt;
+&lt;li&gt;用 body 部分解释此次 commit 的改动及其原因&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;feat(lang): add polish language&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;refactor!: drop support for Node 6 //使用感叹号代表 breaking change&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fix: correct minor typos in code
+
+see the issue for details
+
+on typos fixed.
+
+Reviewed-by: Z
+Refs #133
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.conventionalcommits.org/en/v1.0.0/&#34;&gt;Conventional Commits 1.0.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chris.beams.io/posts/git-commit/&#34;&gt;How to Write a Git Commit Message&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://nitayneeman.com/posts/understanding-semantic-commit-messages-using-git-and-angular/&#34;&gt;Understanding Semantic Commit Messages Using Git and Angular&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html&#34;&gt;常用 Git 命令清单&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html&#34;&gt;Commit message 和 Change log 编写指南&lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/git-1/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
     
   </channel>
-</rss>
+</rss> 

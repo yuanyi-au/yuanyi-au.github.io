@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>转码 on 垃圾回收站</title>
+    <link>https://yuanyi-au.github.io/categories/%E8%BD%AC%E7%A0%81/</link>
+    <description>Recent content in 转码 on 垃圾回收站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/categories/%E8%BD%AC%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习历程</title>
+      <link>https://yuanyi-au.github.io/posts/learning-process/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/learning-process/</guid>
+      <description>学习历程 慢慢反思总结写一下这段时间走过的路&amp;hellip;&amp;hellip;
+第一阶段（2020.11初~2021.1中） 当初开始学计算机可能是想尝试一下其他道路，反正我也很喜欢接触新东西，更新自己感觉很快乐。学了 Python 之后发现自己还蛮有兴趣的，每天疯狂搜索各种东西，最后决定转码。因为这段时间也正好在大三上的后半学期，期末月还是挺忙的，学得比较水，现在 Python 已经基本忘光了。当时确定考完试就开始学前端。
+刚开始是跟着廖雪峰的网站学，半途开始看慕课上的 Python 入门课程（好像是北理的？反正很火的那个），我觉得如果是完全计算机零基础的话应该先看慕课，因为慕课会讲到一些计算机的基础概念。
+第二阶段（2021.1中~2021.4中） 从寒假一开始就开始学 JavaScript/CSS/HTML，同时学了计算机网络、数据结构与算法，大概到三月份的时候开始学 React。整个假期每天在家几乎所有时间都在面对电脑，因为想在开学之后尽快找实习。
+前端部分是在 GitHub 上找了个教程，计网看了谢希仁的《计算机网络》（我居然坚持一字不漏地看完了哈哈，现在也忘光了），数据结构看了慕课上北大的 python 数据结构课程，还有《算法图解》《剑指offer》。
+第三阶段（2021.4末~2021.5初） 开始疯狂实战做项目，跟着油管视频七天敲了八个小项目（油管项目超级多，从这里上手挺不错的），然后开始自己模仿着写，做了个简单的 React 网站，学了点 React Native 做了个小项目。
+然后，就开始投简历找实习，但最后因为学校的原因，以及和几个面试官聊过之后感觉自己还是更想沉下心来继续学习，就放弃了找实习。
+第四阶段（2021.5初~2021.6末） 这段时间基本在忙期末和学校安排的实习，申请了开源之夏的项目，空闲时间继续学习，在看红宝书。
+第五阶段（2021.7初~2021.8末） 这段时间可能是我收获最大的时期，第一次参与开源项目，和别人合作体验到了这行的氛围。转码大半年，终于到了面临秋招的时刻，我也忽然开始反思许多东西，思考自己对未来的真正期望（是很复杂很私人的问题，以后会写文章说说）。
+第六阶段（2021.8末~unknow） 秋招开始，大概之后也没有什么好说的啦，找到工作后会好好总结，希望这一天快点到来。</description>
+    </item>
+    
+  </channel>
+</rss>

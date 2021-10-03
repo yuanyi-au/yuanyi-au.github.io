@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html><head>
+<title>利用 Hugo 搭建网站</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="利用 Hugo 搭建网站" />
+<meta property="og:description" content="利用 Hugo 搭建网站 本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
+快速开始 Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
+请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便
+MacOS： 其它系统的安装过程可以看官网文档
+新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themescontent 文件夹 存放网站的主要内容 md 文件
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：
+---title: &quot;Helloworld&quot;date: {{ ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuanyi-au.github.io/posts/hugo-website/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-06T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="利用 Hugo 搭建网站"/>
+<meta name="twitter:description" content="利用 Hugo 搭建网站 本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
+快速开始 Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
+请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便
+MacOS： 其它系统的安装过程可以看官网文档
+新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themescontent 文件夹 存放网站的主要内容 md 文件
+在该文件夹下的文件结构目录直接对应网站结构
+通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：
+---title: &quot;Helloworld&quot;date: {{ ."/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/dark-mode.min.f7c2efa7183435a6bd1842f91c541481c7a5137b5991629a870f24e4a516ad4b.css" integrity="sha256-98Lvpxg0Naa9GEL5HFQUgcelE3tZkWKahw8k5KUWrUs=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'df402f42b44a5132782e',
+  clientSecret: '91abb6d2335e7f2ea53a51b42eda9f6b332f283c',
+  repo: 'gitalk-comments',
+  owner: 'yuanyi-au',
+  admin: ['yuanyi-au'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://yuanyi-au.github.io/">
+    
+        <div class="nav-title">
+            垃圾回收站
+        </div>
+        
+        <div class="nav-subtitle">
+            yuanyi&#39;s blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                文章
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a9%e7%94%a8-hugo-%e6%90%ad%e5%bb%ba%e7%bd%91%e7%ab%99" onclick="onNavClick(`#利用-hugo-搭建网站-nav`)" id="利用-hugo-搭建网站-nav">
+									利用 Hugo 搭建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%bf%ab%e9%80%9f%e5%bc%80%e5%a7%8b" onclick="onNavClick(`#快速开始-nav`)" id="快速开始-nav">
+									快速开始
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#windows" onclick="onNavClick(`#windows-nav`)" id="windows-nav">
+									Windows:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#macos" onclick="onNavClick(`#macos-nav`)" id="macos-nav">
+									MacOS：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b0%e5%bb%ba%e7%bd%91%e7%ab%99" onclick="onNavClick(`#新建网站-nav`)" id="新建网站-nav">
+									新建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e7%9b%ae%e5%bd%95" onclick="onNavClick(`#结构目录-nav`)" id="结构目录-nav">
+									结构目录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#content-%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#content-文件夹-nav`)" id="content-文件夹-nav">
+									content 文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#layouts-%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#layouts-文件夹-nav`)" id="layouts-文件夹-nav">
+									layouts 文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#themes%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#themes文件夹-nav`)" id="themes文件夹-nav">
+									themes文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#configtoml-%e6%96%87%e4%bb%b6" onclick="onNavClick(`#configtoml-文件-nav`)" id="configtoml-文件-nav">
+									config.toml 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e9%a2%98%e5%a4%96%e8%a7%82" onclick="onNavClick(`#主题外观-nav`)" id="主题外观-nav">
+									主题外观
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e7%8e%b0%e6%9c%89%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#使用现有主题-nav`)" id="使用现有主题-nav">
+									使用现有主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%8e%b0%e6%9c%89%e4%b8%bb%e9%a2%98%e6%a8%a1%e6%9d%bf%e7%9a%84%e4%b8%aa%e6%80%a7%e5%8c%96" onclick="onNavClick(`#现有主题模板的个性化-nav`)" id="现有主题模板的个性化-nav">
+									现有主题模板的个性化
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%b7%b1%e5%88%9b%e5%bb%ba%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#自己创建主题-nav`)" id="自己创建主题-nav">
+									自己创建主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%ab%99%e7%82%b9%e9%83%a8%e7%bd%b2" onclick="onNavClick(`#站点部署-nav`)" id="站点部署-nav">
+									站点部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%8a%8a%e7%bd%91%e7%ab%99%e9%83%a8%e7%bd%b2%e5%88%b0-github-%e4%b8%8a" onclick="onNavClick(`#把网站部署到-github-上-nav`)" id="把网站部署到-github-上-nav">
+									把网站部署到 GitHub 上
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8a%8a%e7%bd%91%e7%ab%99%e9%83%a8%e7%bd%b2%e5%88%b0-netlify-%e4%b8%8a" onclick="onNavClick(`#把网站部署到-netlify-上-nav`)" id="把网站部署到-netlify-上-nav">
+									把网站部署到 Netlify 上
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98" onclick="onNavClick(`#其他问题-nav`)" id="其他问题-nav">
+									其他问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#public-%e6%96%87%e4%bb%b6%e5%a4%b9%e6%b8%b2%e6%9f%93%e5%87%ba%e9%94%99" onclick="onNavClick(`#public-文件夹渲染出错-nav`)" id="public-文件夹渲染出错-nav">
+									Public 文件夹渲染出错
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%89%be%e4%b8%8d%e5%88%b0%e6%96%b0%e5%a2%9e%e7%9a%84%e9%a1%b5%e9%9d%a2" onclick="onNavClick(`#找不到新增的页面-nav`)" id="找不到新增的页面-nav">
+									找不到新增的页面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e7%89%87%e5%8a%a0%e8%bd%bd%e9%97%ae%e9%a2%98" onclick="onNavClick(`#图片加载问题-nav`)" id="图片加载问题-nav">
+									图片加载问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9c%80%e5%90%8e%e4%bf%ae%e6%94%b9%e6%97%b6%e9%97%b4" onclick="onNavClick(`#最后修改时间-nav`)" id="最后修改时间-nav">
+									最后修改时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    文章
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a9%e7%94%a8-hugo-%e6%90%ad%e5%bb%ba%e7%bd%91%e7%ab%99" onclick="onNavClick(`#利用-hugo-搭建网站-nav`)" id="利用-hugo-搭建网站-nav">
+									利用 Hugo 搭建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%bf%ab%e9%80%9f%e5%bc%80%e5%a7%8b" onclick="onNavClick(`#快速开始-nav`)" id="快速开始-nav">
+									快速开始
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#windows" onclick="onNavClick(`#windows-nav`)" id="windows-nav">
+									Windows:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#macos" onclick="onNavClick(`#macos-nav`)" id="macos-nav">
+									MacOS：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b0%e5%bb%ba%e7%bd%91%e7%ab%99" onclick="onNavClick(`#新建网站-nav`)" id="新建网站-nav">
+									新建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e7%9b%ae%e5%bd%95" onclick="onNavClick(`#结构目录-nav`)" id="结构目录-nav">
+									结构目录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#content-%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#content-文件夹-nav`)" id="content-文件夹-nav">
+									content 文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#layouts-%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#layouts-文件夹-nav`)" id="layouts-文件夹-nav">
+									layouts 文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#themes%e6%96%87%e4%bb%b6%e5%a4%b9" onclick="onNavClick(`#themes文件夹-nav`)" id="themes文件夹-nav">
+									themes文件夹
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#configtoml-%e6%96%87%e4%bb%b6" onclick="onNavClick(`#configtoml-文件-nav`)" id="configtoml-文件-nav">
+									config.toml 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e9%a2%98%e5%a4%96%e8%a7%82" onclick="onNavClick(`#主题外观-nav`)" id="主题外观-nav">
+									主题外观
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e7%8e%b0%e6%9c%89%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#使用现有主题-nav`)" id="使用现有主题-nav">
+									使用现有主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%8e%b0%e6%9c%89%e4%b8%bb%e9%a2%98%e6%a8%a1%e6%9d%bf%e7%9a%84%e4%b8%aa%e6%80%a7%e5%8c%96" onclick="onNavClick(`#现有主题模板的个性化-nav`)" id="现有主题模板的个性化-nav">
+									现有主题模板的个性化
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%b7%b1%e5%88%9b%e5%bb%ba%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#自己创建主题-nav`)" id="自己创建主题-nav">
+									自己创建主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%ab%99%e7%82%b9%e9%83%a8%e7%bd%b2" onclick="onNavClick(`#站点部署-nav`)" id="站点部署-nav">
+									站点部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%8a%8a%e7%bd%91%e7%ab%99%e9%83%a8%e7%bd%b2%e5%88%b0-github-%e4%b8%8a" onclick="onNavClick(`#把网站部署到-github-上-nav`)" id="把网站部署到-github-上-nav">
+									把网站部署到 GitHub 上
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8a%8a%e7%bd%91%e7%ab%99%e9%83%a8%e7%bd%b2%e5%88%b0-netlify-%e4%b8%8a" onclick="onNavClick(`#把网站部署到-netlify-上-nav`)" id="把网站部署到-netlify-上-nav">
+									把网站部署到 Netlify 上
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98" onclick="onNavClick(`#其他问题-nav`)" id="其他问题-nav">
+									其他问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#public-%e6%96%87%e4%bb%b6%e5%a4%b9%e6%b8%b2%e6%9f%93%e5%87%ba%e9%94%99" onclick="onNavClick(`#public-文件夹渲染出错-nav`)" id="public-文件夹渲染出错-nav">
+									Public 文件夹渲染出错
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%89%be%e4%b8%8d%e5%88%b0%e6%96%b0%e5%a2%9e%e7%9a%84%e9%a1%b5%e9%9d%a2" onclick="onNavClick(`#找不到新增的页面-nav`)" id="找不到新增的页面-nav">
+									找不到新增的页面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e7%89%87%e5%8a%a0%e8%bd%bd%e9%97%ae%e9%a2%98" onclick="onNavClick(`#图片加载问题-nav`)" id="图片加载问题-nav">
+									图片加载问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9c%80%e5%90%8e%e4%bf%ae%e6%94%b9%e6%97%b6%e9%97%b4" onclick="onNavClick(`#最后修改时间-nav`)" id="最后修改时间-nav">
+									最后修改时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://yuanyi-au.github.io/">
+            垃圾回收站
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://yuanyi-au.github.io/">
+        <div class="single-column-header-title">垃圾回收站</div>
+        
+        <div class="single-column-header-subtitle">yuanyi&#39;s blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    利用 Hugo 搭建网站
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-08-06 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/hugo">Hugo</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/hugo">hugo</a>
+                                &nbsp;
+                            
+                                <a href="/tags/blog">blog</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="利用-hugo-搭建网站">利用 Hugo 搭建网站</h1>
+<p>本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法</p>
+<h2 id="快速开始">快速开始</h2>
+<h3 id="windows">Windows:</h3>
+<p>最简单的方法是直接下载 <a href="https://github.com/gohugoio/hugo/releases">最新版本的 hugo</a> 安装</p>
+<p>请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题</p>
+<p><strong>注意：要把 hugo 的路径添加到环境变量 Path 中！</strong></p>
+<p>我在下载安装扩展版本的时候有点问题，最后重新用 <a href="https://gohugo.io/getting-started/installing/#chocolatey-windows">Chocolatey</a> 安装成功，非常方便</p>
+<h3 id="macos">MacOS：</h3>
+<p><a href="https://gohugo.io/getting-started/installing/">其它系统的安装过程可以看官网文档</a></p>
+<h3 id="新建网站">新建网站</h3>
+<p><code>hugo version</code> 检查安装是否成功</p>
+<p><code>hugo new site [sitename]</code> 创建一个新的网站</p>
+<p><code>hugo server</code> 开启 Hugo 服务器，可以在本地预览调试网站</p>
+<h2 id="结构目录">结构目录</h2>
+<pre><code>.
+├── archetypes 
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+</code></pre><h3 id="content-文件夹">content 文件夹</h3>
+<p>存放网站的主要内容 md 文件</p>
+<p>在该文件夹下的文件结构目录直接对应网站结构</p>
+<p>通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：</p>
+<pre><code>---
+title: &quot;Helloworld&quot;
+date: {{ .Date }}
+draft: true
+---
+</code></pre><p>除了 title 必需，其他可以省略</p>
+<h3 id="layouts-文件夹">layouts 文件夹</h3>
+<p>存放网站 HTML 模板，包括 index、particials、single page、list pages 等</p>
+<h3 id="themes文件夹">themes文件夹</h3>
+<p>存放现有的 Hugo 主题模板</p>
+<h3 id="configtoml-文件">config.toml 文件</h3>
+<p>配置文件，最基础的设置如下：</p>
+<pre><code>baseURL = &quot;http://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;Blog&quot;
+
+#导航栏菜单
+[menu]
+[[menu.main]]
+    identifier = &quot;about&quot;
+    name = &quot;about&quot;
+    url = &quot;/about&quot;
+    weight = 1  #weight数字越小排序越靠前
+</code></pre><h2 id="主题外观">主题外观</h2>
+<p>可以直接使用 Hugo 现有的主题模板，也可以自己编写主题模板</p>
+<h3 id="使用现有主题">使用现有主题</h3>
+<ol>
+<li>
+<p>在 <a href="https://themes.gohugo.io/">Hugo 官网</a> 或者 GitHub 上寻找合适的 Hugo 主题</p>
+</li>
+<li>
+<p>进入 <code>themes</code> 文件夹，<code>git clone</code> 想要使用的主题</p>
+</li>
+<li>
+<p>在配置文件中添加主题：<code>theme = &quot;themename&quot;</code></p>
+</li>
+</ol>
+<h4 id="现有主题模板的个性化">现有主题模板的个性化</h4>
+<p><code>themes</code> 文件夹里主要修改 <code>assets</code> 和 <code>layouts</code> 两个文件夹，前者存放 css 和 js 文件，后者存放 html 文件</p>
+<p><code>layouts</code> 文件夹里主要修改 <code>partials</code> 和 <code>shortcodes</code> 两个文件夹里的 html 文件</p>
+<h3 id="自己创建主题">自己创建主题</h3>
+<ol>
+<li>
+<p>在 <code>layout</code> 中创建 <code>_default</code> 文件夹、 <code>index.html</code> 和 <code>404.html</code> 文件</p>
+</li>
+<li>
+<p>在 <code>_default</code> 文件夹中创建 <code>single.html</code> 和 <code>list.html</code> 文件</p>
+</li>
+<li>
+<p>在 <code>static</code> 文件夹中创建 <code>css</code> 文件定义样式</p>
+</li>
+</ol>
+<p>注意：在 <code>_index.md</code> 中的内容永远都会依照 list 模板渲染，而非 single</p>
+<h2 id="站点部署">站点部署</h2>
+<h3 id="把网站部署到-github-上">把网站部署到 GitHub 上</h3>
+<ol>
+<li>
+<p>在 GitHub 上创建一个新仓库 A ，名字随便起（例如 blog），该仓库用于存放完整的代码</p>
+</li>
+<li>
+<p>创建另一个新仓库 B ，起名为 <code>github_id.github.io</code> （例如 yuanyi-au.github.io ），该仓库用于网站部署</p>
+</li>
+<li>
+<p>将本地代码与 GitHub 上的仓库 A 关联</p>
+</li>
+<li>
+<p>进入本地代码文件根目录：</p>
+<p><code>git submodule add -b main &lt;仓库 B 地址&gt; public</code></p>
+</li>
+</ol>
+<p>生成 <code>public</code> 文件夹并将其关联到仓库 B 上，push 之后可以在 GitHub 仓库 B 的页面上看到 <code>public</code> 文件夹的内容</p>
+<ol start="5">
+<li>在仓库 B 的设置中可以找到 GitHub Pages，可以看到网站地址 <code>github_id.github.io</code>，就可以进行访问了</li>
+</ol>
+<p><strong>注意：<code>public</code> 文件夹的内容需要每次在项目根目录执行 <code>hugo</code> 命令后才会更新</strong></p>
+<h3 id="把网站部署到-netlify-上">把网站部署到 Netlify 上</h3>
+<p>可以参考这篇笔记 <a href="https://yuanyi-au.github.io/notes/netlify/">使用 netlify 预览 GitHub 上的 PR</a> ，不做最后一步就行啦</p>
+<h2 id="其他问题">其他问题</h2>
+<h3 id="public-文件夹渲染出错">Public 文件夹渲染出错</h3>
+<p>问题描述：</p>
+<p><code>hugo server</code> 在本地运行时没有问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件</p>
+<p>问题解决：</p>
+<p>问题出在 Hugo 本身处理 URL 的方式上，可以参见 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a></p>
+<pre><code>baseURL = &quot;//example.org&quot;
+relativeURLs = true
+</code></pre><p>上面的方法没有解决我的问题，后来试了两种方法可行：</p>
+<p><code># baseURL = &quot;example.org&quot;</code></p>
+<p><code>baseURL = &quot;\&quot;</code></p>
+<h3 id="找不到新增的页面">找不到新增的页面</h3>
+<p>问题描述：</p>
+<p>增加的内容在 index 页面有链接，但点开却找不到页面</p>
+<p>问题解决：</p>
+<p>使用 <code>hugo -t theme_name</code> 代替 <code>hugo</code> 命令进行编译</p>
+<h3 id="图片加载问题">图片加载问题</h3>
+<p>问题描述：</p>
+<p>Markdown 文档里的本地图片无法显示</p>
+<p>解决方法：</p>
+<p>我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以</p>
+<p>目录结构：</p>
+<pre><code>
+├── content
+	└── posts 
+		├── cat.md
+		├── dog.md
+		└── images
+			├── cat.png
+			└── dog.png
+</code></pre><p>在图片链接：
+<code>![dog](../images/dog.png)</code></p>
+<h3 id="最后修改时间">最后修改时间</h3>
+<p>可以通过两种方式记录 Last Modified 时间</p>
+<ol>
+<li>在文档开头加上时间</li>
+</ol>
+<pre><code>date: 1990-01-01T00:00:00+00:00
+lastmod: 1995-04-04T00:00:00+00:00
+</code></pre><ol start="2">
+<li>在 config.toml 内设置使用 Git 记录</li>
+</ol>
+<p><code>enableGitInfo = true</code></p>
+<h2 id="参考资料">参考资料</h2>
+<p><a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3"> Hugo - Static Site Generator | Tutorial </a></p>
+<p><a href="https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=247s"> Creating a Blog with Hugo and Github in 10 minutes </a></p>
+<p><a href="https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;list=LLm-KB0VAVChbSZPeDA_WqSg"> Creating your own Hugo Theme! </a></p>
+<p><a href="https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/"> Creating a Hugo Theme From Scratch </a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-08-06</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://yuanyi-au.github.io/posts/netlify/">
+			下篇<br>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://yuanyi-au.github.io/posts/package.json-package-lock.json/">
+			上篇<br>package.json 与 package-lock.json
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
