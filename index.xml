@@ -1,41 +1,452 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>垃圾回收站</title>
+    <title>方圆</title>
     <link>https://yuanyi-au.github.io/</link>
-    <description>Recent content on 垃圾回收站</description>
+    <description>Recent content on 方圆</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 Yuanyi. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://yuanyi-au.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
-        <title>学习历程</title>
-        <link>https://yuanyi-au.github.io/posts/learning-process/</link>
-        <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+        <title>Hugo 详细笔记（建站教程、工作原理）</title>
+        <link>https://yuanyi-au.github.io/posts/hugo/</link>
+        <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://yuanyi-au.github.io/posts/learning-process/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/learning-process/ -&lt;h1 id=&#34;学习历程&#34;&gt;学习历程&lt;/h1&gt;
-&lt;p&gt;慢慢反思总结写一下这段时间走过的路&amp;hellip;&amp;hellip;&lt;/p&gt;
-&lt;h2 id=&#34;第一阶段202011初20211中&#34;&gt;第一阶段（2020.11初~2021.1中）&lt;/h2&gt;
-&lt;p&gt;当初开始学计算机可能是想尝试一下其他道路，反正我也很喜欢接触新东西，更新自己感觉很快乐。学了 Python 之后发现自己还蛮有兴趣的，每天疯狂搜索各种东西，最后决定转码。因为这段时间也正好在大三上的后半学期，期末月还是挺忙的，学得比较水，现在 Python 已经基本忘光了。当时确定考完试就开始学前端。&lt;/p&gt;
-&lt;p&gt;刚开始是跟着廖雪峰的网站学，半途开始看慕课上的 Python 入门课程（好像是北理的？反正很火的那个），我觉得如果是完全计算机零基础的话应该先看慕课，因为慕课会讲到一些计算机的基础概念。&lt;/p&gt;
-&lt;h2 id=&#34;第二阶段20211中20214中&#34;&gt;第二阶段（2021.1中~2021.4中）&lt;/h2&gt;
-&lt;p&gt;从寒假一开始就开始学 JavaScript/CSS/HTML，同时学了计算机网络、数据结构与算法，大概到三月份的时候开始学 React。整个假期每天在家几乎所有时间都在面对电脑，因为想在开学之后尽快找实习。&lt;/p&gt;
-&lt;p&gt;前端部分是在 GitHub 上找了个教程，计网看了谢希仁的《计算机网络》（我居然坚持一字不漏地看完了哈哈，现在也忘光了），数据结构看了慕课上北大的 python 数据结构课程，还有《算法图解》《剑指offer》。&lt;/p&gt;
-&lt;h2 id=&#34;第三阶段20214末20215初&#34;&gt;第三阶段（2021.4末~2021.5初）&lt;/h2&gt;
-&lt;p&gt;开始疯狂实战做项目，跟着油管视频七天敲了八个小项目（油管项目超级多，从这里上手挺不错的），然后开始自己模仿着写，做了个简单的 React 网站，学了点 React Native 做了个小项目。&lt;/p&gt;
-&lt;p&gt;然后，就开始投简历找实习，但最后因为学校的原因，以及和几个面试官聊过之后感觉自己还是更想沉下心来继续学习，就放弃了找实习。&lt;/p&gt;
-&lt;h2 id=&#34;第四阶段20215初20216末&#34;&gt;第四阶段（2021.5初~2021.6末）&lt;/h2&gt;
-&lt;p&gt;这段时间基本在忙期末和学校安排的实习，申请了开源之夏的项目，空闲时间继续学习，在看红宝书。&lt;/p&gt;
-&lt;h2 id=&#34;第五阶段20217初20218末&#34;&gt;第五阶段（2021.7初~2021.8末）&lt;/h2&gt;
-&lt;p&gt;这段时间可能是我收获最大的时期，第一次参与开源项目，和别人合作体验到了这行的氛围。转码大半年，终于到了面临秋招的时刻，我也忽然开始反思许多东西，思考自己对未来的真正期望（是很复杂很私人的问题，以后会写文章说说）。&lt;/p&gt;
-&lt;h2 id=&#34;第六阶段20218末unknow&#34;&gt;第六阶段（2021.8末~unknow）&lt;/h2&gt;
-&lt;p&gt;秋招开始，大概之后也没有什么好说的啦，找到工作后会好好总结，希望这一天快点到来。&lt;/p&gt;
-- https://yuanyi-au.github.io/posts/learning-process/ - 2021 Yuanyi. All rights reserved.</description>
+        <guid>https://yuanyi-au.github.io/posts/hugo/</guid>
+        <description>方圆 https://yuanyi-au.github.io/posts/hugo/ -&lt;h1 id=&#34;基本概念&#34;&gt;基本概念&lt;/h1&gt;
+&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;
+&lt;p&gt;Hugo 是一个用 Go 编写的快速静态网站生成器，具有极快的构建速度（每个页面小于1毫秒），拥有大量现成主题，在开发过程中通过 liveload 即时渲染更改，可以托管在任何平台，是一个理想的建站工具。&lt;/p&gt;
+&lt;h2 id=&#34;静态网站生成器&#34;&gt;静态网站生成器&lt;/h2&gt;
+&lt;p&gt;网站生成器的目的是将内容转换为 HTML 文件，大多数网站生成器是动态的，这意味着每次用户请求页面时 HTTP 服务器都会运行生成器以创建新的 HTML 文件。动态站点生成器会将 HTML 文件缓存下来，以提高页面的加载速度。而 Hugo 更进一步，将 HTML 文件直接在计算机上渲染。在将文件复制到托管 HTTP 服务器的计算机之前可以在本地查看这些文件。因为 HTML 文件不是动态生成的，所以 Hugo 是一个静态网站生成器。&lt;/p&gt;
+&lt;h1 id=&#34;快速建站&#34;&gt;快速建站&lt;/h1&gt;
+&lt;h2 id=&#34;快速开始&#34;&gt;快速开始&lt;/h2&gt;
+&lt;h3 id=&#34;在-windows-上安装&#34;&gt;在 Windows 上安装&lt;/h3&gt;
+&lt;p&gt;最简单的方法是直接下载 &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;最新版本的 hugo&lt;/a&gt; 安装&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意：要把 hugo 的路径添加到环境变量 Path 中！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;我自己在下载安装扩展版本的时候有点问题，最后重新用 &lt;a href=&#34;https://gohugo.io/getting-started/installing/#chocolatey-windows&#34;&gt;Chocolatey&lt;/a&gt; 安装成功，非常方便。其它系统的安装过程可以看 &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;官网文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;新建网站&#34;&gt;新建网站&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;hugo version&lt;/code&gt; 检查安装是否成功&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo new site [sitename]&lt;/code&gt; 创建一个新的网站&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 开启 Hugo 服务器，可以在本地预览调试网站&lt;/p&gt;
+&lt;h3 id=&#34;结构目录&#34;&gt;结构目录&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;.
+├── archetypes 
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;archetypes 文件夹：存放 front matter（前置数据）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;content 文件夹：存放网页的主要内容 Markdown 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;layouts 文件夹：存放 HTML 模板&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;themes 文件夹：存放现有的主题模板&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;config.toml 文件：全局配置文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;data 文件夹：存放数据文件，通常是 json/yaml/toml 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;static 文件夹：存放静态文件，会被直接复制到 public 目录下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;使用现有-hugo-主题&#34;&gt;使用现有 Hugo 主题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;Hugo 官网&lt;/a&gt; 或者 GitHub 上寻找合适的 Hugo 主题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入 &lt;code&gt;themes&lt;/code&gt; 文件夹，&lt;code&gt;git clone&lt;/code&gt; 想要使用的主题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在配置文件中添加主题：&lt;code&gt;theme = &amp;quot;themename&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;站点部署&#34;&gt;站点部署&lt;/h3&gt;
+&lt;p&gt;利用 Hugo 搭建的网站可以托管在任何地方，包括 Netlify、Heroku、GoDaddy、DreamHost、GitHub Pages、GitLab Pages、Surge、Aerobatic、Firebase、Google Cloud Storage、Amazon S3、Rackspace、Azure 和 CloudFront，并且可以很好地与 CDN 配合使用。无需依赖数据库或 runtime 即可运行。&lt;/p&gt;
+&lt;h4 id=&#34;部署到-github-pages&#34;&gt;部署到 GitHub Pages&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;进入本地代码根目录，执行 &lt;code&gt;hugo&lt;/code&gt; 生成 &lt;code&gt;public&lt;/code&gt; 文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 GitHub 上创建一个新仓库，起名为 &lt;code&gt;github_id.github.io&lt;/code&gt; （例如 yuanyi-au.github.io ），将本地 &lt;code&gt;public&lt;/code&gt; 文件夹与此仓库关联，push 到远程仓库中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 GitHub 仓库设置中找到 GitHub Pages，可以看到网站地址 &lt;code&gt;github_id.github.io&lt;/code&gt;，就能进行访问了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：&lt;code&gt;public&lt;/code&gt; 文件夹的内容需要每次在项目根目录执行 &lt;code&gt;hugo&lt;/code&gt; 命令后才会更新，然后 push 到远程仓库中由 GitHub Pages 部署&lt;/p&gt;
+&lt;h4 id=&#34;部署到-netlify&#34;&gt;部署到 Netlify&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装 &lt;a href=&#34;https://github.com/apps/netlify&#34;&gt; Netlify &lt;/a&gt;，授权 GitHub 账号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New site from Git&lt;/p&gt;
+&lt;p&gt;选择平台 - 选择仓库 - 选择分支 - 基本设置（&lt;a href=&#34;https://docs.netlify.com/configure-builds/common-configurations/&#34;&gt;Build command &amp;amp; Publish directory&lt;/a&gt;） - deploy site，部署成功就可以访问了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;工作原理&#34;&gt;工作原理&lt;/h1&gt;
+&lt;p&gt;如果需要对现有主题进行布局方面的修改，甚至自己创建一个新的主题，就不得不对 Hugo 的工作原理有一定了解。同一些其他的静态网站生成器（如 Jekyll ）一样，Hugo 将网站的内容和逻辑分离开来，方便更好地管理网站内容。在这里简单介绍一下 Hugo 中的内容、模板、页面三个部分以及它们之间的联系。&lt;/p&gt;
+&lt;h2 id=&#34;内容&#34;&gt;内容&lt;/h2&gt;
+&lt;p&gt;Hugo 会将 content 文件夹里的 Markdown 文档转换为页面，content 文件夹的目录结构对应着网站目录结构（会生成 section tree）。例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;└── content
+    ├── _index.md          //  https://example.com/
+    ├── about.md           //  https://example.com/about/
+    ├── posts               
+    |   ├── _index.md      //  https://example.com/posts/         
+    |   ├── firstpost.md   //  https://example.com/posts/firstpost/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果通过命令行 &lt;code&gt;hugo new xxx&lt;/code&gt; 创建内容页面，Hugo 会按照 archetypes 中的设置自动创建 title、date 等 front matter。如果是在文件目录下直接创建的内容页面则需要自己在文档开头手动添加 front matter，用 “+++” 或者“&amp;mdash;”分隔。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title = &amp;quot;Hugo Website&amp;quot;
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;模板&#34;&gt;模板&lt;/h2&gt;
+&lt;p&gt;Hugo 将模板存放在两个地方：themes 和 layouts 文件夹。layouts 中的模板优先级高于 themes，如果需要修改现有模板，在 layouts 文件夹中依照 themes 文件夹的目录层级结构编写新的模板即可覆盖。&lt;/p&gt;
+&lt;h3 id=&#34;模板语法&#34;&gt;模板语法&lt;/h3&gt;
+&lt;p&gt;首先推荐一篇特别简洁实用的文章： &lt;a href=&#34;https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/&#34;&gt;Hugo, the scope, the context and the dot&lt;/a&gt;，看完这篇后基本就可以从零开始写出一个简单的模板。&lt;/p&gt;
+&lt;p&gt;Hugo 使用 Go 语言的 &lt;a href=&#34;https://pkg.go.dev/html/template&#34;&gt;html/template 库&lt;/a&gt; 作为模版引擎， 模板的标签为 &lt;code&gt;{{}}&lt;/code&gt; ,  &lt;code&gt;{{}}&lt;/code&gt; 中包含的内容叫“动作”(action)，动作分为两种类型：数据求值与控制结构。&lt;/p&gt;
+&lt;p&gt;模板是通过将它们应用于数据结构来执行的。模板中的注释引用数据结构的元素来控制执行并导出要显示的值。模板的执行会遍历结构并设置光标，
+由句点 “.” 表示，并称为“点”，随着执行的进行到结构中当前位置的值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;基础语法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//点
+{{.}}
+代表传递给模板的数据，表示当前模板的上下文，可以是 Go 语言中的任何类型，比如字符串、数组、结构体等
+
+//注释
+{{/* comment */}}
+
+//空格
+{{- pipeline -}} // 清除 pipeline 前后的空格
+{{- pipeline }} // 清除 pipeline 前面的空格
+
+//变量赋值
+{{$变量名 := &amp;quot;值&amp;quot;}}
+
+//条件判断
+{{if pipeline}} T1 {{else}} T0 {{end}}
+如果不为空则输出T1，否则输出T0
+{{if pipeline}} T1 {{else if pipeline}} T0 {{end}}
+
+//循环语句
+{{range pipeline}} T1 {{end}}
+pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组，切片遍历 map 的值，输出T1
+
+//with 重设点.的值
+{{with pipeline}} T1 {{else}} T0 {{end}}
+如果 pipeline 的值为空， 点. 的值不受影响,输出T1，否则 点. 的值设置成 pipeline 的值，输出T0
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义子模板：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//define
+{{define &amp;quot;name&amp;quot;}} T1 {{end}}
+定义一个特定名称的模板
+
+//template
+{{template &amp;quot;name&amp;quot;}}
+引入指定名称的模板，不传入任何数据.
+
+{{template &amp;quot;name&amp;quot; pipeline}}
+引入指定名称的模板，设置模板上下文 点. 的值为 pipeline 的值
+
+//block
+{{block &amp;quot;name&amp;quot; pipeline}} T1 {{end}}
+定义特定名称的模板，并在当前位置引入该名称的模板，模板的上下文 点. 的值为 pipline 的值，如果该名称的模板未实现(不存在)，则输出T1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;模板类型&#34;&gt;模板类型&lt;/h3&gt;
+&lt;h4 id=&#34;基本模板类型&#34;&gt;基本模板类型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;single template：用于渲染单个页面（Leaf Bundle）的内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;list template：用于渲染具有子页面的页面（Branch Bundle）的内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;partial template：能够被其他模版引用，可以理解为模版级别的组件，例如   header、footer 等&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;partial-与-shortcode-的区别&#34;&gt;Partial 与 Shortcode 的区别&lt;/h4&gt;
+&lt;p&gt;一般来说，需要经常复用的局部组件使用 Partial，因为 Partial 可以被任何模板引用，而 Shortcode 只能被 content 引用。&lt;/p&gt;
+&lt;p&gt;以及两者的参数传入也略有不同，可以参见 &lt;a href=&#34;https://gohugo.io/templates/partials/#variable-scoping&#34;&gt;官方文档&lt;/a&gt; 中的相关内容。&lt;/p&gt;
+&lt;h2 id=&#34;页面&#34;&gt;页面&lt;/h2&gt;
+&lt;p&gt;内容 + 模板 = 页面&lt;/p&gt;
+&lt;h3 id=&#34;页面捆绑page-bundles&#34;&gt;页面捆绑（Page Bundles）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Leaf Bundle：无子页面&lt;/li&gt;
+&lt;li&gt;Branch Bundle：有子页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;页面和模板的对应关系&#34;&gt;页面和模板的对应关系&lt;/h3&gt;
+&lt;p&gt;页面和模板的对应关系是根据页面的一系列属性决定的，包括: Kind、Output Format、Language、Layout、Type、Section，其中kind、layout、type、section 用的比较多。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;kind：用于确定页面的类型，单页面使用 single.html 为默认模板页，列表页使用 list.html 为默认模板页，值不能被修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;section：用于确定 section tree 下面的文章的模板，section tree 的结构是由 content 目录结构生成的，不能被修改，content 目录下的一级目录自动成为 root section，二级及以下的目录需要在目录下添加 _index.md 文件才能成为 section tree 的一部分，如果页面不在 section tree 下 section 的值为空&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;type：可以在 front matter 中设置，用户指定模板的类型. 默认情况下 type 的值等于 section 或 page（section为空的时候）的值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;layout：可以在 front matter 中设置，指定具体的模板名称&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hugo 按照从上到下的顺序依次查找模板并应用（特定页面模板 - 某一类页面的模板 - 全站模板）&lt;/p&gt;
+&lt;h1 id=&#34;问题解决&#34;&gt;问题解决&lt;/h1&gt;
+&lt;h2 id=&#34;public-文件夹渲染出错&#34;&gt;Public 文件夹渲染出错&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 在本地运行时没有问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;问题解决：&lt;/p&gt;
+&lt;p&gt;问题出在 Hugo 本身处理 URL 的方式上，可以参见 &lt;a href=&#34;https://github.com/matcornic/hugo-theme-learn/issues/125&#34;&gt;issue&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;//example.org&amp;quot;
+relativeURLs = true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的方法没有解决我的问题，后来试了两种方法可行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`# baseURL = &amp;quot;example.org&amp;quot;`
+
+`baseURL = &amp;quot;\&amp;quot;`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;找不到新增的页面&#34;&gt;找不到新增的页面&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;增加的内容在 index 页面有链接，但点开却找不到页面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;问题解决：&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;hugo -t theme_name&lt;/code&gt; 代替 &lt;code&gt;hugo&lt;/code&gt; 命令进行编译&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;图片加载问题&#34;&gt;图片加载问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;Markdown 文档里的本地图片无法显示&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以：&lt;/p&gt;
+&lt;p&gt;目录结构：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── content
+  └── posts 
+    ├── cat.md
+    ├── dog.md
+    └── images
+      ├── cat.png
+      └── dog.png
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;图片链接：
+&lt;code&gt;![dog](../images/dog.png)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最后修改时间&#34;&gt;最后修改时间&lt;/h2&gt;
+&lt;p&gt;可以通过两种方式记录 Last Modified 时间&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在文档开头加上时间&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;date: 1990-01-01T00:00:00+00:00
+lastmod: 1995-04-04T00:00:00+00:00
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 config.toml 内设置使用 Git 记录&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;enableGitInfo = true&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;HUGO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/files/1242701/static-site-generators.pdf&#34;&gt;“Static Site Generators”, O’Reilly&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io/t/how-does-hugo-work/11037/8&#34;&gt;How does Hugo work?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io/t/could-shortcodes-and-partials-be-unified/1348&#34;&gt;Could shortcodes and partials be unified?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/&#34;&gt;Hugo, the scope, the context and the dot&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jakewiesler.com/blog/hugo-directory-structure&#34;&gt;Hugo&amp;rsquo;s Directory Structure Explained&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hugo.aiaide.com/&#34;&gt;Reset hugo中文帮助文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000016078760&#34;&gt;Hugo-框架学习&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&#34;&gt; Hugo - Static Site Generator | Tutorial &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=247s&#34;&gt; Creating a Blog with Hugo and Github in 10 minutes &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;amp;list=LLm-KB0VAVChbSZPeDA_WqSg&#34;&gt; Creating your own Hugo Theme! &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&#34;&gt; Creating a Hugo Theme From Scratch &lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/hugo/ - 2021 Yuanyi. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>浏览器基本原理</title>
+        <link>https://yuanyi-au.github.io/posts/browser/</link>
+        <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuanyi-au.github.io/posts/browser/</guid>
+        <description>方圆 https://yuanyi-au.github.io/posts/browser/ -&lt;h1 id=&#34;浏览器简介&#34;&gt;浏览器简介&lt;/h1&gt;
+&lt;p&gt;目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera&lt;/p&gt;
+&lt;p&gt;浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源&lt;/p&gt;
+&lt;p&gt;浏览器的主要组件有：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/layers.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户界面&lt;/li&gt;
+&lt;li&gt;浏览器引擎&lt;/li&gt;
+&lt;li&gt;渲染引擎&lt;/li&gt;
+&lt;li&gt;网络&lt;/li&gt;
+&lt;li&gt;UI 后端&lt;/li&gt;
+&lt;li&gt;JavaScript 解释器&lt;/li&gt;
+&lt;li&gt;数据存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;进程与线程&#34;&gt;进程与线程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;进程：资源（CPU、内存）分配的最小单位&lt;/li&gt;
+&lt;li&gt;线程：是在进程内部的程序运行单位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）&lt;/p&gt;
+&lt;h2 id=&#34;浏览器中的主要进程&#34;&gt;浏览器中的主要进程&lt;/h2&gt;
+&lt;p&gt;浏览器进程、第三方插件进程、GPU 进程、渲染进程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题&lt;/li&gt;
+&lt;li&gt;多进程的缺点：内存消耗大，不同进程中常常包含相同内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;死锁&#34;&gt;死锁&lt;/h2&gt;
+&lt;p&gt;在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;产生死锁的必要条件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;互斥条件：进程要求对所分配的资源进行排它性控制&lt;/li&gt;
+&lt;li&gt;请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放&lt;/li&gt;
+&lt;li&gt;不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放&lt;/li&gt;
+&lt;li&gt;环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解决死锁的方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;预防死锁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;一次性分配所有资源，这样就不会再请求资源了&lt;/li&gt;
+&lt;li&gt;如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃）&lt;/li&gt;
+&lt;li&gt;给资源编号，有序分配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;避免死锁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待&lt;/li&gt;
+&lt;li&gt;银行家算法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;解除死锁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;从其他进程中剥夺资源给死锁进程，以解除死锁状态&lt;/li&gt;
+&lt;li&gt;直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;渲染进程浏览器内核&#34;&gt;渲染进程（浏览器内核）&lt;/h1&gt;
+&lt;p&gt;渲染进程也就是我们说的浏览器内核&lt;/p&gt;
+&lt;h2 id=&#34;gui-渲染线程&#34;&gt;GUI 渲染线程&lt;/h2&gt;
+&lt;p&gt;作用：负责渲染页面&lt;/p&gt;
+&lt;h3 id=&#34;渲染流程&#34;&gt;渲染流程&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;构建 DOM ：根据 HTML 渲染 DOM（同一个 HTML 文件得到的DOM 树并不总是一样，浏览器会按照自己的规范来构建）&lt;/li&gt;
+&lt;li&gt;加载次级资源：请求下载图片，CSS，JS 等资源&lt;/li&gt;
+&lt;li&gt;JS 的下载与执行：&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;样式计算：基于 CSS 选择器解析 CSS 计算每个节点的具体样式值&lt;/li&gt;
+&lt;li&gt;获取布局：遍历 DOM 以及相关元素的计算样式，构建出布局树&lt;/li&gt;
+&lt;li&gt;绘制各元素：遍历布局树，创建绘制记录&lt;/li&gt;
+&lt;li&gt;合成帧：遍历布局树，创建层树，合成器将每一层栅格化然后合成帧（合成器是独立工作的，与主线程无关，非常流畅）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;js-引擎线程&#34;&gt;JS 引擎线程&lt;/h2&gt;
+&lt;p&gt;作用：负责解析执行 JS 脚本&lt;/p&gt;
+&lt;p&gt;JS 引擎线程是单线程，容易引发的阻塞问题， HTML5 提出了 Web Worker 解决此问题，允许主线程创建 Worker 线程，将一些任务分配给该线程在后台运行。JS 引擎线程与 Worker 线程之间通过 postMessage API 进行通信&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JS 引擎线程与 GUI 渲染线程互斥，无法同时进行，因为 JS 也可以操作 DOM，会影响渲染结果&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;事件触发线程&#34;&gt;事件触发线程&lt;/h2&gt;
+&lt;p&gt;作用：控制事件循环&lt;/p&gt;
+&lt;h3 id=&#34;事件循环&#34;&gt;事件循环&lt;/h3&gt;
+&lt;p&gt;同步任务直接放入 JS 引擎线程中的执行栈中处理，异步任务放入事件触发线程中的事件队列中等待。&lt;/p&gt;
+&lt;p&gt;当 JS 引擎线程上的执行栈为空时，JS 引擎线程会询问事件触发线程，如果事件队列中有异步任务，就会被添加到执行栈中开始执行。&lt;/p&gt;
+&lt;h2 id=&#34;定时触发器线程&#34;&gt;定时触发器线程&lt;/h2&gt;
+&lt;p&gt;作用：执行 setInterval 与 setTimesout，计时完毕后通知事件触发线程&lt;/p&gt;
+&lt;h2 id=&#34;异步http请求线程&#34;&gt;异步http请求线程&lt;/h2&gt;
+&lt;p&gt;作用：在 XMLHttpRequest 连接后通过浏览器新开一个线程请求。当检测到状态变更时，如果设置有回调函数，异步线程就会产生状态变更事件，将回调放入事件队列中，再由 JS 引擎执行。&lt;/p&gt;
+&lt;h1 id=&#34;浏览器缓存&#34;&gt;浏览器缓存&lt;/h1&gt;
+&lt;p&gt;浏览器会把通过 HTTP 获取的所有资源保存到本地&lt;/p&gt;
+&lt;h2 id=&#34;缓存位置&#34;&gt;缓存位置&lt;/h2&gt;
+&lt;p&gt;Service Worker：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;内存缓存 memory cache&lt;/th&gt;
+&lt;th&gt;硬盘缓存 disk cache&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;读取速度快&lt;/td&gt;
+&lt;td&gt;读取速度慢&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;退出进程时数据会被清除&lt;/td&gt;
+&lt;td&gt;退出进程时数据不会被清除&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;通常 memory cache 保存 JS、字体、图片等文件，disk cache 保存 CSS 文件&lt;/p&gt;
+&lt;h2 id=&#34;访问缓存优先级&#34;&gt;访问缓存优先级&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在内存中查找&lt;/li&gt;
+&lt;li&gt;在硬盘中查找&lt;/li&gt;
+&lt;li&gt;进行网络请求&lt;/li&gt;
+&lt;li&gt;把获取的资源缓存到本地&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;强制缓存-和-协商缓存&#34;&gt;强制缓存 和 协商缓存&lt;/h2&gt;
+&lt;p&gt;浏览器在请求某一资源时，会先获取该资源缓存的 header 信息，判断是否命中强缓存，若命中则直接从缓存中获取资源信息，不会与服务器进行通信。若没有命中强缓存，浏览器会向服务器发送携带之前获取到的有关缓存的 header 信息，服务器对比相关 header 信息看是否命中协商缓存，若命中则服务器返回新的响应 header 信息更新缓存中对应的 header 信息，告知浏览器可以直接从缓存中获取资源信息，若没有命中协商缓存，则会直接返回最新的资源内容&lt;/p&gt;
+&lt;h2 id=&#34;http-报文中的缓存相关字段&#34;&gt;HTTP 报文中的缓存相关字段&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cache-Control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;http 1.1 出现的 header 字段，可以定义资源什么时候被缓存、如何被缓存以及缓存多长时间等&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Last-Modify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;标识资源的最后修改时间，浏览器第一次请求一个资源的时候，服务器返回的 header 中会加上 Last-Modify。当浏览器再次请求该资源时，服务器会根据资源的最后修改时间判断是否命中缓存。如果命中缓存，则返回 304，并且不会返回资源内容，如果未命中，返回 200 和新的资源，并带上新的修改时间 Last-Modify。&lt;/p&gt;
+&lt;p&gt;缺点：短时间内如果资源发生变化，Last-Modified 并不会变化，可以用 Etag 处理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Etag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;服务器针对资源计算出一串校验码，通过 Etag 返回给客户端，客户端下次请求时带上该值，服务器对比校验，如果相同则返回 304，不返回资源，不一致则返回 412 和新的资源。&lt;/p&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Layered_representation&#34;&gt;浏览器的工作原理：新式网络浏览器幕后揭秘&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/6844903553795014663#heading-0&#34;&gt;从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/47407398&#34;&gt;图解浏览器的基本工作原理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e05307cf8f6a&#34;&gt;浏览器原理机制&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2018/07/web-worker.html&#34;&gt;Web Worker 使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u012375924/article/details/82806617&#34;&gt;浅谈http中的Cache-Control&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000017962411&#34;&gt;实践这一次，彻底搞懂浏览器缓存机制&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/hd12370/article/details/82814348&#34;&gt;死锁面试题（什么是死锁，产生死锁的原因及必要条件）&lt;/a&gt;&lt;/p&gt;
+- https://yuanyi-au.github.io/posts/browser/ - 2021 Yuanyi. All rights reserved.</description>
         </item>
     
     
@@ -46,7 +457,7 @@
         <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/reactjsbook/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;h1 id=&#34;reactjs-小书---笔记&#34;&gt;React.js 小书 - 笔记&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;h1 id=&#34;reactjs-小书---笔记&#34;&gt;React.js 小书 - 笔记&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/react-naive-book/about.md&#34;&gt;React.js 小书在线阅读&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;reactjs&#34;&gt;React.js&lt;/h2&gt;
 &lt;h3 id=&#34;基础知识&#34;&gt;基础知识&lt;/h3&gt;
@@ -270,7 +681,7 @@ store.dispatch(...)
         <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/opensource/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
 &lt;p&gt;今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。&lt;/p&gt;
@@ -332,7 +743,7 @@ store.dispatch(...)
         <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
 &lt;p&gt;Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台&lt;/p&gt;
 &lt;p&gt;本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-bot.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -369,175 +780,12 @@ store.dispatch(...)
     
     
         <item>
-        <title>利用 Hugo 搭建网站</title>
-        <link>https://yuanyi-au.github.io/posts/hugo-website/</link>
-        <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://yuanyi-au.github.io/posts/hugo-website/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/hugo-website/ -&lt;h1 id=&#34;利用-hugo-搭建网站&#34;&gt;利用 Hugo 搭建网站&lt;/h1&gt;
-&lt;p&gt;本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法&lt;/p&gt;
-&lt;h2 id=&#34;快速开始&#34;&gt;快速开始&lt;/h2&gt;
-&lt;h3 id=&#34;windows&#34;&gt;Windows:&lt;/h3&gt;
-&lt;p&gt;最简单的方法是直接下载 &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;最新版本的 hugo&lt;/a&gt; 安装&lt;/p&gt;
-&lt;p&gt;请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意：要把 hugo 的路径添加到环境变量 Path 中！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;我在下载安装扩展版本的时候有点问题，最后重新用 &lt;a href=&#34;https://gohugo.io/getting-started/installing/#chocolatey-windows&#34;&gt;Chocolatey&lt;/a&gt; 安装成功，非常方便&lt;/p&gt;
-&lt;h3 id=&#34;macos&#34;&gt;MacOS：&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;其它系统的安装过程可以看官网文档&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;新建网站&#34;&gt;新建网站&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;hugo version&lt;/code&gt; 检查安装是否成功&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;hugo new site [sitename]&lt;/code&gt; 创建一个新的网站&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 开启 Hugo 服务器，可以在本地预览调试网站&lt;/p&gt;
-&lt;h2 id=&#34;结构目录&#34;&gt;结构目录&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;.
-├── archetypes 
-├── config.toml
-├── content
-├── data
-├── layouts
-├── static
-└── themes
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;content-文件夹&#34;&gt;content 文件夹&lt;/h3&gt;
-&lt;p&gt;存放网站的主要内容 md 文件&lt;/p&gt;
-&lt;p&gt;在该文件夹下的文件结构目录直接对应网站结构&lt;/p&gt;
-&lt;p&gt;通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: &amp;quot;Helloworld&amp;quot;
-date: {{ .Date }}
-draft: true
----
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除了 title 必需，其他可以省略&lt;/p&gt;
-&lt;h3 id=&#34;layouts-文件夹&#34;&gt;layouts 文件夹&lt;/h3&gt;
-&lt;p&gt;存放网站 HTML 模板，包括 index、particials、single page、list pages 等&lt;/p&gt;
-&lt;h3 id=&#34;themes文件夹&#34;&gt;themes文件夹&lt;/h3&gt;
-&lt;p&gt;存放现有的 Hugo 主题模板&lt;/p&gt;
-&lt;h3 id=&#34;configtoml-文件&#34;&gt;config.toml 文件&lt;/h3&gt;
-&lt;p&gt;配置文件，最基础的设置如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;http://example.org/&amp;quot;
-languageCode = &amp;quot;en-us&amp;quot;
-title = &amp;quot;Blog&amp;quot;
-
-#导航栏菜单
-[menu]
-[[menu.main]]
-    identifier = &amp;quot;about&amp;quot;
-    name = &amp;quot;about&amp;quot;
-    url = &amp;quot;/about&amp;quot;
-    weight = 1  #weight数字越小排序越靠前
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;主题外观&#34;&gt;主题外观&lt;/h2&gt;
-&lt;p&gt;可以直接使用 Hugo 现有的主题模板，也可以自己编写主题模板&lt;/p&gt;
-&lt;h3 id=&#34;使用现有主题&#34;&gt;使用现有主题&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;Hugo 官网&lt;/a&gt; 或者 GitHub 上寻找合适的 Hugo 主题&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;进入 &lt;code&gt;themes&lt;/code&gt; 文件夹，&lt;code&gt;git clone&lt;/code&gt; 想要使用的主题&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在配置文件中添加主题：&lt;code&gt;theme = &amp;quot;themename&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;现有主题模板的个性化&#34;&gt;现有主题模板的个性化&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;themes&lt;/code&gt; 文件夹里主要修改 &lt;code&gt;assets&lt;/code&gt; 和 &lt;code&gt;layouts&lt;/code&gt; 两个文件夹，前者存放 css 和 js 文件，后者存放 html 文件&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;layouts&lt;/code&gt; 文件夹里主要修改 &lt;code&gt;partials&lt;/code&gt; 和 &lt;code&gt;shortcodes&lt;/code&gt; 两个文件夹里的 html 文件&lt;/p&gt;
-&lt;h3 id=&#34;自己创建主题&#34;&gt;自己创建主题&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在 &lt;code&gt;layout&lt;/code&gt; 中创建 &lt;code&gt;_default&lt;/code&gt; 文件夹、 &lt;code&gt;index.html&lt;/code&gt; 和 &lt;code&gt;404.html&lt;/code&gt; 文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 &lt;code&gt;_default&lt;/code&gt; 文件夹中创建 &lt;code&gt;single.html&lt;/code&gt; 和 &lt;code&gt;list.html&lt;/code&gt; 文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 &lt;code&gt;static&lt;/code&gt; 文件夹中创建 &lt;code&gt;css&lt;/code&gt; 文件定义样式&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;注意：在 &lt;code&gt;_index.md&lt;/code&gt; 中的内容永远都会依照 list 模板渲染，而非 single&lt;/p&gt;
-&lt;h2 id=&#34;站点部署&#34;&gt;站点部署&lt;/h2&gt;
-&lt;h3 id=&#34;把网站部署到-github-上&#34;&gt;把网站部署到 GitHub 上&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在 GitHub 上创建一个新仓库 A ，名字随便起（例如 blog），该仓库用于存放完整的代码&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;创建另一个新仓库 B ，起名为 &lt;code&gt;github_id.github.io&lt;/code&gt; （例如 yuanyi-au.github.io ），该仓库用于网站部署&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将本地代码与 GitHub 上的仓库 A 关联&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;进入本地代码文件根目录：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git submodule add -b main &amp;lt;仓库 B 地址&amp;gt; public&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;生成 &lt;code&gt;public&lt;/code&gt; 文件夹并将其关联到仓库 B 上，push 之后可以在 GitHub 仓库 B 的页面上看到 &lt;code&gt;public&lt;/code&gt; 文件夹的内容&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;在仓库 B 的设置中可以找到 GitHub Pages，可以看到网站地址 &lt;code&gt;github_id.github.io&lt;/code&gt;，就可以进行访问了&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;注意：&lt;code&gt;public&lt;/code&gt; 文件夹的内容需要每次在项目根目录执行 &lt;code&gt;hugo&lt;/code&gt; 命令后才会更新&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;把网站部署到-netlify-上&#34;&gt;把网站部署到 Netlify 上&lt;/h3&gt;
-&lt;p&gt;可以参考这篇笔记 &lt;a href=&#34;https://yuanyi-au.github.io/notes/netlify/&#34;&gt;使用 netlify 预览 GitHub 上的 PR&lt;/a&gt; ，不做最后一步就行啦&lt;/p&gt;
-&lt;h2 id=&#34;其他问题&#34;&gt;其他问题&lt;/h2&gt;
-&lt;h3 id=&#34;public-文件夹渲染出错&#34;&gt;Public 文件夹渲染出错&lt;/h3&gt;
-&lt;p&gt;问题描述：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt; 在本地运行时没有问题，但部署上线后打开网页发现渲染缺失 css 和 js 文件&lt;/p&gt;
-&lt;p&gt;问题解决：&lt;/p&gt;
-&lt;p&gt;问题出在 Hugo 本身处理 URL 的方式上，可以参见 &lt;a href=&#34;https://github.com/matcornic/hugo-theme-learn/issues/125&#34;&gt;issue&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;//example.org&amp;quot;
-relativeURLs = true
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的方法没有解决我的问题，后来试了两种方法可行：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;# baseURL = &amp;quot;example.org&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;baseURL = &amp;quot;\&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;找不到新增的页面&#34;&gt;找不到新增的页面&lt;/h3&gt;
-&lt;p&gt;问题描述：&lt;/p&gt;
-&lt;p&gt;增加的内容在 index 页面有链接，但点开却找不到页面&lt;/p&gt;
-&lt;p&gt;问题解决：&lt;/p&gt;
-&lt;p&gt;使用 &lt;code&gt;hugo -t theme_name&lt;/code&gt; 代替 &lt;code&gt;hugo&lt;/code&gt; 命令进行编译&lt;/p&gt;
-&lt;h3 id=&#34;图片加载问题&#34;&gt;图片加载问题&lt;/h3&gt;
-&lt;p&gt;问题描述：&lt;/p&gt;
-&lt;p&gt;Markdown 文档里的本地图片无法显示&lt;/p&gt;
-&lt;p&gt;解决方法：&lt;/p&gt;
-&lt;p&gt;我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以&lt;/p&gt;
-&lt;p&gt;目录结构：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-├── content
-	└── posts 
-		├── cat.md
-		├── dog.md
-		└── images
-			├── cat.png
-			└── dog.png
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在图片链接：
-&lt;code&gt;![dog](../images/dog.png)&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;最后修改时间&#34;&gt;最后修改时间&lt;/h3&gt;
-&lt;p&gt;可以通过两种方式记录 Last Modified 时间&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在文档开头加上时间&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;date: 1990-01-01T00:00:00+00:00
-lastmod: 1995-04-04T00:00:00+00:00
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;在 config.toml 内设置使用 Git 记录&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;enableGitInfo = true&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&#34;&gt; Hugo - Static Site Generator | Tutorial &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=247s&#34;&gt; Creating a Blog with Hugo and Github in 10 minutes &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=wcMqrb3v2SM&amp;amp;list=LLm-KB0VAVChbSZPeDA_WqSg&#34;&gt; Creating your own Hugo Theme! &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&#34;&gt; Creating a Hugo Theme From Scratch &lt;/a&gt;&lt;/p&gt;
-- https://yuanyi-au.github.io/posts/hugo-website/ - 2021 Yuanyi. All rights reserved.</description>
-        </item>
-    
-    
-    
-        <item>
         <title>package.json 与 package-lock.json</title>
         <link>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</link>
         <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
 &lt;h2 id=&#34;packagejson&#34;&gt;package.json&lt;/h2&gt;
 &lt;p&gt;描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 &lt;code&gt;npm init&lt;/code&gt; 自动生成&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{
@@ -603,7 +851,7 @@ lastmod: 1995-04-04T00:00:00+00:00
         <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
 &lt;h2 id=&#34;git-rebase&#34;&gt;git rebase&lt;/h2&gt;
 &lt;h3 id=&#34;合并不同分支的提交&#34;&gt;合并不同分支的提交&lt;/h3&gt;
 &lt;p&gt;将 b 分支上的提交合并到 a 分支上成为一条直线&lt;/p&gt;
@@ -667,7 +915,7 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
         <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
-        <description>垃圾回收站 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
+        <description>方圆 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
 &lt;p&gt;本篇笔记内容包括常用命令以及 commit message 规范&lt;/p&gt;
 &lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
 &lt;h3 id=&#34;名词&#34;&gt;名词&lt;/h3&gt;
@@ -748,8 +996,9 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;revert&#34;&gt;Revert&lt;/h4&gt;
 &lt;p&gt;如果当前 commit 是用来撤销之前的 commit，则必须以 &lt;code&gt;revert:&lt;/code&gt; 开头，后面跟着被撤销的 commit 的 header&lt;/p&gt;
-&lt;p&gt;body 部分则必须写成 &lt;code&gt;This  reverts commit 667ecc1654a317a13331b17617d973392f415f02.&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;规则&#34;&gt;规则&lt;/h3&gt;
+&lt;p&gt;body 部分则必须写成:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;规则&#34;&gt;规则&lt;/h3&gt;
 &lt;p&gt;优秀的 commit massage 应该遵循以下七条规则：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;subject 和 body 之间空一行&lt;/li&gt;
@@ -761,9 +1010,9 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;li&gt;用 body 部分解释此次 commit 的改动及其原因&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;feat(lang): add polish language&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;refactor!: drop support for Node 6 //使用感叹号代表 breaking change&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fix: correct minor typos in code
+&lt;pre&gt;&lt;code&gt;feat(lang): add polish language
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;refactor!: drop support for Node 6 //使用感叹号代表 breaking change
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;fix: correct minor typos in code
 
 see the issue for details
 

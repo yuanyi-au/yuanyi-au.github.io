@@ -117,7 +117,7 @@ git branch [branch] 新建一个分支，但依然停留在当前分支"/>
     <a class="a-block nav-head false" href="https://yuanyi-au.github.io/">
     
         <div class="nav-title">
-            垃圾回收站
+            方圆
         </div>
         
         <div class="nav-subtitle">
@@ -993,7 +993,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             </i>
         </button>
         <a id="navTitle" class="navbar-brand" href="https://yuanyi-au.github.io/">
-            垃圾回收站
+            方圆
         </a>
         
         <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
@@ -1007,7 +1007,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="https://yuanyi-au.github.io/">
-        <div class="single-column-header-title">垃圾回收站</div>
+        <div class="single-column-header-title">方圆</div>
         
         <div class="single-column-header-subtitle">yuanyi&#39;s blog</div>
         
@@ -1140,8 +1140,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </ul>
 <h4 id="revert">Revert</h4>
 <p>如果当前 commit 是用来撤销之前的 commit，则必须以 <code>revert:</code> 开头，后面跟着被撤销的 commit 的 header</p>
-<p>body 部分则必须写成 <code>This  reverts commit 667ecc1654a317a13331b17617d973392f415f02.</code></p>
-<h3 id="规则">规则</h3>
+<p>body 部分则必须写成:</p>
+<pre><code>This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+</code></pre><h3 id="规则">规则</h3>
 <p>优秀的 commit massage 应该遵循以下七条规则：</p>
 <ol>
 <li>subject 和 body 之间空一行</li>
@@ -1153,9 +1154,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li>用 body 部分解释此次 commit 的改动及其原因</li>
 </ol>
 <h3 id="示例">示例</h3>
-<p><code>feat(lang): add polish language</code></p>
-<p><code>refactor!: drop support for Node 6 //使用感叹号代表 breaking change</code></p>
-<pre><code>fix: correct minor typos in code
+<pre><code>feat(lang): add polish language
+</code></pre><pre><code>refactor!: drop support for Node 6 //使用感叹号代表 breaking change
+</code></pre><pre><code>fix: correct minor typos in code
 
 see the issue for details
 

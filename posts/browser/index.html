@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html><head>
+<title>浏览器基本原理</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="浏览器基本原理" />
+<meta property="og:description" content="浏览器简介 目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera
+浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源
+浏览器的主要组件有：
+ 用户界面 浏览器引擎 渲染引擎 网络 UI 后端 JavaScript 解释器 数据存储  进程与线程  进程：资源（CPU、内存）分配的最小单位 线程：是在进程内部的程序运行单位  每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）
+浏览器中的主要进程 浏览器进程、第三方插件进程、GPU 进程、渲染进程
+ 多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
+  产生死锁的必要条件
+ 互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
+ 预防死锁   一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配  避免死锁   在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法  解除死锁   从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止    渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核
+GUI 渲染线程 作用：负责渲染页面" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuanyi-au.github.io/posts/browser/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-02T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浏览器基本原理"/>
+<meta name="twitter:description" content="浏览器简介 目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera
+浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源
+浏览器的主要组件有：
+ 用户界面 浏览器引擎 渲染引擎 网络 UI 后端 JavaScript 解释器 数据存储  进程与线程  进程：资源（CPU、内存）分配的最小单位 线程：是在进程内部的程序运行单位  每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）
+浏览器中的主要进程 浏览器进程、第三方插件进程、GPU 进程、渲染进程
+ 多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
+  产生死锁的必要条件
+ 互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
+ 预防死锁   一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配  避免死锁   在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法  解除死锁   从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止    渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核
+GUI 渲染线程 作用：负责渲染页面"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/journal.min.3f72a5fc8f5b5dd732a4b476aced0eece2156958d9d414316494ddb10593ddf7.css" integrity="sha256-P3Kl/I9bXdcypLR2rO0O7OIVaVjZ1BQxZJTdsQWT3fc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://yuanyi-au.github.io/scss/dark-mode.min.f7c2efa7183435a6bd1842f91c541481c7a5137b5991629a870f24e4a516ad4b.css" integrity="sha256-98Lvpxg0Naa9GEL5HFQUgcelE3tZkWKahw8k5KUWrUs=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://yuanyi-au.github.io/">
+    
+        <div class="nav-title">
+            方圆
+        </div>
+        
+        <div class="nav-subtitle">
+            yuanyi&#39;s blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                文章
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%ae%80%e4%bb%8b" onclick="onNavClick(`#浏览器简介-nav`)" id="浏览器简介-nav">
+									浏览器简介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#进程与线程-nav`)" id="进程与线程-nav">
+									进程与线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%ad%e7%9a%84%e4%b8%bb%e8%a6%81%e8%bf%9b%e7%a8%8b" onclick="onNavClick(`#浏览器中的主要进程-nav`)" id="浏览器中的主要进程-nav">
+									浏览器中的主要进程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%bb%e9%94%81" onclick="onNavClick(`#死锁-nav`)" id="死锁-nav">
+									死锁
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b8%b2%e6%9f%93%e8%bf%9b%e7%a8%8b%e6%b5%8f%e8%a7%88%e5%99%a8%e5%86%85%e6%a0%b8" onclick="onNavClick(`#渲染进程浏览器内核-nav`)" id="渲染进程浏览器内核-nav">
+									渲染进程（浏览器内核）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#gui-%e6%b8%b2%e6%9f%93%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#gui-渲染线程-nav`)" id="gui-渲染线程-nav">
+									GUI 渲染线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b8%b2%e6%9f%93%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#渲染流程-nav`)" id="渲染流程-nav">
+									渲染流程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#js-%e5%bc%95%e6%93%8e%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#js-引擎线程-nav`)" id="js-引擎线程-nav">
+									JS 引擎线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8b%e4%bb%b6%e8%a7%a6%e5%8f%91%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#事件触发线程-nav`)" id="事件触发线程-nav">
+									事件触发线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%ba%8b%e4%bb%b6%e5%be%aa%e7%8e%af" onclick="onNavClick(`#事件循环-nav`)" id="事件循环-nav">
+									事件循环
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e6%97%b6%e8%a7%a6%e5%8f%91%e5%99%a8%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#定时触发器线程-nav`)" id="定时触发器线程-nav">
+									定时触发器线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bc%82%e6%ad%a5http%e8%af%b7%e6%b1%82%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#异步http请求线程-nav`)" id="异步http请求线程-nav">
+									异步http请求线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%bc%93%e5%ad%98" onclick="onNavClick(`#浏览器缓存-nav`)" id="浏览器缓存-nav">
+									浏览器缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bc%93%e5%ad%98%e4%bd%8d%e7%bd%ae" onclick="onNavClick(`#缓存位置-nav`)" id="缓存位置-nav">
+									缓存位置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%bf%e9%97%ae%e7%bc%93%e5%ad%98%e4%bc%98%e5%85%88%e7%ba%a7" onclick="onNavClick(`#访问缓存优先级-nav`)" id="访问缓存优先级-nav">
+									访问缓存优先级
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bc%ba%e5%88%b6%e7%bc%93%e5%ad%98-%e5%92%8c-%e5%8d%8f%e5%95%86%e7%bc%93%e5%ad%98" onclick="onNavClick(`#强制缓存-和-协商缓存-nav`)" id="强制缓存-和-协商缓存-nav">
+									强制缓存 和 协商缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#http-%e6%8a%a5%e6%96%87%e4%b8%ad%e7%9a%84%e7%bc%93%e5%ad%98%e7%9b%b8%e5%85%b3%e5%ad%97%e6%ae%b5" onclick="onNavClick(`#http-报文中的缓存相关字段-nav`)" id="http-报文中的缓存相关字段-nav">
+									HTTP 报文中的缓存相关字段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    文章
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%ae%80%e4%bb%8b" onclick="onNavClick(`#浏览器简介-nav`)" id="浏览器简介-nav">
+									浏览器简介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#进程与线程-nav`)" id="进程与线程-nav">
+									进程与线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%ad%e7%9a%84%e4%b8%bb%e8%a6%81%e8%bf%9b%e7%a8%8b" onclick="onNavClick(`#浏览器中的主要进程-nav`)" id="浏览器中的主要进程-nav">
+									浏览器中的主要进程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%bb%e9%94%81" onclick="onNavClick(`#死锁-nav`)" id="死锁-nav">
+									死锁
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b8%b2%e6%9f%93%e8%bf%9b%e7%a8%8b%e6%b5%8f%e8%a7%88%e5%99%a8%e5%86%85%e6%a0%b8" onclick="onNavClick(`#渲染进程浏览器内核-nav`)" id="渲染进程浏览器内核-nav">
+									渲染进程（浏览器内核）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#gui-%e6%b8%b2%e6%9f%93%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#gui-渲染线程-nav`)" id="gui-渲染线程-nav">
+									GUI 渲染线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b8%b2%e6%9f%93%e6%b5%81%e7%a8%8b" onclick="onNavClick(`#渲染流程-nav`)" id="渲染流程-nav">
+									渲染流程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#js-%e5%bc%95%e6%93%8e%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#js-引擎线程-nav`)" id="js-引擎线程-nav">
+									JS 引擎线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8b%e4%bb%b6%e8%a7%a6%e5%8f%91%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#事件触发线程-nav`)" id="事件触发线程-nav">
+									事件触发线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%ba%8b%e4%bb%b6%e5%be%aa%e7%8e%af" onclick="onNavClick(`#事件循环-nav`)" id="事件循环-nav">
+									事件循环
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e6%97%b6%e8%a7%a6%e5%8f%91%e5%99%a8%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#定时触发器线程-nav`)" id="定时触发器线程-nav">
+									定时触发器线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bc%82%e6%ad%a5http%e8%af%b7%e6%b1%82%e7%ba%bf%e7%a8%8b" onclick="onNavClick(`#异步http请求线程-nav`)" id="异步http请求线程-nav">
+									异步http请求线程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%bc%93%e5%ad%98" onclick="onNavClick(`#浏览器缓存-nav`)" id="浏览器缓存-nav">
+									浏览器缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bc%93%e5%ad%98%e4%bd%8d%e7%bd%ae" onclick="onNavClick(`#缓存位置-nav`)" id="缓存位置-nav">
+									缓存位置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%bf%e9%97%ae%e7%bc%93%e5%ad%98%e4%bc%98%e5%85%88%e7%ba%a7" onclick="onNavClick(`#访问缓存优先级-nav`)" id="访问缓存优先级-nav">
+									访问缓存优先级
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bc%ba%e5%88%b6%e7%bc%93%e5%ad%98-%e5%92%8c-%e5%8d%8f%e5%95%86%e7%bc%93%e5%ad%98" onclick="onNavClick(`#强制缓存-和-协商缓存-nav`)" id="强制缓存-和-协商缓存-nav">
+									强制缓存 和 协商缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#http-%e6%8a%a5%e6%96%87%e4%b8%ad%e7%9a%84%e7%bc%93%e5%ad%98%e7%9b%b8%e5%85%b3%e5%ad%97%e6%ae%b5" onclick="onNavClick(`#http-报文中的缓存相关字段-nav`)" id="http-报文中的缓存相关字段-nav">
+									HTTP 报文中的缓存相关字段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" onclick="onNavClick(`#参考资料-nav`)" id="参考资料-nav">
+									参考资料
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://yuanyi-au.github.io/">
+            方圆
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://yuanyi-au.github.io/">
+        <div class="single-column-header-title">方圆</div>
+        
+        <div class="single-column-header-subtitle">yuanyi&#39;s blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    浏览器基本原理
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-02 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/browser">browser</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="浏览器简介">浏览器简介</h1>
+<p>目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera</p>
+<p>浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源</p>
+<p>浏览器的主要组件有：</p>
+<p><img src="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/layers.png" alt=""></p>
+<ul>
+<li>用户界面</li>
+<li>浏览器引擎</li>
+<li>渲染引擎</li>
+<li>网络</li>
+<li>UI 后端</li>
+<li>JavaScript 解释器</li>
+<li>数据存储</li>
+</ul>
+<h1 id="进程与线程">进程与线程</h1>
+<ul>
+<li>进程：资源（CPU、内存）分配的最小单位</li>
+<li>线程：是在进程内部的程序运行单位</li>
+</ul>
+<p>每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）</p>
+<h2 id="浏览器中的主要进程">浏览器中的主要进程</h2>
+<p>浏览器进程、第三方插件进程、GPU 进程、渲染进程</p>
+<ul>
+<li>多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题</li>
+<li>多进程的缺点：内存消耗大，不同进程中常常包含相同内容</li>
+</ul>
+<h2 id="死锁">死锁</h2>
+<p>在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。</p>
+<ul>
+<li>
+<p>产生死锁的必要条件</p>
+<ul>
+<li>互斥条件：进程要求对所分配的资源进行排它性控制</li>
+<li>请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放</li>
+<li>不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放</li>
+<li>环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链</li>
+</ul>
+</li>
+<li>
+<p>解决死锁的方法</p>
+<ol>
+<li>预防死锁</li>
+</ol>
+<ul>
+<li>一次性分配所有资源，这样就不会再请求资源了</li>
+<li>如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃）</li>
+<li>给资源编号，有序分配</li>
+</ul>
+<ol start="2">
+<li>避免死锁</li>
+</ol>
+<ul>
+<li>在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待</li>
+<li>银行家算法</li>
+</ul>
+<ol start="3">
+<li>解除死锁</li>
+</ol>
+<ul>
+<li>从其他进程中剥夺资源给死锁进程，以解除死锁状态</li>
+<li>直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止</li>
+</ul>
+</li>
+</ul>
+<h1 id="渲染进程浏览器内核">渲染进程（浏览器内核）</h1>
+<p>渲染进程也就是我们说的浏览器内核</p>
+<h2 id="gui-渲染线程">GUI 渲染线程</h2>
+<p>作用：负责渲染页面</p>
+<h3 id="渲染流程">渲染流程</h3>
+<ol>
+<li>构建 DOM ：根据 HTML 渲染 DOM（同一个 HTML 文件得到的DOM 树并不总是一样，浏览器会按照自己的规范来构建）</li>
+<li>加载次级资源：请求下载图片，CSS，JS 等资源</li>
+<li>JS 的下载与执行：<!-- raw HTML omitted --></li>
+<li>样式计算：基于 CSS 选择器解析 CSS 计算每个节点的具体样式值</li>
+<li>获取布局：遍历 DOM 以及相关元素的计算样式，构建出布局树</li>
+<li>绘制各元素：遍历布局树，创建绘制记录</li>
+<li>合成帧：遍历布局树，创建层树，合成器将每一层栅格化然后合成帧（合成器是独立工作的，与主线程无关，非常流畅）</li>
+</ol>
+<h2 id="js-引擎线程">JS 引擎线程</h2>
+<p>作用：负责解析执行 JS 脚本</p>
+<p>JS 引擎线程是单线程，容易引发的阻塞问题， HTML5 提出了 Web Worker 解决此问题，允许主线程创建 Worker 线程，将一些任务分配给该线程在后台运行。JS 引擎线程与 Worker 线程之间通过 postMessage API 进行通信</p>
+<p><strong>JS 引擎线程与 GUI 渲染线程互斥，无法同时进行，因为 JS 也可以操作 DOM，会影响渲染结果</strong></p>
+<h2 id="事件触发线程">事件触发线程</h2>
+<p>作用：控制事件循环</p>
+<h3 id="事件循环">事件循环</h3>
+<p>同步任务直接放入 JS 引擎线程中的执行栈中处理，异步任务放入事件触发线程中的事件队列中等待。</p>
+<p>当 JS 引擎线程上的执行栈为空时，JS 引擎线程会询问事件触发线程，如果事件队列中有异步任务，就会被添加到执行栈中开始执行。</p>
+<h2 id="定时触发器线程">定时触发器线程</h2>
+<p>作用：执行 setInterval 与 setTimesout，计时完毕后通知事件触发线程</p>
+<h2 id="异步http请求线程">异步http请求线程</h2>
+<p>作用：在 XMLHttpRequest 连接后通过浏览器新开一个线程请求。当检测到状态变更时，如果设置有回调函数，异步线程就会产生状态变更事件，将回调放入事件队列中，再由 JS 引擎执行。</p>
+<h1 id="浏览器缓存">浏览器缓存</h1>
+<p>浏览器会把通过 HTTP 获取的所有资源保存到本地</p>
+<h2 id="缓存位置">缓存位置</h2>
+<p>Service Worker：</p>
+<table>
+<thead>
+<tr>
+<th>内存缓存 memory cache</th>
+<th>硬盘缓存 disk cache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读取速度快</td>
+<td>读取速度慢</td>
+</tr>
+<tr>
+<td>退出进程时数据会被清除</td>
+<td>退出进程时数据不会被清除</td>
+</tr>
+</tbody>
+</table>
+<p>通常 memory cache 保存 JS、字体、图片等文件，disk cache 保存 CSS 文件</p>
+<h2 id="访问缓存优先级">访问缓存优先级</h2>
+<ol>
+<li>在内存中查找</li>
+<li>在硬盘中查找</li>
+<li>进行网络请求</li>
+<li>把获取的资源缓存到本地</li>
+</ol>
+<h2 id="强制缓存-和-协商缓存">强制缓存 和 协商缓存</h2>
+<p>浏览器在请求某一资源时，会先获取该资源缓存的 header 信息，判断是否命中强缓存，若命中则直接从缓存中获取资源信息，不会与服务器进行通信。若没有命中强缓存，浏览器会向服务器发送携带之前获取到的有关缓存的 header 信息，服务器对比相关 header 信息看是否命中协商缓存，若命中则服务器返回新的响应 header 信息更新缓存中对应的 header 信息，告知浏览器可以直接从缓存中获取资源信息，若没有命中协商缓存，则会直接返回最新的资源内容</p>
+<h2 id="http-报文中的缓存相关字段">HTTP 报文中的缓存相关字段</h2>
+<ul>
+<li>Cache-Control</li>
+</ul>
+<p>http 1.1 出现的 header 字段，可以定义资源什么时候被缓存、如何被缓存以及缓存多长时间等</p>
+<ul>
+<li>Last-Modify</li>
+</ul>
+<p>标识资源的最后修改时间，浏览器第一次请求一个资源的时候，服务器返回的 header 中会加上 Last-Modify。当浏览器再次请求该资源时，服务器会根据资源的最后修改时间判断是否命中缓存。如果命中缓存，则返回 304，并且不会返回资源内容，如果未命中，返回 200 和新的资源，并带上新的修改时间 Last-Modify。</p>
+<p>缺点：短时间内如果资源发生变化，Last-Modified 并不会变化，可以用 Etag 处理</p>
+<ul>
+<li>Etag</li>
+</ul>
+<p>服务器针对资源计算出一串校验码，通过 Etag 返回给客户端，客户端下次请求时带上该值，服务器对比校验，如果相同则返回 304，不返回资源，不一致则返回 412 和新的资源。</p>
+<h1 id="参考资料">参考资料</h1>
+<p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Layered_representation">浏览器的工作原理：新式网络浏览器幕后揭秘</a></p>
+<p><a href="https://juejin.cn/post/6844903553795014663#heading-0">从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/47407398">图解浏览器的基本工作原理</a></p>
+<p><a href="https://www.jianshu.com/p/e05307cf8f6a">浏览器原理机制</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2018/07/web-worker.html">Web Worker 使用教程</a></p>
+<p><a href="https://blog.csdn.net/u012375924/article/details/82806617">浅谈http中的Cache-Control</a></p>
+<p><a href="https://segmentfault.com/a/1190000017962411">实践这一次，彻底搞懂浏览器缓存机制</a></p>
+<p><a href="https://blog.csdn.net/hd12370/article/details/82814348">死锁面试题（什么是死锁，产生死锁的原因及必要条件）</a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://yuanyi-au.github.io/posts/hugo/">
+			上篇<br>Hugo 详细笔记（建站教程、工作原理）
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://yuanyi-au.github.io/posts/reactjsbook/">
+			下篇<br>React.js 小书 - 笔记
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2021 Yuanyi. All rights reserved.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

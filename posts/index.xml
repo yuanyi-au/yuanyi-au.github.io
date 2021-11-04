@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 垃圾回收站</title>
+    <title>Posts on 方圆</title>
     <link>https://yuanyi-au.github.io/posts/</link>
-    <description>Recent content in Posts on 垃圾回收站</description>
+    <description>Recent content in Posts on 方圆</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 Yuanyi. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>学习历程</title>
-      <link>https://yuanyi-au.github.io/posts/learning-process/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Hugo 详细笔记（建站教程、工作原理）</title>
+      <link>https://yuanyi-au.github.io/posts/hugo/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yuanyi-au.github.io/posts/learning-process/</guid>
-      <description>学习历程 慢慢反思总结写一下这段时间走过的路&amp;hellip;&amp;hellip;
-第一阶段（2020.11初~2021.1中） 当初开始学计算机可能是想尝试一下其他道路，反正我也很喜欢接触新东西，更新自己感觉很快乐。学了 Python 之后发现自己还蛮有兴趣的，每天疯狂搜索各种东西，最后决定转码。因为这段时间也正好在大三上的后半学期，期末月还是挺忙的，学得比较水，现在 Python 已经基本忘光了。当时确定考完试就开始学前端。
-刚开始是跟着廖雪峰的网站学，半途开始看慕课上的 Python 入门课程（好像是北理的？反正很火的那个），我觉得如果是完全计算机零基础的话应该先看慕课，因为慕课会讲到一些计算机的基础概念。
-第二阶段（2021.1中~2021.4中） 从寒假一开始就开始学 JavaScript/CSS/HTML，同时学了计算机网络、数据结构与算法，大概到三月份的时候开始学 React。整个假期每天在家几乎所有时间都在面对电脑，因为想在开学之后尽快找实习。
-前端部分是在 GitHub 上找了个教程，计网看了谢希仁的《计算机网络》（我居然坚持一字不漏地看完了哈哈，现在也忘光了），数据结构看了慕课上北大的 python 数据结构课程，还有《算法图解》《剑指offer》。
-第三阶段（2021.4末~2021.5初） 开始疯狂实战做项目，跟着油管视频七天敲了八个小项目（油管项目超级多，从这里上手挺不错的），然后开始自己模仿着写，做了个简单的 React 网站，学了点 React Native 做了个小项目。
-然后，就开始投简历找实习，但最后因为学校的原因，以及和几个面试官聊过之后感觉自己还是更想沉下心来继续学习，就放弃了找实习。
-第四阶段（2021.5初~2021.6末） 这段时间基本在忙期末和学校安排的实习，申请了开源之夏的项目，空闲时间继续学习，在看红宝书。
-第五阶段（2021.7初~2021.8末） 这段时间可能是我收获最大的时期，第一次参与开源项目，和别人合作体验到了这行的氛围。转码大半年，终于到了面临秋招的时刻，我也忽然开始反思许多东西，思考自己对未来的真正期望（是很复杂很私人的问题，以后会写文章说说）。
-第六阶段（2021.8末~unknow） 秋招开始，大概之后也没有什么好说的啦，找到工作后会好好总结，希望这一天快点到来。</description>
+      <guid>https://yuanyi-au.github.io/posts/hugo/</guid>
+      <description>基本概念 什么是 Hugo Hugo 是一个用 Go 编写的快速静态网站生成器，具有极快的构建速度（每个页面小于1毫秒），拥有大量现成主题，在开发过程中通过 liveload 即时渲染更改，可以托管在任何平台，是一个理想的建站工具。
+静态网站生成器 网站生成器的目的是将内容转换为 HTML 文件，大多数网站生成器是动态的，这意味着每次用户请求页面时 HTTP 服务器都会运行生成器以创建新的 HTML 文件。动态站点生成器会将 HTML 文件缓存下来，以提高页面的加载速度。而 Hugo 更进一步，将 HTML 文件直接在计算机上渲染。在将文件复制到托管 HTTP 服务器的计算机之前可以在本地查看这些文件。因为 HTML 文件不是动态生成的，所以 Hugo 是一个静态网站生成器。
+快速建站 快速开始 在 Windows 上安装 最简单的方法是直接下载 最新版本的 hugo 安装
+请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我自己在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便。其它系统的安装过程可以看 官网文档。
+新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.</description>
+    </item>
+    
+    <item>
+      <title>浏览器基本原理</title>
+      <link>https://yuanyi-au.github.io/posts/browser/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/browser/</guid>
+      <description>浏览器简介 目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera
+浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源
+浏览器的主要组件有：
+ 用户界面 浏览器引擎 渲染引擎 网络 UI 后端 JavaScript 解释器 数据存储  进程与线程  进程：资源（CPU、内存）分配的最小单位 线程：是在进程内部的程序运行单位  每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）
+浏览器中的主要进程 浏览器进程、第三方插件进程、GPU 进程、渲染进程
+ 多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
+  产生死锁的必要条件
+ 互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
+ 预防死锁   一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配  避免死锁   在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法  解除死锁   从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止    渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核
+GUI 渲染线程 作用：负责渲染页面</description>
     </item>
     
     <item>
@@ -77,27 +95,6 @@ New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - de
 基本设置 常见框架对应的 Build command 和 Publish directory 可以看 官网文档
 环境变量 如果第一次 deploy 失败，请查看环境设置，检查版本是否正确
 Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables</description>
-    </item>
-    
-    <item>
-      <title>利用 Hugo 搭建网站</title>
-      <link>https://yuanyi-au.github.io/posts/hugo-website/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://yuanyi-au.github.io/posts/hugo-website/</guid>
-      <description>利用 Hugo 搭建网站 本篇笔记介绍了如何利用 Hugo 框架搭建网站并部署到 GitHub 上，以及我在建站过程中遇到的问题和解决办法
-快速开始 Windows: 最简单的方法是直接下载 最新版本的 hugo 安装
-请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
-注意：要把 hugo 的路径添加到环境变量 Path 中！
-我在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便
-MacOS： 其它系统的安装过程可以看官网文档
-新建网站 hugo version 检查安装是否成功
-hugo new site [sitename] 创建一个新的网站
-hugo server 开启 Hugo 服务器，可以在本地预览调试网站
-结构目录 .├── archetypes ├── config.toml├── content├── data├── layouts├── static└── themescontent 文件夹 存放网站的主要内容 md 文件
-在该文件夹下的文件结构目录直接对应网站结构
-通常md文件开头如下（一般可以在 archetypes 文件夹中找到）：
----title: &amp;quot;Helloworld&amp;quot;date: {{ .</description>
     </item>
     
     <item>
