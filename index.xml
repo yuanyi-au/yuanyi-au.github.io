@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>方圆</title>
+    <title>方圆之所</title>
     <link>https://yuanyi-au.github.io/</link>
-    <description>Recent content on 方圆</description>
+    <description>Recent content on 方圆之所</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 Yuanyi. All rights reserved.</copyright>
@@ -18,7 +18,7 @@
         <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/hugo/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/hugo/ -&lt;h1 id=&#34;基本概念&#34;&gt;基本概念&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/hugo/ -&lt;h1 id=&#34;基本概念&#34;&gt;基本概念&lt;/h1&gt;
 &lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;
 &lt;p&gt;Hugo 是一个用 Go 编写的快速静态网站生成器，具有极快的构建速度（每个页面小于1毫秒），拥有大量现成主题，在开发过程中通过 liveload 即时渲染更改，可以托管在任何平台，是一个理想的建站工具。&lt;/p&gt;
 &lt;h2 id=&#34;静态网站生成器&#34;&gt;静态网站生成器&lt;/h2&gt;
@@ -187,6 +187,11 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 &lt;/ul&gt;
 &lt;h4 id=&#34;partial-与-shortcode-的区别&#34;&gt;Partial 与 Shortcode 的区别&lt;/h4&gt;
 &lt;p&gt;一般来说，需要经常复用的局部组件使用 Partial，因为 Partial 可以被任何模板引用，而 Shortcode 只能被 content 引用。&lt;/p&gt;
+&lt;p&gt;引用方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Partial： &lt;code&gt;{{ partial &amp;quot;&amp;lt;PATH&amp;gt;/&amp;lt;PARTIAL&amp;gt;.html&amp;quot; . }}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Shortcode： &lt;code&gt;{{% shortcodename parameters %}}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;以及两者的参数传入也略有不同，可以参见 &lt;a href=&#34;https://gohugo.io/templates/partials/#variable-scoping&#34;&gt;官方文档&lt;/a&gt; 中的相关内容。&lt;/p&gt;
 &lt;h2 id=&#34;页面&#34;&gt;页面&lt;/h2&gt;
 &lt;p&gt;内容 + 模板 = 页面&lt;/p&gt;
@@ -213,6 +218,22 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 &lt;/ul&gt;
 &lt;p&gt;Hugo 按照从上到下的顺序依次查找模板并应用（特定页面模板 - 某一类页面的模板 - 全站模板）&lt;/p&gt;
 &lt;h1 id=&#34;问题解决&#34;&gt;问题解决&lt;/h1&gt;
+&lt;h2 id=&#34;markdown-代码块中的-shortcodes-被解析&#34;&gt;Markdown 代码块中的 Shortcodes 被解析&lt;/h2&gt;
+&lt;p&gt;这个问题很有趣，是在写这篇博客过程中遇到的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题描述：&lt;/p&gt;
+&lt;p&gt;当我在写模板引用方式的时候，我是这样写的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/hugo-called.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行 &lt;code&gt;hugo&lt;/code&gt; 或者 &lt;code&gt;hugo server&lt;/code&gt; 时报错：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;failed to extract shortcode: template for shortcode &amp;quot;shortcodename&amp;quot; not found&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;问题解决：&lt;/p&gt;
+&lt;p&gt;在 Hugo 社区里得到的答复：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/hugo-shortcodes.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;public-文件夹渲染出错&#34;&gt;Public 文件夹渲染出错&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -222,8 +243,6 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 &lt;li&gt;
 &lt;p&gt;问题解决：&lt;/p&gt;
 &lt;p&gt;问题出在 Hugo 本身处理 URL 的方式上，可以参见 &lt;a href=&#34;https://github.com/matcornic/hugo-theme-learn/issues/125&#34;&gt;issue&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;//example.org&amp;quot;
 relativeURLs = true
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的方法没有解决我的问题，后来试了两种方法可行：&lt;/p&gt;
@@ -231,6 +250,8 @@ relativeURLs = true
 
 `baseURL = &amp;quot;\&amp;quot;`
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;找不到新增的页面&#34;&gt;找不到新增的页面&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -250,7 +271,6 @@ relativeURLs = true
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;解决方法：&lt;/p&gt;
-&lt;p&gt;我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以：&lt;/p&gt;
 &lt;p&gt;目录结构：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;├── content
   └── posts 
@@ -261,6 +281,7 @@ relativeURLs = true
       └── dog.png
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;图片链接：
 &lt;code&gt;![dog](../images/dog.png)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我用这个方法能成功加载出图片，但好像有些人不行，可以看看 Hugo 社区里的讨论 &lt;a href=&#34;https://discourse.gohugo.io/t/replace-image-reference-link/35314&#34;&gt;Replace Image Reference link&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;最后修改时间&#34;&gt;最后修改时间&lt;/h2&gt;
@@ -300,7 +321,7 @@ lastmod: 1995-04-04T00:00:00+00:00
         <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/browser/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/browser/ -&lt;h1 id=&#34;浏览器简介&#34;&gt;浏览器简介&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/browser/ -&lt;h1 id=&#34;浏览器简介&#34;&gt;浏览器简介&lt;/h1&gt;
 &lt;p&gt;目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera&lt;/p&gt;
 &lt;p&gt;浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源&lt;/p&gt;
 &lt;p&gt;浏览器的主要组件有：&lt;/p&gt;
@@ -340,27 +361,29 @@ lastmod: 1995-04-04T00:00:00+00:00
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;解决死锁的方法&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;预防死锁&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;预防死锁&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一次性分配所有资源，这样就不会再请求资源了&lt;/li&gt;
 &lt;li&gt;如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃）&lt;/li&gt;
 &lt;li&gt;给资源编号，有序分配&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;避免死锁&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免死锁&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待&lt;/li&gt;
 &lt;li&gt;银行家算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;解除死锁&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解除死锁&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;从其他进程中剥夺资源给死锁进程，以解除死锁状态&lt;/li&gt;
 &lt;li&gt;直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -372,7 +395,7 @@ lastmod: 1995-04-04T00:00:00+00:00
 &lt;ol&gt;
 &lt;li&gt;构建 DOM ：根据 HTML 渲染 DOM（同一个 HTML 文件得到的DOM 树并不总是一样，浏览器会按照自己的规范来构建）&lt;/li&gt;
 &lt;li&gt;加载次级资源：请求下载图片，CSS，JS 等资源&lt;/li&gt;
-&lt;li&gt;JS 的下载与执行：&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;JS 的下载与执行：&amp;lt;script&amp;gt;&lt;/li&gt;
 &lt;li&gt;样式计算：基于 CSS 选择器解析 CSS 计算每个节点的具体样式值&lt;/li&gt;
 &lt;li&gt;获取布局：遍历 DOM 以及相关元素的计算样式，构建出布局树&lt;/li&gt;
 &lt;li&gt;绘制各元素：遍历布局树，创建绘制记录&lt;/li&gt;
@@ -425,18 +448,20 @@ lastmod: 1995-04-04T00:00:00+00:00
 &lt;p&gt;浏览器在请求某一资源时，会先获取该资源缓存的 header 信息，判断是否命中强缓存，若命中则直接从缓存中获取资源信息，不会与服务器进行通信。若没有命中强缓存，浏览器会向服务器发送携带之前获取到的有关缓存的 header 信息，服务器对比相关 header 信息看是否命中协商缓存，若命中则服务器返回新的响应 header 信息更新缓存中对应的 header 信息，告知浏览器可以直接从缓存中获取资源信息，若没有命中协商缓存，则会直接返回最新的资源内容&lt;/p&gt;
 &lt;h2 id=&#34;http-报文中的缓存相关字段&#34;&gt;HTTP 报文中的缓存相关字段&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Cache-Control&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cache-Control&lt;/p&gt;
 &lt;p&gt;http 1.1 出现的 header 字段，可以定义资源什么时候被缓存、如何被缓存以及缓存多长时间等&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Last-Modify&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Last-Modify&lt;/p&gt;
 &lt;p&gt;标识资源的最后修改时间，浏览器第一次请求一个资源的时候，服务器返回的 header 中会加上 Last-Modify。当浏览器再次请求该资源时，服务器会根据资源的最后修改时间判断是否命中缓存。如果命中缓存，则返回 304，并且不会返回资源内容，如果未命中，返回 200 和新的资源，并带上新的修改时间 Last-Modify。&lt;/p&gt;
 &lt;p&gt;缺点：短时间内如果资源发生变化，Last-Modified 并不会变化，可以用 Etag 处理&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Etag&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Etag&lt;/p&gt;
 &lt;p&gt;服务器针对资源计算出一串校验码，通过 Etag 返回给客户端，客户端下次请求时带上该值，服务器对比校验，如果相同则返回 304，不返回资源，不一致则返回 412 和新的资源。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Layered_representation&#34;&gt;浏览器的工作原理：新式网络浏览器幕后揭秘&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/6844903553795014663#heading-0&#34;&gt;从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理&lt;/a&gt;&lt;/p&gt;
@@ -457,7 +482,7 @@ lastmod: 1995-04-04T00:00:00+00:00
         <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/reactjsbook/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;h1 id=&#34;reactjs-小书---笔记&#34;&gt;React.js 小书 - 笔记&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;h1 id=&#34;reactjs-小书---笔记&#34;&gt;React.js 小书 - 笔记&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/react-naive-book/about.md&#34;&gt;React.js 小书在线阅读&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;reactjs&#34;&gt;React.js&lt;/h2&gt;
 &lt;h3 id=&#34;基础知识&#34;&gt;基础知识&lt;/h3&gt;
@@ -681,7 +706,7 @@ store.dispatch(...)
         <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/opensource/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
 &lt;p&gt;今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。&lt;/p&gt;
@@ -743,7 +768,7 @@ store.dispatch(...)
         <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
 &lt;p&gt;Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台&lt;/p&gt;
 &lt;p&gt;本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-bot.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -785,7 +810,7 @@ store.dispatch(...)
         <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
 &lt;h2 id=&#34;packagejson&#34;&gt;package.json&lt;/h2&gt;
 &lt;p&gt;描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 &lt;code&gt;npm init&lt;/code&gt; 自动生成&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{
@@ -851,7 +876,7 @@ store.dispatch(...)
         <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
 &lt;h2 id=&#34;git-rebase&#34;&gt;git rebase&lt;/h2&gt;
 &lt;h3 id=&#34;合并不同分支的提交&#34;&gt;合并不同分支的提交&lt;/h3&gt;
 &lt;p&gt;将 b 分支上的提交合并到 a 分支上成为一条直线&lt;/p&gt;
@@ -915,7 +940,7 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
         <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
-        <description>方圆 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
 &lt;p&gt;本篇笔记内容包括常用命令以及 commit message 规范&lt;/p&gt;
 &lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
 &lt;h3 id=&#34;名词&#34;&gt;名词&lt;/h3&gt;

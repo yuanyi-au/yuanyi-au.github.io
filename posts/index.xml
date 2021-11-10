@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 方圆</title>
+    <title>Posts on 方圆之所</title>
     <link>https://yuanyi-au.github.io/posts/</link>
-    <description>Recent content in Posts on 方圆</description>
+    <description>Recent content in Posts on 方圆之所</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2021 Yuanyi. All rights reserved.</copyright>
@@ -40,8 +40,10 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
  多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
   产生死锁的必要条件
  互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
- 预防死锁   一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配  避免死锁   在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法  解除死锁   从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止    渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核
-GUI 渲染线程 作用：负责渲染页面</description>
+  预防死锁
+ 一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配    避免死锁
+ 在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法    解除死锁
+ 从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止      渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核</description>
     </item>
     
     <item>

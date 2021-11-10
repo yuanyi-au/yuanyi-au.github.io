@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>浏览器 on 方圆之所</title>
+    <link>https://yuanyi-au.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+    <description>Recent content in 浏览器 on 方圆之所</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浏览器基本原理</title>
+      <link>https://yuanyi-au.github.io/posts/browser/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/browser/</guid>
+      <description>浏览器简介 目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera
+浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源
+浏览器的主要组件有：
+ 用户界面 浏览器引擎 渲染引擎 网络 UI 后端 JavaScript 解释器 数据存储  进程与线程  进程：资源（CPU、内存）分配的最小单位 线程：是在进程内部的程序运行单位  每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）
+浏览器中的主要进程 浏览器进程、第三方插件进程、GPU 进程、渲染进程
+ 多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
+  产生死锁的必要条件
+ 互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
+  预防死锁
+ 一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配    避免死锁
+ 在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法    解除死锁
+ 从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止      渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核</description>
+    </item>
+    
+  </channel>
+</rss>

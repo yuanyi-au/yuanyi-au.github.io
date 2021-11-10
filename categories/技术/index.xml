@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 方圆之所</title>
+    <link>https://yuanyi-au.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 方圆之所</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2021 Yuanyi. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yuanyi-au.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 详细笔记（建站教程、工作原理）</title>
+      <link>https://yuanyi-au.github.io/posts/hugo/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/hugo/</guid>
+      <description>基本概念 什么是 Hugo Hugo 是一个用 Go 编写的快速静态网站生成器，具有极快的构建速度（每个页面小于1毫秒），拥有大量现成主题，在开发过程中通过 liveload 即时渲染更改，可以托管在任何平台，是一个理想的建站工具。
+静态网站生成器 网站生成器的目的是将内容转换为 HTML 文件，大多数网站生成器是动态的，这意味着每次用户请求页面时 HTTP 服务器都会运行生成器以创建新的 HTML 文件。动态站点生成器会将 HTML 文件缓存下来，以提高页面的加载速度。而 Hugo 更进一步，将 HTML 文件直接在计算机上渲染。在将文件复制到托管 HTTP 服务器的计算机之前可以在本地查看这些文件。因为 HTML 文件不是动态生成的，所以 Hugo 是一个静态网站生成器。
+快速建站 快速开始 在 Windows 上安装 最简单的方法是直接下载 最新版本的 hugo 安装
+请安装 extended 版本，可以对 scss 文件进行编译，否则在之后使用模板时会出现问题
+注意：要把 hugo 的路径添加到环境变量 Path 中！
+我自己在下载安装扩展版本的时候有点问题，最后重新用 Chocolatey 安装成功，非常方便。其它系统的安装过程可以看 官网文档。
+新建网站 hugo version 检查安装是否成功
+hugo new site [sitename] 创建一个新的网站
+hugo server 开启 Hugo 服务器，可以在本地预览调试网站
+结构目录 .├── archetypes ├── config.</description>
+    </item>
+    
+    <item>
+      <title>浏览器基本原理</title>
+      <link>https://yuanyi-au.github.io/posts/browser/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/browser/</guid>
+      <description>浏览器简介 目前的主流浏览器有五个：IE、Firefox、Safari、Chrome 和 Opera
+浏览器的主要功能是向服务器发出请求，然后在浏览器窗口中呈现返回的资源
+浏览器的主要组件有：
+ 用户界面 浏览器引擎 渲染引擎 网络 UI 后端 JavaScript 解释器 数据存储  进程与线程  进程：资源（CPU、内存）分配的最小单位 线程：是在进程内部的程序运行单位  每打开一个新的标签页就新建了一个进程（如果后期标签页过多可能会合并进程）
+浏览器中的主要进程 浏览器进程、第三方插件进程、GPU 进程、渲染进程
+ 多进程的优点：某一页面进程出问题不会影响其他页面，避免不同页面的权限问题，以及第三方插件的问题 多进程的缺点：内存消耗大，不同进程中常常包含相同内容  死锁 在多个进程执行过程中因资源争夺而造成的僵持状态，此时若没有干预这些线程就都将无法向前推进。
+  产生死锁的必要条件
+ 互斥条件：进程要求对所分配的资源进行排它性控制 请求和保持条件：当进程因请求资源而阻塞时，对已经获得的资源保持不放 不剥夺条件：进程已获得的资源在未使用完之前，不能剥夺，只能在使用完时由自己释放 环路等待条件：在发生死锁时，必然存在一个进程-资源的环形链    解决死锁的方法
+  预防死锁
+ 一次性分配所有资源，这样就不会再请求资源了 如果某进程获得了部分资源，但得不到剩下的资源，则释放已有资源（超时放弃） 给资源编号，有序分配    避免死锁
+ 在进行资源分配前先计算安全性，若安全才进行分配，否则进程等待 银行家算法    解除死锁
+ 从其他进程中剥夺资源给死锁进程，以解除死锁状态 直接撤销死锁进程，或撤销代价最小的进程直到资源足够接触死锁进程为止      渲染进程（浏览器内核） 渲染进程也就是我们说的浏览器内核</description>
+    </item>
+    
+    <item>
+      <title>React.js 小书 - 笔记</title>
+      <link>https://yuanyi-au.github.io/posts/reactjsbook/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/reactjsbook/</guid>
+      <description>React.js 小书 - 笔记 React.js 小书在线阅读
+React.js 基础知识 MVVM（Model-View-ViewModel）：是 MVC（Model View Controller） 的改进版，一种将图形用户界面开发与业务逻辑或后端逻辑的开发分离开来的软件架构模式。
+ Model层：请求的原始数据 View层：视图展示，由ViewController来控制 ViewModel层：负责业务处理和数据转化  可以参考 什么是MVVM
+React 只是一个库，而不是框架，它只提供 UI 也就是 View 层面的解决方案，需要结合其它的库（如 Redux、React-router ）来协助提供完整的解决方法。
+JSX 一个 DOM 元素包含的信息其实只有三个：标签名，属性，子元素，这些信息既可以用 HTML 也可以用 JS 来描述，但 HTML 写起来比 JS 简便许多。 于是 React.js 把 JS 语法扩展了一下，支持直接在 JS 代码里面编写类似 HTML 标签结构的语法，也就是 JSX。JSX 在编译的时候会变成相应的 JavaScript 对象描述。
+ReactDOM.render(&amp;lt;Header /&amp;gt;, document.getElementById(&#39;root&#39;))//会被编译成：ReactDOM.render(React.createElement(Header, null), document.getElementById(&#39;root&#39;))从 JSX 到页面经历的过程：
+不直接从 JSX 直接渲染构造 DOM 结构的原因：</description>
+    </item>
+    
+    <item>
+      <title>开源入门之路</title>
+      <link>https://yuanyi-au.github.io/posts/opensource/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/opensource/</guid>
+      <description>开源入门之路 今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。
+前言 首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。
+参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。
+如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。
+在这篇文章里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。
+最后一点，保持礼貌！
+参与项目的基本流程 找到你想要参与的项目 如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 Explore 板块，或者 Open Source Friday 之类的网站来寻找项目。
+请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。
+较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。
+看看 Issues 都有些什么 很多开源项目在 Issues 板块都会有 good first issue ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。
+如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。
+创建 Issue 要注意的问题：
+ 提供具体的环境配置、操作步骤以及问题的详细情况 用文字描述，方便其他人检索 做好标签分类  Pull Request 基本流程 如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码</description>
+    </item>
+    
+    <item>
+      <title>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR</title>
+      <link>https://yuanyi-au.github.io/posts/netlify/</link>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
+      <description>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
+本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果
+也可以参考此笔记将自己的网站部署在 Netlify 上
+安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
+或者你也可以选择在 Netlify 官网 上进行注册授权
+New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
+基本设置 常见框架对应的 Build command 和 Publish directory 可以看 官网文档
+环境变量 如果第一次 deploy 失败，请查看环境设置，检查版本是否正确
+Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables</description>
+    </item>
+    
+    <item>
+      <title>package.json 与 package-lock.json</title>
+      <link>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</guid>
+      <description>package.json 与 package-lock.json package.json 描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 npm init 自动生成
+{&amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,&amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,&amp;quot;description&amp;quot;: &amp;quot;Hugo theme for technical documentation.&amp;quot;,&amp;quot;main&amp;quot;: &amp;quot;none.js&amp;quot;,&amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;},&amp;quot;repository&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;git&amp;quot;,&amp;quot;url&amp;quot;: &amp;quot;git+https://github.com/google/docsy-example.git&amp;quot;},&amp;quot;author&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&amp;quot;bugs&amp;quot;: {&amp;quot;url&amp;quot;: &amp;quot;https://github.com/google/docsy-example/issues&amp;quot;},&amp;quot;homepage&amp;quot;: &amp;quot;https://github.com/google/docsy-example#readme&amp;quot;,&amp;quot;dependencies&amp;quot;: {},&amp;quot;devDependencies&amp;quot;: {&amp;quot;autoprefixer&amp;quot;: &amp;quot;^9.8.6&amp;quot;,&amp;quot;postcss-cli&amp;quot;: &amp;quot;^7.1.2&amp;quot;}}package.json 文件要求必须包括name 和 version 属性
+ author：作者，是在 npmjs.org 网站上的有效账户名 main：指定加载入口，默认值时模块根目录下的 index.</description>
+    </item>
+    
+    <item>
+      <title>git 笔记 (2)</title>
+      <link>https://yuanyi-au.github.io/posts/git-2/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
+      <description>git 笔记 (2) git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
+git checkout bgit rebase a与 merge 的区别 永远不要在公共项目里使用 rebase
+merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
+git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
+git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
+git rebase --abort
+合并本地的多次提交 合并最新的三次提交
+git rebase -i HEAD~3
+git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上</description>
+    </item>
+    
+    <item>
+      <title>git 笔记 (1)</title>
+      <link>https://yuanyi-au.github.io/posts/git-1/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
+      <description>git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
+常用命令 名词 workplace 工作区
+stage 暂存区
+repository 本地仓库
+remote 远程仓库
+新建仓库 git init 在当前目录新建一个本地仓库
+git clone 将一个远程仓库的内容下载到本地
+文件的增加、删除、提交 git add [filename] 将文件从工作区添加到暂存区
+git rm [filename] 删除工作区文件
+git rm --cached [filename] 停止追踪指定文件，但该文件会保留在工作区
+git mv [originalname] [newname] 文件重命名，并将该文件放入暂存区
+git commit - &amp;quot;message&amp;quot; 将暂存区文件提交到本地仓库
+git commit -amend -m &amp;quot;message&amp;quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
+分支管理 git branch 查看所有本地分支
+git branch -a 查看所有本地分支与远程分支
+git branch [branch] 新建一个分支，但依然停留在当前分支</description>
+    </item>
+    
+  </channel>
+</rss>

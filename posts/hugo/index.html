@@ -105,7 +105,7 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
     <a class="a-block nav-head false" href="https://yuanyi-au.github.io/">
     
         <div class="nav-title">
-            方圆
+            方圆之所
         </div>
         
         <div class="nav-subtitle">
@@ -691,6 +691,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 									<ul>
 								
 							
+						
+						
+							<li>
+								<a href="#markdown-%e4%bb%a3%e7%a0%81%e5%9d%97%e4%b8%ad%e7%9a%84-shortcodes-%e8%a2%ab%e8%a7%a3%e6%9e%90" onclick="onNavClick(`#markdown-代码块中的-shortcodes-被解析-nav`)" id="markdown-代码块中的-shortcodes-被解析-nav">
+									Markdown 代码块中的 Shortcodes 被解析
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
 						
 						
 							<li>
@@ -1364,6 +1382,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
+								<a href="#markdown-%e4%bb%a3%e7%a0%81%e5%9d%97%e4%b8%ad%e7%9a%84-shortcodes-%e8%a2%ab%e8%a7%a3%e6%9e%90" onclick="onNavClick(`#markdown-代码块中的-shortcodes-被解析-nav`)" id="markdown-代码块中的-shortcodes-被解析-nav">
+									Markdown 代码块中的 Shortcodes 被解析
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#public-%e6%96%87%e4%bb%b6%e5%a4%b9%e6%b8%b2%e6%9f%93%e5%87%ba%e9%94%99" onclick="onNavClick(`#public-文件夹渲染出错-nav`)" id="public-文件夹渲染出错-nav">
 									Public 文件夹渲染出错
 								</a>
@@ -1469,7 +1505,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             </i>
         </button>
         <a id="navTitle" class="navbar-brand" href="https://yuanyi-au.github.io/">
-            方圆
+            方圆之所
         </a>
         
         <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
@@ -1483,7 +1519,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="https://yuanyi-au.github.io/">
-        <div class="single-column-header-title">方圆</div>
+        <div class="single-column-header-title">方圆之所</div>
         
         <div class="single-column-header-subtitle">yuanyi&#39;s blog</div>
         
@@ -1509,23 +1545,23 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2021-11-03 00:00
+                            2021-11-03
                         </time>
                         
 
                         
                             <i class="material-icons" style="">folder</i>
-                                <a href="/categories/hugo">Hugo</a>
+                                <a href="/categories/%E6%8A%80%E6%9C%AF">技术</a>
                                 &nbsp;
                         
 
                         
                             <i class="material-icons" style="">label</i>
                             
-                                <a href="/tags/hugo">hugo</a>
+                                <a href="/tags/hugo">Hugo</a>
                                 &nbsp;
                             
-                                <a href="/tags/blog">blog</a>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
                                 &nbsp;
                             
                         
@@ -1707,6 +1743,11 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 </ul>
 <h4 id="partial-与-shortcode-的区别">Partial 与 Shortcode 的区别</h4>
 <p>一般来说，需要经常复用的局部组件使用 Partial，因为 Partial 可以被任何模板引用，而 Shortcode 只能被 content 引用。</p>
+<p>引用方式：</p>
+<ul>
+<li>Partial： <code>{{ partial &quot;&lt;PATH&gt;/&lt;PARTIAL&gt;.html&quot; . }}</code></li>
+<li>Shortcode： <code>{{% shortcodename parameters %}}</code></li>
+</ul>
 <p>以及两者的参数传入也略有不同，可以参见 <a href="https://gohugo.io/templates/partials/#variable-scoping">官方文档</a> 中的相关内容。</p>
 <h2 id="页面">页面</h2>
 <p>内容 + 模板 = 页面</p>
@@ -1733,6 +1774,22 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 </ul>
 <p>Hugo 按照从上到下的顺序依次查找模板并应用（特定页面模板 - 某一类页面的模板 - 全站模板）</p>
 <h1 id="问题解决">问题解决</h1>
+<h2 id="markdown-代码块中的-shortcodes-被解析">Markdown 代码块中的 Shortcodes 被解析</h2>
+<p>这个问题很有趣，是在写这篇博客过程中遇到的。</p>
+<ul>
+<li>
+<p>问题描述：</p>
+<p>当我在写模板引用方式的时候，我是这样写的：</p>
+<p><img src="../images/hugo-called.png" alt=""></p>
+<p>执行 <code>hugo</code> 或者 <code>hugo server</code> 时报错：</p>
+<p><code>failed to extract shortcode: template for shortcode &quot;shortcodename&quot; not found</code></p>
+</li>
+<li>
+<p>问题解决：</p>
+<p>在 Hugo 社区里得到的答复：</p>
+<p><img src="../images/hugo-shortcodes.png" alt=""></p>
+</li>
+</ul>
 <h2 id="public-文件夹渲染出错">Public 文件夹渲染出错</h2>
 <ul>
 <li>
@@ -1742,8 +1799,6 @@ pipeline 的值必须是数组，切片，map，channel，设置 点. 为数组�
 <li>
 <p>问题解决：</p>
 <p>问题出在 Hugo 本身处理 URL 的方式上，可以参见 <a href="https://github.com/matcornic/hugo-theme-learn/issues/125">issue</a></p>
-</li>
-</ul>
 <pre><code>baseURL = &quot;//example.org&quot;
 relativeURLs = true
 </code></pre><p>上面的方法没有解决我的问题，后来试了两种方法可行：</p>
@@ -1751,6 +1806,8 @@ relativeURLs = true
 
 `baseURL = &quot;\&quot;`
 </code></pre>
+</li>
+</ul>
 <h2 id="找不到新增的页面">找不到新增的页面</h2>
 <ul>
 <li>
@@ -1770,7 +1827,6 @@ relativeURLs = true
 </li>
 <li>
 <p>解决方法：</p>
-<p>我搜了很多类似答案，都不能解决我的问题，自己试了很久之后发现这个方法可以：</p>
 <p>目录结构：</p>
 <pre><code>├── content
   └── posts 
@@ -1781,6 +1837,7 @@ relativeURLs = true
       └── dog.png
 </code></pre><p>图片链接：
 <code>![dog](../images/dog.png)</code></p>
+<p>我用这个方法能成功加载出图片，但好像有些人不行，可以看看 Hugo 社区里的讨论 <a href="https://discourse.gohugo.io/t/replace-image-reference-link/35314">Replace Image Reference link</a></p>
 </li>
 </ul>
 <h2 id="最后修改时间">最后修改时间</h2>
