@@ -47,18 +47,19 @@ hugo server 开启 Hugo 服务器，可以在本地预览调试网站
     </item>
     
     <item>
-      <title>React.js 小书 - 笔记</title>
+      <title>React.js 小书笔记</title>
       <link>https://yuanyi-au.github.io/posts/reactjsbook/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://yuanyi-au.github.io/posts/reactjsbook/</guid>
-      <description>React.js 小书 - 笔记 React.js 小书在线阅读
+      <description>React.js 小书在线阅读
 React.js 基础知识 MVVM（Model-View-ViewModel）：是 MVC（Model View Controller） 的改进版，一种将图形用户界面开发与业务逻辑或后端逻辑的开发分离开来的软件架构模式。
  Model层：请求的原始数据 View层：视图展示，由ViewController来控制 ViewModel层：负责业务处理和数据转化  可以参考 什么是MVVM
 React 只是一个库，而不是框架，它只提供 UI 也就是 View 层面的解决方案，需要结合其它的库（如 Redux、React-router ）来协助提供完整的解决方法。
 JSX 一个 DOM 元素包含的信息其实只有三个：标签名，属性，子元素，这些信息既可以用 HTML 也可以用 JS 来描述，但 HTML 写起来比 JS 简便许多。 于是 React.js 把 JS 语法扩展了一下，支持直接在 JS 代码里面编写类似 HTML 标签结构的语法，也就是 JSX。JSX 在编译的时候会变成相应的 JavaScript 对象描述。
 ReactDOM.render(&amp;lt;Header /&amp;gt;, document.getElementById(&#39;root&#39;))//会被编译成：ReactDOM.render(React.createElement(Header, null), document.getElementById(&#39;root&#39;))从 JSX 到页面经历的过程：
-不直接从 JSX 直接渲染构造 DOM 结构的原因：</description>
+不直接从 JSX 直接渲染构造 DOM 结构的原因：
+元素不一定会被渲染到浏览器页面上，也可能渲染到 canvas 或者 RN 上</description>
     </item>
     
     <item>
@@ -67,15 +68,15 @@ ReactDOM.render(&amp;lt;Header /&amp;gt;, document.getElementById(&#39;root&#39
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
-      <description>使用 Netlify 部署个人网站以及预览 GitHub 上的 PR Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台
-本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果
+      <description>Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台。本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果。
 也可以参考此笔记将自己的网站部署在 Netlify 上
 安装准备 在 GitHub 上安装 Netlify ，授权 GitHub 账号
 或者你也可以选择在 Netlify 官网 上进行注册授权
 New site from Git 选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site
 基本设置 常见框架对应的 Build command 和 Publish directory 可以看 官网文档
 环境变量 如果第一次 deploy 失败，请查看环境设置，检查版本是否正确
-Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables</description>
+Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables
+修改域名 Netlify 会自动以你的 site name 生成一个域名：[name-of-your-site].netlify.app</description>
     </item>
     
   </channel>

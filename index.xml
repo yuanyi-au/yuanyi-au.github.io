@@ -477,15 +477,14 @@ lastmod: 1995-04-04T00:00:00+00:00
     
     
         <item>
-        <title>React.js 小书 - 笔记</title>
+        <title>React.js 小书笔记</title>
         <link>https://yuanyi-au.github.io/posts/reactjsbook/</link>
         <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/reactjsbook/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;h1 id=&#34;reactjs-小书---笔记&#34;&gt;React.js 小书 - 笔记&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/react-naive-book/about.md&#34;&gt;React.js 小书在线阅读&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;reactjs&#34;&gt;React.js&lt;/h2&gt;
-&lt;h3 id=&#34;基础知识&#34;&gt;基础知识&lt;/h3&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/reactjsbook/ -&lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/react-naive-book/about.md&#34;&gt;React.js 小书在线阅读&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;reactjs&#34;&gt;React.js&lt;/h1&gt;
+&lt;h2 id=&#34;基础知识&#34;&gt;基础知识&lt;/h2&gt;
 &lt;p&gt;MVVM（Model-View-ViewModel）：是 MVC（Model View Controller） 的改进版，一种将图形用户界面开发与业务逻辑或后端逻辑的开发分离开来的软件架构模式。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Model层：请求的原始数据&lt;/li&gt;
@@ -494,7 +493,7 @@ lastmod: 1995-04-04T00:00:00+00:00
 &lt;/ul&gt;
 &lt;p&gt;可以参考 &lt;a href=&#34;https://www.w3cschool.cn/ios_functional_reactive_program/ios_functional_reactive_program-vjix288i.html&#34;&gt;什么是MVVM&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;React 只是一个库，而不是框架，它只提供 UI 也就是 View 层面的解决方案，需要结合其它的库（如 Redux、React-router ）来协助提供完整的解决方法。&lt;/p&gt;
-&lt;h3 id=&#34;jsx&#34;&gt;JSX&lt;/h3&gt;
+&lt;h2 id=&#34;jsx&#34;&gt;JSX&lt;/h2&gt;
 &lt;p&gt;一个 DOM 元素包含的信息其实只有三个：标签名，属性，子元素，这些信息既可以用 HTML 也可以用 JS 来描述，但 HTML 写起来比 JS 简便许多。 于是 React.js 把 JS 语法扩展了一下，支持直接在 JS 代码里面编写类似 HTML 标签结构的语法，也就是 JSX。JSX 在编译的时候会变成相应的 JavaScript 对象描述。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ReactDOM.render(
  &amp;lt;Header /&amp;gt;, 
@@ -509,7 +508,7 @@ ReactDOM.render(
 &lt;p&gt;&lt;img src=&#34;http://huzidaha.github.io/static/assets/img/posts/44B5EC06-EAEB-4BA2-B3DC-325703E4BA45.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;不直接从 JSX 直接渲染构造 DOM 结构的原因：&lt;/p&gt;
 &lt;p&gt;元素不一定会被渲染到浏览器页面上，也可能渲染到 canvas 或者 RN 上&lt;/p&gt;
-&lt;h3 id=&#34;render&#34;&gt;render&lt;/h3&gt;
+&lt;h2 id=&#34;render&#34;&gt;render&lt;/h2&gt;
 &lt;p&gt;一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素。&lt;/p&gt;
 &lt;p&gt;必须要用一个外层的 JSX 元素（比如&lt;!-- raw HTML omitted --&gt;）把所有内容包裹起来。返回并列多个 JSX 元素是不合法的。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;render () {
@@ -522,10 +521,10 @@ ReactDOM.render(
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;因为 class 是 JavaScript 的关键字，所以 React.js 定义了 className 给元素添加类名。&lt;/p&gt;
 &lt;p&gt;因为 JSX 元素其实是 JS 对象，一次可以将 JSX 元素赋值给变量，或者作为函数参数、函数参数返回值。&lt;/p&gt;
-&lt;h3 id=&#34;事件监听&#34;&gt;事件监听&lt;/h3&gt;
+&lt;h2 id=&#34;事件监听&#34;&gt;事件监听&lt;/h2&gt;
 &lt;p&gt;在 React.js 不需要手动调用浏览器原生的 addEventListener 进行事件监听，React.js 帮我们封装好了一系列的 on 属性，当你需要为某个元素监听某个事件的时候，只需要简单地给它加上 on 就可以了。&lt;/p&gt;
 &lt;p&gt;但是注意，这些 on 的事件监听只能用在普通的 HTML 的标签上，不能用在组件标签上。&lt;/p&gt;
-&lt;h3 id=&#34;this&#34;&gt;this&lt;/h3&gt;
+&lt;h2 id=&#34;this&#34;&gt;this&lt;/h2&gt;
 &lt;p&gt;如果想在事件函数当中使用当前的实例，你需要手动地将实例方法 bind 到 this 上再传入给 React.js，例如：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;class Title extends Component {
   handleClickOnTitle (word, e) {
@@ -537,7 +536,7 @@ ReactDOM.render(
     )
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;state-与-setstate&#34;&gt;state 与 setState&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;state-与-setstate&#34;&gt;state 与 setState&lt;/h2&gt;
 &lt;p&gt;state 用来存储可变化的状态&lt;/p&gt;
 &lt;p&gt;当我们调用 setState 方法时，React.js 会更新组件的状态 state ，并且重新调用 render 方法渲染页面。&lt;/p&gt;
 &lt;p&gt;调用 setState 的时候，React.js 并不会马上修改 state，而是把这个对象放到一个更新队列里面，稍后才会从队列当中把新的状态提取出来合并到 state 当中，然后再触发组件更新。&lt;/p&gt;
@@ -555,16 +554,16 @@ ReactDOM.render(
     // 最后的结果是 this.state.count 为 3
   }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;React.js 内部会把 JS 事件循环中的消息队列的同一个消息中的 setState 都进行合并以后再重新渲染组件，因此并不需要担心多次进行 setState 会带来性能问题。&lt;/p&gt;
-&lt;h3 id=&#34;props&#34;&gt;props&lt;/h3&gt;
+&lt;h2 id=&#34;props&#34;&gt;props&lt;/h2&gt;
 &lt;p&gt;每个组件都可以接受一个 props 参数，它是一个对象，包含了所有你对这个组件的配置。&lt;/p&gt;
 &lt;p&gt;组件可以在内部通过 this.props 获取到配置参数，props 一旦传入，就不可以在组件内部修改，但可以通过父组件主动重新渲染的方式（比如调用 setState）来传入新的 props，从而达到更新的效果。&lt;/p&gt;
 &lt;p&gt;state 是让组件控制自己的状态，props 是让外部对组件自己进行配置。因为状态会带来管理的复杂性，推荐多使用无状态组件。&lt;/p&gt;
-&lt;h3 id=&#34;状态提升&#34;&gt;状态提升&lt;/h3&gt;
+&lt;h2 id=&#34;状态提升&#34;&gt;状态提升&lt;/h2&gt;
 &lt;p&gt;将组件之间共享的状态交给组件最近的公共父节点保管，然后通过 props 把状态传递给子组件，这样就可以在组件之间共享数据&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://huzidaha.github.io/static/assets/img/posts/C547BD3E-F923-4B1D-96BC-A77966CDFBEF.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;但如果提升路径发生改变，需要修改的地方就很多，这个问题 React.js 还没有很好地解决，不过可以通过 Redux 来管理状态。&lt;/p&gt;
-&lt;h3 id=&#34;生命周期&#34;&gt;生命周期&lt;/h3&gt;
-&lt;h4 id=&#34;挂载阶段&#34;&gt;挂载阶段&lt;/h4&gt;
+&lt;h2 id=&#34;生命周期&#34;&gt;生命周期&lt;/h2&gt;
+&lt;h3 id=&#34;挂载阶段&#34;&gt;挂载阶段&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;-&amp;gt; constructor()
 -&amp;gt; componentWillMount()
 -&amp;gt; render()
@@ -588,7 +587,7 @@ ReactDOM.render(
 &lt;p&gt;componentWillUnmount：在组件销毁时清除定时器和数据&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;更新阶段&#34;&gt;更新阶段&lt;/h4&gt;
+&lt;h3 id=&#34;更新阶段&#34;&gt;更新阶段&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;shouldComponentUpdate(nextProps, nextState)：可以通过这个方法控制组件是否重新渲染。可以用在性能优化上。&lt;/p&gt;
@@ -603,10 +602,10 @@ ReactDOM.render(
 &lt;p&gt;componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;ref-属性&#34;&gt;ref 属性&lt;/h3&gt;
+&lt;h2 id=&#34;ref-属性&#34;&gt;ref 属性&lt;/h2&gt;
 &lt;p&gt;用来获取已经挂载的元素的 DOM 节点然后调用 DOM API&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;原则：能不用 ref 就不用&lt;/em&gt; 特别是要避免用 ref 来做 React.js 本来就可以帮助你做到的页面自动更新的操作和事件监听。&lt;/p&gt;
-&lt;h3 id=&#34;propschildren&#34;&gt;props.children&lt;/h3&gt;
+&lt;h2 id=&#34;propschildren&#34;&gt;props.children&lt;/h2&gt;
 &lt;p&gt;所有嵌套在组件中的 JSX 结构都可以在组件内部通过 props.children 获取到，可以在各个地方高度复用。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;class Layout extends Component {
   render () {
@@ -622,15 +621,15 @@ ReactDOM.render(
     )
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;dangerouslysethtml&#34;&gt;dangerouslySetHTML&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;dangerouslysethtml&#34;&gt;dangerouslySetHTML&lt;/h2&gt;
 &lt;p&gt;因为设置 innerHTML 可能会导致跨站脚本攻击（XSS），在 React.js 当中所有的表达式插入的内容都会被自动转义，动态 HTML 结构无法正常渲染&lt;/p&gt;
 &lt;p&gt;给 dangerouslySetInnerHTML 传入一个对象，这个对象的 __html 属性值就相当于元素的 innerHTML，这样就可以动态渲染元素的 innerHTML 结构&lt;/p&gt;
-&lt;h3 id=&#34;style-属性&#34;&gt;style 属性&lt;/h3&gt;
+&lt;h2 id=&#34;style-属性&#34;&gt;style 属性&lt;/h2&gt;
 &lt;p&gt;在 React.js 中你需要把 CSS 属性变成一个对象再传给元素：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;h1 style={{fontSize: &#39;12px&#39;, color: &#39;red&#39;}}&amp;gt;React.js 小书&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;原来 CSS 属性中带 - 的元素都必须要去掉 - 换成驼峰命名，如 font-size 换成 fontSize，text-align 换成 textAlign&lt;/p&gt;
 &lt;p&gt;用对象作为 style 方便我们动态设置元素的样式，可以用 props 或者 state 中的数据生成样式对象再传给元素，然后用 setState 就可以修改样式，比如 &lt;code&gt;setState({color: &#39;blue&#39;})&lt;/code&gt; 就可以把元素的颜色改成蓝色。&lt;/p&gt;
-&lt;h3 id=&#34;第三方库-prop-types&#34;&gt;第三方库 prop-types&lt;/h3&gt;
+&lt;h2 id=&#34;第三方库-prop-types&#34;&gt;第三方库 prop-types&lt;/h2&gt;
 &lt;p&gt;给组件的配置参数加上类型验证&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;npm install --save prop-types&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;import React, { Component } from &#39;react&#39;
@@ -641,11 +640,11 @@ class Comment extends Component {
     /*传入的 comment 类型必须为 object*/
     comment: PropTypes.object 
   }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;高阶组件-higher-order-components&#34;&gt;高阶组件 Higher-Order Components&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;高阶组件-higher-order-components&#34;&gt;高阶组件 Higher-Order Components&lt;/h2&gt;
 &lt;p&gt;高阶组件就是一个函数，传给它一个组件，它返回一个新的组件。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;const NewComponent = higherOrderComponent(OldComponent)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;其实就是设计模式里面的装饰者模式&lt;/p&gt;
-&lt;h3 id=&#34;context&#34;&gt;context&lt;/h3&gt;
+&lt;h2 id=&#34;context&#34;&gt;context&lt;/h2&gt;
 &lt;p&gt;普通情况下一个父组件的状态需要通过 props 一层层往下传递到子组件才能使用。如果组件树层次很深的话维护起来简直是灾难。&lt;/p&gt;
 &lt;p&gt;而一个组件只要往自己的 context 里放了某个状态，这个组件之下的所有子组件都直接访问这个状态而不需要通过中间组件的传递&lt;/p&gt;
 &lt;p&gt;子组件要获取 context 里面的内容必须写 contextTypes 来声明和验证需要获取的状态的类型：&lt;/p&gt;
@@ -653,11 +652,11 @@ class Comment extends Component {
   static contextTypes = {
     themeColor: PropTypes.string
   }
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;redux&#34;&gt;Redux&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;redux&#34;&gt;Redux&lt;/h1&gt;
 &lt;p&gt;Redux 是一种架构模式（Flux 架构的一种变种）&lt;/p&gt;
-&lt;h3 id=&#34;store&#34;&gt;store&lt;/h3&gt;
+&lt;h2 id=&#34;store&#34;&gt;store&lt;/h2&gt;
 &lt;p&gt;用 createStore 产生的新定义的数据类型，通过 store.getState 获取共享状态，通过 store.dispatch 修改共享状态，通过 store.subscribe 监听数据数据状态。&lt;/p&gt;
-&lt;h4 id=&#34;共享结构对象&#34;&gt;共享结构对象&lt;/h4&gt;
+&lt;h3 id=&#34;共享结构对象&#34;&gt;共享结构对象&lt;/h3&gt;
 &lt;p&gt;用拓展运算符共享结构对象&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;let newAppState = { // 新建一个 newAppState
   ...appState, // 复制 appState 里面的内容
@@ -667,11 +666,11 @@ class Comment extends Component {
   }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://static.sitestack.cn/projects/react-naive-book/5f38c25fc06a9681e0d3c3db2a1cab7e.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;reducer-函数&#34;&gt;reducer 函数&lt;/h4&gt;
+&lt;h3 id=&#34;reducer-函数&#34;&gt;reducer 函数&lt;/h3&gt;
 &lt;p&gt;这个函数规定是一个纯函数，它接受两个参数，一个是 state，一个是 action&lt;/p&gt;
 &lt;p&gt;reducer 不允许有副作用，不能在里面操作 DOM，也不能发 Ajax 请求，更不能直接修改 state，它能做的仅仅是初始化和计算新的 state&lt;/p&gt;
 &lt;p&gt;如果没有传入 state 或者 state 为 null，它就会返回一个初始化的数据；如果有传入 state，就会根据 action 来“修改“数据（其实规定不能修改 state，而是要通过拓展运算符共享结构对象）。如果它不能识别你的 action，它就不会产生新的数据，而是（在 default 内部）把 state 原封不动地返回。&lt;/p&gt;
-&lt;h4 id=&#34;套路&#34;&gt;套路&lt;/h4&gt;
+&lt;h3 id=&#34;套路&#34;&gt;套路&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;// 定一个 reducer
 function reducer (state, action) {
   /* 初始化 state 和 switch case */
@@ -684,7 +683,7 @@ store.subscribe(() =&amp;gt; renderApp(store.getState()))
 renderApp(store.getState()) 
 // 后面可以随意 dispatch 了，页面自动更新
 store.dispatch(...)
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;redux-的安装使用&#34;&gt;Redux 的安装使用&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;redux-的安装使用&#34;&gt;Redux 的安装使用&lt;/h2&gt;
 &lt;p&gt;在工程目录下使用 npm 安装 Redux 和 React-redux 模块：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;npm install redux react-redux --save&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;把 src/ 目录下从本地导入的 connect 改成从第三方 react-redux 模块中导入：&lt;/p&gt;
@@ -692,7 +691,7 @@ store.dispatch(...)
 &lt;p&gt;改成：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;import { connect } from &#39;react-redux&#39;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;最后可以删除 src/react-redux.js&lt;/p&gt;
-&lt;h2 id=&#34;smart-组件-vs-dumb-组件&#34;&gt;Smart 组件 vs Dumb 组件&lt;/h2&gt;
+&lt;h1 id=&#34;smart-组件-vs-dumb-组件&#34;&gt;Smart 组件 vs Dumb 组件&lt;/h1&gt;
 &lt;p&gt;根据是否需要高度的复用性，把组件划分为 Dumb 和 Smart 组件，约定俗成地把它们分别放到 components 和 containers 目录下&lt;/p&gt;
 &lt;p&gt;Dumb 组件只做一件事情：根据 props 进行渲染，而 Smart 负责应用的逻辑、数据，把所有相关的 Dumb、Smart 组件组合起来，通过 props 控制它们。&lt;/p&gt;
 - https://yuanyi-au.github.io/posts/reactjsbook/ - 2021 Yuanyi. All rights reserved.</description>
@@ -701,25 +700,29 @@ store.dispatch(...)
     
     
         <item>
-        <title>开源入门之路</title>
+        <title>开源入门</title>
         <link>https://yuanyi-au.github.io/posts/opensource/</link>
         <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/opensource/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/opensource/ -&lt;h1 id=&#34;开源入门之路&#34;&gt;开源入门之路&lt;/h1&gt;
-&lt;p&gt;今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。&lt;/p&gt;
-&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/opensource/ -&lt;p&gt;今年夏天有幸参与了 OSPP 2021 这个活动，终于第一次真正接触到向往已久的开源，以这篇文章记录我在这条路上的旅程，希望能越走越远，以后有更多经验分享给大家。&lt;/p&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;首先我想说的是，参与开源并不是必须贡献代码，文档写作、视觉设计、组织宣传等也是项目中非常重要的部分。以及在项目社区或者 GitHub Issues 里进行反馈和解答其他人提出的问题，这些都是对开源社区很好的贡献。&lt;/p&gt;
 &lt;p&gt;参与开源你需要知道的最重要的事情就是，大胆提问，大胆提交 PR。&lt;/p&gt;
 &lt;p&gt;如果项目文档和谷歌搜索都不能解决你的疑问，不要害怕提问，项目维护者能够快速帮助你找到解决问题的方向，而且换个角度想，其他拥有同样疑惑的人也能搜索到你与项目维护者的交流过程，从中受益。也不要担心自己的代码不够好，项目维护者会对你提交的代码进行 review，如果有问题会给出建议，这其实是一个很好的学习机会。&lt;/p&gt;
 &lt;p&gt;在&lt;a href=&#34;https://www.igor.pro.br/publica/papers/saner2016.pdf&#34;&gt;这篇文章&lt;/a&gt;里有提到，实际上 28% 的贡献都是随意贡献（比如修正语法排版错误等），修补 bug 的贡献其实也只占到 30%。所以，不要担心，勇敢地在项目中积极交流贡献。&lt;/p&gt;
 &lt;p&gt;最后一点，保持礼貌！&lt;/p&gt;
-&lt;h2 id=&#34;参与项目的基本流程&#34;&gt;参与项目的基本流程&lt;/h2&gt;
-&lt;h3 id=&#34;找到你想要参与的项目&#34;&gt;找到你想要参与的项目&lt;/h3&gt;
+&lt;h1 id=&#34;开源指南放送&#34;&gt;开源指南放送&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://opensource.guide/zh-hans/&#34;&gt;GitHub 开源软件指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/opensource-guide/&#34;&gt;Gitee 开源指北&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://surenpi.com/open-source-best-practice/&#34;&gt;开源最佳实践&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;参与项目的基本流程&#34;&gt;参与项目的基本流程&lt;/h1&gt;
+&lt;h2 id=&#34;找到你想要参与的项目&#34;&gt;找到你想要参与的项目&lt;/h2&gt;
 &lt;p&gt;如果毫无头绪，我认为最好从自己熟悉的项目开始下手。在之前做项目的过程中肯定用过许多其他工具，在 GitHub 上搜索它们的项目仓库会是一个不错的开始。当然你也可以通过 GitHub 的 &lt;a href=&#34;https://github.com/explore/&#34;&gt;Explore&lt;/a&gt; 板块，或者 &lt;a href=&#34;https://opensourcefriday.com/&#34;&gt;Open Source Friday&lt;/a&gt; 之类的网站来寻找项目。&lt;/p&gt;
+&lt;p&gt;我的经验以前端为例，大多数项目都会有 website 仓库，用来维护官网，这是不错的入门方向。据我观察很多项目也会有专门的 console 或者 dashboard 仓库，我看过的几个都是用 React 搭建的。以及也可以尝试自己做一些博客主题开源。&lt;/p&gt;
 &lt;p&gt;请注意一个项目的活跃度以及最后活跃时间，项目维护者对 issue 以及 PR 的响应速度如何，以及整个项目的交流氛围，这些都是非常重要的考虑因素。&lt;/p&gt;
 &lt;p&gt;较大的开源项目都会有 CONTRIBUTING 文档，用来说明如何为项目做贡献，请仔细阅读。&lt;/p&gt;
-&lt;h3 id=&#34;看看-issues-都有些什么&#34;&gt;看看 &lt;code&gt;Issues&lt;/code&gt; 都有些什么&lt;/h3&gt;
+&lt;h2 id=&#34;看看-issues-都有些什么&#34;&gt;看看 &lt;code&gt;Issues&lt;/code&gt; 都有些什么&lt;/h2&gt;
 &lt;p&gt;很多开源项目在 Issues 板块都会有 &lt;code&gt;good first issue&lt;/code&gt; ，这些 Issue 通常都比较容易上手，有的项目负责人还会给出一些参考指引，是为了让第一次参与该项目的贡献者能够快速熟悉和参与到项目中来。&lt;/p&gt;
 &lt;p&gt;如果你想要做出某个实际贡献，先看看 Issues 里有没有类似的问题以及是否被解决，如果没有，你可以先创建一个 Issue 让参与项目的其他人知道你要进行这方面的工作，总之，将问题进度公开，以避免重复劳动。&lt;/p&gt;
 &lt;p&gt;创建 Issue 要注意的问题：&lt;/p&gt;
@@ -728,8 +731,8 @@ store.dispatch(...)
 &lt;li&gt;用文字描述，方便其他人检索&lt;/li&gt;
 &lt;li&gt;做好标签分类&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;pull-request-基本流程&#34;&gt;Pull Request 基本流程&lt;/h3&gt;
-&lt;p&gt;如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码&lt;/p&gt;
+&lt;h2 id=&#34;pull-request-基本流程&#34;&gt;Pull Request 基本流程&lt;/h2&gt;
+&lt;p&gt;如果你对项目里的一些问题有了解决方案，可以通过 pull request 提交代码。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;fork&lt;/code&gt; 你想要参与的项目，它就会出现在你的仓库列表里&lt;/li&gt;
 &lt;li&gt;将你自己仓库里的这个项目 &lt;code&gt;git clone&lt;/code&gt; 到本地&lt;/li&gt;
@@ -738,13 +741,13 @@ store.dispatch(...)
 &lt;li&gt;把改好的代码推送到自己的远程仓库&lt;/li&gt;
 &lt;li&gt;在 GitHub 自己的仓库页面上就可以看到 &lt;code&gt;New pull request&lt;/code&gt; 按钮&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;等待-review-结果&#34;&gt;等待 review 结果&lt;/h3&gt;
+&lt;h2 id=&#34;等待-review-结果&#34;&gt;等待 review 结果&lt;/h2&gt;
 &lt;p&gt;项目维护者会对你提交的代码进行 review，如果你提交的代码存在问题，对方会做出说明，希望调整代码或者是代码不被接受的原因。如果没有问题，你的代码就将会被 merge 到项目源码里，一次贡献就这样完成了！&lt;/p&gt;
 &lt;p&gt;如果你的 PR 暂时没有得到回应，请耐心等待，如果时间超过一周，可以尝试 @ 相关负责人。&lt;/p&gt;
-&lt;h2 id=&#34;参与到开源社区中&#34;&gt;参与到开源社区中&lt;/h2&gt;
-&lt;p&gt;如果你对某个社区产生兴趣想要参与，在社区的官网或者 GitHub 上都能找到联系方式（比如 邮件列表、Slack、SIG 会议）。&lt;/p&gt;
+&lt;h1 id=&#34;参与到开源社区中&#34;&gt;参与到开源社区中&lt;/h1&gt;
+&lt;p&gt;如果你对某个社区产生兴趣想要参与，在社区的官网或者 GitHub 以及各种社交媒体上都能找到联系方式（比如邮件列表、Slack、SIG 会议），很多开源社区还会专门举办关于如何参与开源贡献的主题会议。&lt;/p&gt;
 &lt;p&gt;SIG (Special Interest Group) ：很多社区会定期举办 SIG 会议，不要害怕参与进去。一般来说社区会维护每次 SIG 会议的会议文档以及会议录屏，也可以通过这些方式了解社区或者项目的动态。&lt;/p&gt;
-&lt;h2 id=&#34;github-上常见的交流缩写&#34;&gt;GitHub 上常见的交流缩写&lt;/h2&gt;
+&lt;h1 id=&#34;github-上常见的交流缩写&#34;&gt;GitHub 上常见的交流缩写&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;WIP：Work in progress, do not merge yet.  // 开发中&lt;/li&gt;
 &lt;li&gt;LGTM：Looks good to me.  // PR 经过 review 没有问题&lt;/li&gt;
@@ -753,10 +756,6 @@ store.dispatch(...)
 &lt;li&gt;ACK：acknowledgement.&lt;/li&gt;
 &lt;li&gt;NACK/NAK：negative acknowledgement.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;开源指南&#34;&gt;开源指南&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://opensource.guide/zh-hans/&#34;&gt;GitHub 开源软件指南&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/opensource-guide/&#34;&gt;Gitee 开源指北&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://surenpi.com/open-source-best-practice/&#34;&gt;开源最佳实践&lt;/a&gt;&lt;/p&gt;
 - https://yuanyi-au.github.io/posts/opensource/ - 2021 Yuanyi. All rights reserved.</description>
         </item>
     
@@ -768,35 +767,33 @@ store.dispatch(...)
         <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/netlify/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/netlify/ -&lt;h1 id=&#34;使用-netlify-部署个人网站以及预览-github-上的-pr&#34;&gt;使用 Netlify 部署个人网站以及预览 GitHub 上的 PR&lt;/h1&gt;
-&lt;p&gt;Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台&lt;/p&gt;
-&lt;p&gt;本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果&lt;/p&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/netlify/ -&lt;p&gt;Netlify 是一个可以用来构建、部署、协作处理 Web 应用程序的云平台。本篇笔记介绍了如何在 GitHub 上添加 Netlify 以便预览提交的 Pull Request 效果。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-bot.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;也可以参考此笔记将自己的网站部署在 Netlify 上&lt;/p&gt;
-&lt;h2 id=&#34;安装准备&#34;&gt;安装准备&lt;/h2&gt;
+&lt;h1 id=&#34;安装准备&#34;&gt;安装准备&lt;/h1&gt;
 &lt;p&gt;在 GitHub 上安装 &lt;a href=&#34;https://github.com/apps/netlify&#34;&gt; Netlify &lt;/a&gt;，授权 GitHub 账号&lt;/p&gt;
 &lt;p&gt;或者你也可以选择在 &lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify 官网&lt;/a&gt; 上进行注册授权&lt;/p&gt;
-&lt;h2 id=&#34;new-site-from-git&#34;&gt;New site from Git&lt;/h2&gt;
+&lt;h1 id=&#34;new-site-from-git&#34;&gt;New site from Git&lt;/h1&gt;
 &lt;p&gt;选择平台 - 选择仓库 - 选择分支 - 基本设置 - deploy site&lt;/p&gt;
-&lt;h3 id=&#34;基本设置&#34;&gt;基本设置&lt;/h3&gt;
+&lt;h2 id=&#34;基本设置&#34;&gt;基本设置&lt;/h2&gt;
 &lt;p&gt;常见框架对应的 Build command 和 Publish directory 可以看 &lt;a href=&#34;https://docs.netlify.com/configure-builds/common-configurations/&#34;&gt;官网文档&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;环境变量&#34;&gt;环境变量&lt;/h3&gt;
+&lt;h2 id=&#34;环境变量&#34;&gt;环境变量&lt;/h2&gt;
 &lt;p&gt;如果第一次 deploy 失败，请查看环境设置，检查版本是否正确&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment &amp;gt; Environment variables&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-environment.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;修改域名&#34;&gt;修改域名&lt;/h3&gt;
+&lt;h2 id=&#34;修改域名&#34;&gt;修改域名&lt;/h2&gt;
 &lt;p&gt;Netlify 会自动以你的 site name 生成一个域名：&lt;code&gt;[name-of-your-site].netlify.app&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;进入 &lt;code&gt;Domain Setting &amp;gt; Domain management &amp;gt; Custom domains&lt;/code&gt;，可以通过修改 site name 修改域名&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-domain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;为-pr-生成预览&#34;&gt;为 PR 生成预览&lt;/h2&gt;
+&lt;h1 id=&#34;为-pr-生成预览&#34;&gt;为 PR 生成预览&lt;/h1&gt;
 &lt;p&gt;进入 &lt;code&gt;Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Deploy notifications&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-notification.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;选择 ”Add notification“ ，在下拉菜单中选择 “GitHub Pull Request Comment” ，然后选择 “Deploy Preview succeeded” ，保存&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/netlify-prcomment.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;现在每个新出现的 PR 都会自动生成一个评论，包含预览链接 &lt;code&gt;deploy-preview-4--yoursitename.netlify.app&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;对开源项目的支持&#34;&gt;对开源项目的支持&lt;/h2&gt;
+&lt;h1 id=&#34;对开源项目的支持&#34;&gt;对开源项目的支持&lt;/h1&gt;
 &lt;p&gt;如果是开源项目，可以阅读 &lt;a href=&#34;https://www.netlify.com/legal/open-source-policy&#34;&gt;Open Source Plan Policy&lt;/a&gt; 相关内容，提交申请表单，就能免费享有 Pro 的功能，团队成员数量无限制&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.netlify.com/site-deploys/deploy-previews/&#34;&gt; Netlify 官网文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://levelup.gitconnected.com/how-to-setup-previews-for-prs-on-your-github-repo-using-netlify-105c80574875&#34;&gt; How to Setup Previews For PRs on Your GitHub Repo Using Netlify &lt;/a&gt;&lt;/p&gt;
 - https://yuanyi-au.github.io/posts/netlify/ - 2021 Yuanyi. All rights reserved.</description>
@@ -810,8 +807,7 @@ store.dispatch(...)
         <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/package.json-package-lock.json/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson-与-package-lockjson&#34;&gt;package.json 与 package-lock.json&lt;/h1&gt;
-&lt;h2 id=&#34;packagejson&#34;&gt;package.json&lt;/h2&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/package.json-package-lock.json/ -&lt;h1 id=&#34;packagejson&#34;&gt;package.json&lt;/h1&gt;
 &lt;p&gt;描述项目所需要的各种模块以及配置信息，可以手动编写，也可以在项目根目录用 &lt;code&gt;npm init&lt;/code&gt; 自动生成&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{
   &amp;quot;name&amp;quot;: &amp;quot;tech-doc-hugo&amp;quot;,
@@ -850,16 +846,16 @@ store.dispatch(...)
 &lt;li&gt;&lt;code&gt;license&lt;/code&gt;：开源协议，可看&lt;a href=&#34;https://choosealicense.com/&#34;&gt;Choose an open source license&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;config&lt;/code&gt;：用于添加命令行的环境变量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;依赖模块的版本&#34;&gt;依赖模块的版本&lt;/h3&gt;
+&lt;h2 id=&#34;依赖模块的版本&#34;&gt;依赖模块的版本&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;指定版本 16.2.3&lt;/li&gt;
 &lt;li&gt;波浪号 ~16.2.3：安装 16.2.x 的最新版本&lt;/li&gt;
 &lt;li&gt;插入号 ^16.2.3：安装 16.x.x 的最新版本&lt;/li&gt;
 &lt;li&gt;latest：安装最新版本&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;package-lockjson&#34;&gt;package-lock.json&lt;/h2&gt;
+&lt;h1 id=&#34;package-lockjson&#34;&gt;package-lock.json&lt;/h1&gt;
 &lt;p&gt;描述 &lt;code&gt;node_modules&lt;/code&gt; 文件中所有模块的版本信息，模块来源及依赖的小版本信息，将整个依赖树锁死&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.npmjs.com/cli/v7/configuring-npm/package-json&#34;&gt;npm 官网 package.json 文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.npmjs.com/cli/v7/configuring-npm/package-lock-json&#34;&gt;npm 官网 package-lock.json 文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://javascript.ruanyifeng.com/nodejs/packagejson.html&#34;&gt;package.json文件&lt;/a&gt;&lt;/p&gt;
@@ -876,53 +872,67 @@ store.dispatch(...)
         <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-笔记-2&#34;&gt;git 笔记 (2)&lt;/h1&gt;
-&lt;h2 id=&#34;git-rebase&#34;&gt;git rebase&lt;/h2&gt;
-&lt;h3 id=&#34;合并不同分支的提交&#34;&gt;合并不同分支的提交&lt;/h3&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/git-2/ -&lt;h1 id=&#34;git-rebase&#34;&gt;git rebase&lt;/h1&gt;
+&lt;h2 id=&#34;合并不同分支的提交&#34;&gt;合并不同分支的提交&lt;/h2&gt;
 &lt;p&gt;将 b 分支上的提交合并到 a 分支上成为一条直线&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git checkout b
 git rebase a
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;与-merge-的区别&#34;&gt;与 merge 的区别&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;与-merge-的区别&#34;&gt;与 merge 的区别&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;永远不要在公共项目里使用 rebase&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;git rebase:
 &lt;img src=&#34;../images/git-rebase.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;git merge:
 &lt;img src=&#34;../images/git-merge.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git add -u
 git rebase --continue
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase   前的代码则可以用命令&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git rebase --abort&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;合并本地的多次提交&#34;&gt;合并本地的多次提交&lt;/h3&gt;
+&lt;h2 id=&#34;合并本地的多次提交&#34;&gt;合并本地的多次提交&lt;/h2&gt;
 &lt;p&gt;合并最新的三次提交&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git rebase -i HEAD~3&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在原来的分支上把 commit 给合并，而是从合并的 start point 开始新生成一个匿名分支然后把原来分支那几个 commit 作为一个 commit 放到新分支上&lt;/p&gt;
-&lt;h2 id=&#34;cherry-pick&#34;&gt;cherry-pick&lt;/h2&gt;
+&lt;h1 id=&#34;cherry-pick&#34;&gt;cherry-pick&lt;/h1&gt;
 &lt;p&gt;将其他分支上的提交应用于 a 分支&lt;/p&gt;
 &lt;p&gt;在开源项目里很有用&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git checkout a
 git cherry-pick &amp;lt;CommitID&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;与-rebase-的区别&#34;&gt;与 rebase 的区别&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;与-rebase-的区别&#34;&gt;与 rebase 的区别&lt;/h2&gt;
 &lt;p&gt;rebase 相当于剪切粘贴， cherry-pick 相当于复制粘贴&lt;/p&gt;
-&lt;h2 id=&#34;git-reset-与-git-revert&#34;&gt;git reset 与 git revert&lt;/h2&gt;
-&lt;h3 id=&#34;git-reset&#34;&gt;git reset&lt;/h3&gt;
+&lt;h1 id=&#34;git-reset-与-git-revert&#34;&gt;git reset 与 git revert&lt;/h1&gt;
+&lt;h2 id=&#34;git-reset&#34;&gt;git reset&lt;/h2&gt;
 &lt;p&gt;回退到指定的提交版本&lt;/p&gt;
-&lt;h3 id=&#34;git-revert&#34;&gt;git revert&lt;/h3&gt;
+&lt;h2 id=&#34;git-revert&#34;&gt;git revert&lt;/h2&gt;
 &lt;p&gt;用一个新的提交来消除之前的提交，原来的 commit 内容依旧会保存在提交历史中&lt;/p&gt;
-&lt;h3 id=&#34;两者的区别&#34;&gt;两者的区别&lt;/h3&gt;
+&lt;h2 id=&#34;两者的区别&#34;&gt;两者的区别&lt;/h2&gt;
 &lt;p&gt;reset 是在正常的提交历史中,删除了指定的 commit ，HEAD 向后移动，而 revert 是在正常的提交历史中再 commit 一次，只不过是反向提交可以抵消之前的提交，它的HEAD 是一直向前的&lt;/p&gt;
-&lt;h2 id=&#34;git-pull-和-git-fetch-的区别&#34;&gt;git pull 和 git fetch 的区别&lt;/h2&gt;
+&lt;h1 id=&#34;git-pull-和-git-fetch-的区别&#34;&gt;git pull 和 git fetch 的区别&lt;/h1&gt;
 &lt;p&gt;打开本地 &lt;code&gt;.git/refs&lt;/code&gt; 文件夹我们可以看到代表本地分支的 &lt;code&gt;head&lt;/code&gt; 文件夹和代表正在跟踪的远程分支的 &lt;code&gt;remotes&lt;/code&gt; 文件夹&lt;/p&gt;
 &lt;p&gt;使用 git pull 会将两个文件夹里的 commit ID 都更新至远程库的最新 commit ID&lt;/p&gt;
 &lt;p&gt;使用 git fetch 只会将 &lt;code&gt;remotes&lt;/code&gt; 文件夹中的 commit ID 更新至远程库的最新 commit ID&lt;/p&gt;
-&lt;h2 id=&#34;git-blame&#34;&gt;git blame&lt;/h2&gt;
+&lt;h1 id=&#34;git-blame&#34;&gt;git blame&lt;/h1&gt;
 &lt;p&gt;可以查看某个文件里每一行代码的最后修改提交记录&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git blame &amp;lt;filename&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;sign-off&#34;&gt;sign-off&lt;/h2&gt;
+&lt;h1 id=&#34;sign-off&#34;&gt;sign-off&lt;/h1&gt;
 &lt;p&gt;在做开源项目时遇到要求 sign-off，用于证明提交作者&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git commit -s -m &amp;quot;&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;h1 id=&#34;ssh-与-https-克隆代码的区别&#34;&gt;SSH 与 HTTPS 克隆代码的区别&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;HTTPS 使用 443 端口，可以随意克隆 GitHub 上的项目，但进行其他 git 操作时需要验证用户名和密码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH 使用 22 端口，操作者必须是项目拥有者，先添加 SSH key 然后才能克隆 GitHub 上的项目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/hudashi/article/details/7664631?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.control&amp;amp;spm=1001.2101.3001.4242&#34;&gt;git rebase简介(基本篇)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/6960811ac89c&#34;&gt;你真的懂git rebase吗？&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_43425487/article/details/105620270&#34;&gt;Git应用详解第九讲：Git cherry-pick与Git rebase&lt;/a&gt;&lt;/p&gt;
@@ -940,26 +950,25 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
         <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
-        <description>方圆之所 https://yuanyi-au.github.io/posts/git-1/ -&lt;h1 id=&#34;git-笔记-1&#34;&gt;git 笔记 (1)&lt;/h1&gt;
-&lt;p&gt;本篇笔记内容包括常用命令以及 commit message 规范&lt;/p&gt;
-&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
-&lt;h3 id=&#34;名词&#34;&gt;名词&lt;/h3&gt;
+        <description>方圆之所 https://yuanyi-au.github.io/posts/git-1/ -&lt;p&gt;本篇笔记内容包括常用命令以及 commit message 规范&lt;/p&gt;
+&lt;h1 id=&#34;常用命令&#34;&gt;常用命令&lt;/h1&gt;
+&lt;h2 id=&#34;名词&#34;&gt;名词&lt;/h2&gt;
 &lt;p&gt;workplace 工作区&lt;/p&gt;
 &lt;p&gt;stage 暂存区&lt;/p&gt;
 &lt;p&gt;repository 本地仓库&lt;/p&gt;
 &lt;p&gt;remote 远程仓库&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;新建仓库&#34;&gt;新建仓库&lt;/h3&gt;
+&lt;h2 id=&#34;新建仓库&#34;&gt;新建仓库&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git init&lt;/code&gt; 在当前目录新建一个本地仓库&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git clone&lt;/code&gt; 将一个远程仓库的内容下载到本地&lt;/p&gt;
-&lt;h3 id=&#34;文件的增加删除提交&#34;&gt;文件的增加、删除、提交&lt;/h3&gt;
+&lt;h2 id=&#34;文件的增加删除提交&#34;&gt;文件的增加、删除、提交&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git add [filename]&lt;/code&gt; 将文件从工作区添加到暂存区&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git rm [filename]&lt;/code&gt; 删除工作区文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git rm --cached [filename]&lt;/code&gt; 停止追踪指定文件，但该文件会保留在工作区&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git mv [originalname] [newname]&lt;/code&gt; 文件重命名，并将该文件放入暂存区&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git commit - &amp;quot;message&amp;quot;&lt;/code&gt; 将暂存区文件提交到本地仓库&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git commit -amend -m &amp;quot;message&amp;quot;&lt;/code&gt; 用一次新的 commit 代替上次 commit，可以用来改写 commit message&lt;/p&gt;
-&lt;h3 id=&#34;分支管理&#34;&gt;分支管理&lt;/h3&gt;
+&lt;h2 id=&#34;分支管理&#34;&gt;分支管理&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git branch&lt;/code&gt; 查看所有本地分支&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git branch -a&lt;/code&gt; 查看所有本地分支与远程分支&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git branch [branch]&lt;/code&gt; 新建一个分支，但依然停留在当前分支&lt;/p&gt;
@@ -968,14 +977,14 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;p&gt;&lt;code&gt;git merge [branch]&lt;/code&gt; 将指定分支合并到当前分支&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git branch -d [branch]&lt;/code&gt; 删除本地分支&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git push origin --delete [branch]&lt;/code&gt; 删除远程分支&lt;/p&gt;
-&lt;h3 id=&#34;远程仓库&#34;&gt;远程仓库&lt;/h3&gt;
+&lt;h2 id=&#34;远程仓库&#34;&gt;远程仓库&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git remote -v&lt;/code&gt; 查看所有远程仓库&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git remote add [name] [url]&lt;/code&gt; 添加远程仓库&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git remote remove [name]&lt;/code&gt; 删除远程仓库&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git fetch [remote]&lt;/code&gt; 下载远程仓库的所有变动&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git pull [remote] [branch]&lt;/code&gt; 下载远程仓库的变动并与本地仓库合并&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git push [remote] [branch]&lt;/code&gt; 将本地分支推送到远程分支&lt;/p&gt;
-&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git config --list&lt;/code&gt; 显示当前配置&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git config -e&lt;/code&gt; 编辑配置文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 显示所有变更文件&lt;/p&gt;
@@ -983,17 +992,17 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;p&gt;&lt;code&gt;git reset --soft [commit_id]&lt;/code&gt; 回退到某一个 commit 版本，工作区和暂存区不变&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git reset --hard [commit_id]&lt;/code&gt; 回退到某一个 commit 版本，工作区和暂存区也随之更改&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff&lt;/code&gt; 显示暂存区与工作区的差异&lt;/p&gt;
-&lt;h2 id=&#34;commit-message-规范&#34;&gt;commit message 规范&lt;/h2&gt;
+&lt;h1 id=&#34;commit-message-规范&#34;&gt;commit message 规范&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/eb16595d0c6862c0c013a36c339317a4d82bdce7/9195b/images/posts/2019-11-01-understanding-semantic-commit-messages-using-git-and-angular/conventions-diagram.png&#34; alt=&#34;不同的 commit message 规范&#34;&gt;&lt;/p&gt;
 &lt;p&gt;通常我们都用 Angular 的规范，具体可以参见 &lt;a href=&#34;https://www.conventionalcommits.org/en/v1.0.0/&#34;&gt;Conventional Commits&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;组成&#34;&gt;组成&lt;/h3&gt;
+&lt;h2 id=&#34;组成&#34;&gt;组成&lt;/h2&gt;
 &lt;p&gt;commit message 包括三部分：header，body 和 footer&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;type&amp;gt;[optional scope]: &amp;lt;description&amp;gt;
 
 [optional body]
 
 [optional footer(s)]
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;header&#34;&gt;Header&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;header&#34;&gt;Header&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;type：用于说明 commit 的类别
 &lt;ul&gt;
@@ -1011,19 +1020,19 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;li&gt;scope：用于说明 commit 影响的范围，例如数据层、控制层、视图层等&lt;/li&gt;
 &lt;li&gt;subject：用于描述 commit 目的&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;body&#34;&gt;Body&lt;/h4&gt;
+&lt;h3 id=&#34;body&#34;&gt;Body&lt;/h3&gt;
 &lt;p&gt;对 commit 的详细描述，可以分成多行&lt;/p&gt;
-&lt;h4 id=&#34;footer&#34;&gt;Footer&lt;/h4&gt;
+&lt;h3 id=&#34;footer&#34;&gt;Footer&lt;/h3&gt;
 &lt;p&gt;只用于两种情况：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;当前代码与上一版本代码不兼容，则 footer 以 BREAKING CHANGE 开头，接着描述变动的内容、理由及迁移方法&lt;/li&gt;
 &lt;li&gt;针对某个 Issue，可以在 footer 部分关闭这个 Issue &lt;code&gt;Close #65 #77&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;revert&#34;&gt;Revert&lt;/h4&gt;
+&lt;h3 id=&#34;revert&#34;&gt;Revert&lt;/h3&gt;
 &lt;p&gt;如果当前 commit 是用来撤销之前的 commit，则必须以 &lt;code&gt;revert:&lt;/code&gt; 开头，后面跟着被撤销的 commit 的 header&lt;/p&gt;
 &lt;p&gt;body 部分则必须写成:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;规则&#34;&gt;规则&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;规则&#34;&gt;规则&lt;/h2&gt;
 &lt;p&gt;优秀的 commit massage 应该遵循以下七条规则：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;subject 和 body 之间空一行&lt;/li&gt;
@@ -1034,7 +1043,7 @@ git cherry-pick &amp;lt;CommitID&amp;gt;
 &lt;li&gt;body 不超过72个字符&lt;/li&gt;
 &lt;li&gt;用 body 部分解释此次 commit 的改动及其原因&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;feat(lang): add polish language
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;refactor!: drop support for Node 6 //使用感叹号代表 breaking change
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;fix: correct minor typos in code
@@ -1045,7 +1054,7 @@ on typos fixed.
 
 Reviewed-by: Z
 Refs #133
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.conventionalcommits.org/en/v1.0.0/&#34;&gt;Conventional Commits 1.0.0&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://chris.beams.io/posts/git-commit/&#34;&gt;How to Write a Git Commit Message&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://nitayneeman.com/posts/understanding-semantic-commit-messages-using-git-and-angular/&#34;&gt;Understanding Semantic Commit Messages Using Git and Angular&lt;/a&gt;&lt;/p&gt;

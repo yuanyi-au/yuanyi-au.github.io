@@ -14,10 +14,10 @@
       <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://yuanyi-au.github.io/posts/git-2/</guid>
-      <description>git 笔记 (2) git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
+      <description>git rebase 合并不同分支的提交 将 b 分支上的提交合并到 a 分支上成为一条直线
 git checkout bgit rebase a与 merge 的区别 永远不要在公共项目里使用 rebase
 merge 采用的是三方合并的原则，没有公共提交节点就无法进行合并
-git rebase: git merge: rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
+  git rebase:   git merge:   rebase 和 merge 的另一个区别是 rebase 的冲突是一个一个解决，先解决第一个，然后用命令
 git add -ugit rebase --continue继续后才会出现第二个冲突，直到所有冲突解决完，而 merge 是所有的冲突都会显示出来。另外如果 rebase 过程中，你想中途退出，恢复 rebase 前的代码则可以用命令
 git rebase --abort
 合并本地的多次提交 合并最新的三次提交
@@ -31,7 +31,7 @@ git reabse -i 合并 commit 之后会出现一个匿名的分支，并不是在�
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://yuanyi-au.github.io/posts/git-1/</guid>
-      <description>git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
+      <description>本篇笔记内容包括常用命令以及 commit message 规范
 常用命令 名词 workplace 工作区
 stage 暂存区
 repository 本地仓库
@@ -46,7 +46,8 @@ git commit - &amp;quot;message&amp;quot; 将暂存区文件提交到本地仓库
 git commit -amend -m &amp;quot;message&amp;quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
 分支管理 git branch 查看所有本地分支
 git branch -a 查看所有本地分支与远程分支
-git branch [branch] 新建一个分支，但依然停留在当前分支</description>
+git branch [branch] 新建一个分支，但依然停留在当前分支
+git checkout -b [branch] 新建一个分支并切换到该分支</description>
     </item>
     
   </channel>

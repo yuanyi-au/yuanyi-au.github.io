@@ -17,7 +17,7 @@
 
 
 <meta property="og:title" content="git 笔记 (1)" />
-<meta property="og:description" content="git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
+<meta property="og:description" content="本篇笔记内容包括常用命令以及 commit message 规范
 常用命令 名词 workplace 工作区
 stage 暂存区
 repository 本地仓库
@@ -32,7 +32,8 @@ git commit - &quot;message&quot; 将暂存区文件提交到本地仓库
 git commit -amend -m &quot;message&quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
 分支管理 git branch 查看所有本地分支
 git branch -a 查看所有本地分支与远程分支
-git branch [branch] 新建一个分支，但依然停留在当前分支" />
+git branch [branch] 新建一个分支，但依然停留在当前分支
+git checkout -b [branch] 新建一个分支并切换到该分支" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yuanyi-au.github.io/posts/git-1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-24T00:00:00+00:00" />
@@ -45,7 +46,7 @@ git branch [branch] 新建一个分支，但依然停留在当前分支" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="git 笔记 (1)"/>
-<meta name="twitter:description" content="git 笔记 (1) 本篇笔记内容包括常用命令以及 commit message 规范
+<meta name="twitter:description" content="本篇笔记内容包括常用命令以及 commit message 规范
 常用命令 名词 workplace 工作区
 stage 暂存区
 repository 本地仓库
@@ -60,7 +61,8 @@ git commit - &quot;message&quot; 将暂存区文件提交到本地仓库
 git commit -amend -m &quot;message&quot; 用一次新的 commit 代替上次 commit，可以用来改写 commit message
 分支管理 git branch 查看所有本地分支
 git branch -a 查看所有本地分支与远程分支
-git branch [branch] 新建一个分支，但依然停留在当前分支"/>
+git branch [branch] 新建一个分支，但依然停留在当前分支
+git checkout -b [branch] 新建一个分支并切换到该分支"/>
 
 
 
@@ -229,30 +231,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
-						
-						
-							<li>
-								<a href="#git-%e7%ac%94%e8%ae%b0-1" onclick="onNavClick(`#git-笔记-1-nav`)" id="git-笔记-1-nav">
-									git 笔记 (1)
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
 						
 						
 							<li>
@@ -658,30 +636,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#git-%e7%ac%94%e8%ae%b0-1" onclick="onNavClick(`#git-笔记-1-nav`)" id="git-笔记-1-nav">
-									git 笔记 (1)
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
 								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#常用命令-nav`)" id="常用命令-nav">
 									常用命令
 								</a>
@@ -1077,26 +1031,25 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h1 id="git-笔记-1">git 笔记 (1)</h1>
-<p>本篇笔记内容包括常用命令以及 commit message 规范</p>
-<h2 id="常用命令">常用命令</h2>
-<h3 id="名词">名词</h3>
+                    <p>本篇笔记内容包括常用命令以及 commit message 规范</p>
+<h1 id="常用命令">常用命令</h1>
+<h2 id="名词">名词</h2>
 <p>workplace 工作区</p>
 <p>stage 暂存区</p>
 <p>repository 本地仓库</p>
 <p>remote 远程仓库</p>
 <p><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt=""></p>
-<h3 id="新建仓库">新建仓库</h3>
+<h2 id="新建仓库">新建仓库</h2>
 <p><code>git init</code> 在当前目录新建一个本地仓库</p>
 <p><code>git clone</code> 将一个远程仓库的内容下载到本地</p>
-<h3 id="文件的增加删除提交">文件的增加、删除、提交</h3>
+<h2 id="文件的增加删除提交">文件的增加、删除、提交</h2>
 <p><code>git add [filename]</code> 将文件从工作区添加到暂存区</p>
 <p><code>git rm [filename]</code> 删除工作区文件</p>
 <p><code>git rm --cached [filename]</code> 停止追踪指定文件，但该文件会保留在工作区</p>
 <p><code>git mv [originalname] [newname]</code> 文件重命名，并将该文件放入暂存区</p>
 <p><code>git commit - &quot;message&quot;</code> 将暂存区文件提交到本地仓库</p>
 <p><code>git commit -amend -m &quot;message&quot;</code> 用一次新的 commit 代替上次 commit，可以用来改写 commit message</p>
-<h3 id="分支管理">分支管理</h3>
+<h2 id="分支管理">分支管理</h2>
 <p><code>git branch</code> 查看所有本地分支</p>
 <p><code>git branch -a</code> 查看所有本地分支与远程分支</p>
 <p><code>git branch [branch]</code> 新建一个分支，但依然停留在当前分支</p>
@@ -1105,14 +1058,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <p><code>git merge [branch]</code> 将指定分支合并到当前分支</p>
 <p><code>git branch -d [branch]</code> 删除本地分支</p>
 <p><code>git push origin --delete [branch]</code> 删除远程分支</p>
-<h3 id="远程仓库">远程仓库</h3>
+<h2 id="远程仓库">远程仓库</h2>
 <p><code>git remote -v</code> 查看所有远程仓库</p>
 <p><code>git remote add [name] [url]</code> 添加远程仓库</p>
 <p><code>git remote remove [name]</code> 删除远程仓库</p>
 <p><code>git fetch [remote]</code> 下载远程仓库的所有变动</p>
 <p><code>git pull [remote] [branch]</code> 下载远程仓库的变动并与本地仓库合并</p>
 <p><code>git push [remote] [branch]</code> 将本地分支推送到远程分支</p>
-<h3 id="其他">其他</h3>
+<h2 id="其他">其他</h2>
 <p><code>git config --list</code> 显示当前配置</p>
 <p><code>git config -e</code> 编辑配置文件</p>
 <p><code>git status</code> 显示所有变更文件</p>
@@ -1120,17 +1073,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <p><code>git reset --soft [commit_id]</code> 回退到某一个 commit 版本，工作区和暂存区不变</p>
 <p><code>git reset --hard [commit_id]</code> 回退到某一个 commit 版本，工作区和暂存区也随之更改</p>
 <p><code>git diff</code> 显示暂存区与工作区的差异</p>
-<h2 id="commit-message-规范">commit message 规范</h2>
+<h1 id="commit-message-规范">commit message 规范</h1>
 <p><img src="https://d33wubrfki0l68.cloudfront.net/eb16595d0c6862c0c013a36c339317a4d82bdce7/9195b/images/posts/2019-11-01-understanding-semantic-commit-messages-using-git-and-angular/conventions-diagram.png" alt="不同的 commit message 规范"></p>
 <p>通常我们都用 Angular 的规范，具体可以参见 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></p>
-<h3 id="组成">组成</h3>
+<h2 id="组成">组成</h2>
 <p>commit message 包括三部分：header，body 和 footer</p>
 <pre><code>&lt;type&gt;[optional scope]: &lt;description&gt;
 
 [optional body]
 
 [optional footer(s)]
-</code></pre><h4 id="header">Header</h4>
+</code></pre><h3 id="header">Header</h3>
 <ul>
 <li>type：用于说明 commit 的类别
 <ul>
@@ -1148,19 +1101,19 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li>scope：用于说明 commit 影响的范围，例如数据层、控制层、视图层等</li>
 <li>subject：用于描述 commit 目的</li>
 </ul>
-<h4 id="body">Body</h4>
+<h3 id="body">Body</h3>
 <p>对 commit 的详细描述，可以分成多行</p>
-<h4 id="footer">Footer</h4>
+<h3 id="footer">Footer</h3>
 <p>只用于两种情况：</p>
 <ul>
 <li>当前代码与上一版本代码不兼容，则 footer 以 BREAKING CHANGE 开头，接着描述变动的内容、理由及迁移方法</li>
 <li>针对某个 Issue，可以在 footer 部分关闭这个 Issue <code>Close #65 #77</code></li>
 </ul>
-<h4 id="revert">Revert</h4>
+<h3 id="revert">Revert</h3>
 <p>如果当前 commit 是用来撤销之前的 commit，则必须以 <code>revert:</code> 开头，后面跟着被撤销的 commit 的 header</p>
 <p>body 部分则必须写成:</p>
 <pre><code>This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-</code></pre><h3 id="规则">规则</h3>
+</code></pre><h2 id="规则">规则</h2>
 <p>优秀的 commit massage 应该遵循以下七条规则：</p>
 <ol>
 <li>subject 和 body 之间空一行</li>
@@ -1171,7 +1124,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li>body 不超过72个字符</li>
 <li>用 body 部分解释此次 commit 的改动及其原因</li>
 </ol>
-<h3 id="示例">示例</h3>
+<h2 id="示例">示例</h2>
 <pre><code>feat(lang): add polish language
 </code></pre><pre><code>refactor!: drop support for Node 6 //使用感叹号代表 breaking change
 </code></pre><pre><code>fix: correct minor typos in code
@@ -1182,7 +1135,7 @@ on typos fixed.
 
 Reviewed-by: Z
 Refs #133
-</code></pre><h2 id="参考资料">参考资料</h2>
+</code></pre><h1 id="参考资料">参考资料</h1>
 <p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a></p>
 <p><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></p>
 <p><a href="https://nitayneeman.com/posts/understanding-semantic-commit-messages-using-git-and-angular/">Understanding Semantic Commit Messages Using Git and Angular</a></p>
